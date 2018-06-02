@@ -8,7 +8,6 @@ import traveller.interfaz.panel.PanelVerViaje;
 import traveller.interfaz.panel.PanelMisViajes;
 import traveller.interfaz.panel.PanelNuevoEvento;
 import traveller.interfaz.panel.PanelAmigos;
-import com.wolfram.alpha.net.ProxySettings;
 import traveller.dominio.ISistema;
 import traveller.dominio.Usuario;
 import traveller.dominio.Viaje;
@@ -19,7 +18,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.border.LineBorder;
-import traveller.extras.WolframAlpha;
 
 /**
  * La clase VentanaMenu se encarga de manejar la interfaz del menú principal y
@@ -838,33 +836,7 @@ public class VentanaMenu extends javax.swing.JFrame {
     }
 
     private void btnAgendarViaje2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarViaje2ActionPerformed
-        WolframAlpha wolfram = new WolframAlpha();
-        boolean traducir = true;
-        if (this.sistema.getProxy().length() > 4) {
-            ProxySettings.useProxy = 2;
-            traducir = false;
-        }
-        PanelResultadoBusqueda panel;
-        try {
-            panel = new PanelResultadoBusqueda(wolfram.busqueda(txtBusqueda.getText(), traducir));
-
-            opcionMenu = 3;
-            btnNuevoEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png")));
-            btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png")));
-            btnAmigos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png")));
-            btnMisViajes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png")));
-            btnMiCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png")));
-            btnAgendarViaje1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png")));
-            /*
-             * Limpiar el panel actual y agregar el nuevo.
-             */
-            panelContenido.removeAll();
-            panelContenido.add(panel);
-            panel.setBounds(0, 0, 439, 660);
-            this.pack();
-        } catch (Exception ex) {
-            Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        }
+      
     }//GEN-LAST:event_btnAgendarViaje2ActionPerformed
 
     private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
