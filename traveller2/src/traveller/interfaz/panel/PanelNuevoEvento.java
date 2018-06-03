@@ -17,7 +17,6 @@ import javax.swing.border.LineBorder;
 import traveller.utill.Utilidades;
 
 public class PanelNuevoEvento extends javax.swing.JPanel {
-    DateFormat dateFormat = DateFormat.getDateInstance();
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public PanelNuevoEvento(ISistema sistema) {
@@ -29,6 +28,10 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
             lista.add(it.next());
         }
         listaViajes.setListData(lista.toArray());
+        lblRegistered.setVisible(false);
+        lblRegistered.setText("Registro Exitoso.");
+        lblRegistered.setForeground(Color.RED);
+        
          if (this.sistema.esModoDesarrollador()) {
             this.txtNombre.requestFocusInWindow();
             this.txtNombre.setText("Paseo al museo");
@@ -69,6 +72,7 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
         etqFechas = new javax.swing.JLabel();
         etqAclaracion = new javax.swing.JLabel();
         jCal = new com.toedter.calendar.JDateChooser();
+        lblRegistered = new java.awt.Label();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -254,6 +258,12 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
 
         jCal.setDateFormatString("dd/MM/yyyy");
 
+        lblRegistered.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblRegistered.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblRegistered.setForeground(new java.awt.Color(204, 0, 0));
+        lblRegistered.setName(""); // NOI18N
+        lblRegistered.setText("Registro exitoso.");
+
         javax.swing.GroupLayout panelCrearJugadorLayout = new javax.swing.GroupLayout(panelCrearJugador);
         panelCrearJugador.setLayout(panelCrearJugadorLayout);
         panelCrearJugadorLayout.setHorizontalGroup(
@@ -275,9 +285,7 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
                                 .addGap(312, 312, 312))
                             .addGroup(panelCrearJugadorLayout.createSequentialGroup()
                                 .addComponent(etqFecha)
-                                .addGap(83, 83, 83)
-                                .addComponent(jCal, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
+                                .addGap(34, 34, 34))))
                     .addGroup(panelCrearJugadorLayout.createSequentialGroup()
                         .addComponent(etqCorrecto, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 78, Short.MAX_VALUE))))
@@ -286,37 +294,37 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
                     .addGroup(panelCrearJugadorLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(etqAclaracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelCrearJugadorLayout.createSequentialGroup()
-                        .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelCrearJugadorLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(etqError, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(panelCrearJugadorLayout.createSequentialGroup()
-                                        .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(panelCrearJugadorLayout.createSequentialGroup()
-                                                .addGap(8, 8, 8)
-                                                .addComponent(etqFechas, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(panelCrearJugadorLayout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addComponent(etqViaje)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtNombre)
-                                            .addComponent(txtLugar)
-                                            .addComponent(comboTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane2)
-                                            .addComponent(scrollListaViajes, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)))))
-                            .addGroup(panelCrearJugadorLayout.createSequentialGroup()
-                                .addGap(93, 93, 93)
-                                .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelCrearJugadorLayout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(etqError, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(panelCrearJugadorLayout.createSequentialGroup()
+                                    .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(panelCrearJugadorLayout.createSequentialGroup()
+                                            .addGap(8, 8, 8)
+                                            .addComponent(etqFechas, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(panelCrearJugadorLayout.createSequentialGroup()
+                                            .addGap(10, 10, 10)
+                                            .addComponent(etqViaje)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblRegistered, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtNombre)
+                                        .addComponent(txtLugar)
+                                        .addComponent(comboTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane2)
+                                        .addComponent(scrollListaViajes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                        .addComponent(jCal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(panelCrearJugadorLayout.createSequentialGroup()
+                            .addGap(93, 93, 93)
+                            .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         panelCrearJugadorLayout.setVerticalGroup(
             panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearJugadorLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(etqError, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -333,7 +341,7 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
                 .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etqLugar)
                     .addComponent(txtLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etqTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -345,11 +353,13 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
                 .addGroup(panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(etqDescripcion)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(etqAclaracion, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(lblRegistered, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(etqAclaracion, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
                 .addComponent(etqCorrecto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79))
         );
@@ -415,7 +425,6 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         String tipo = (String) comboTipo.getSelectedItem();
-
         TipoEvento tipoEvento = null;
         if (tipo.equals("Cultural")) {
             tipoEvento = TipoEvento.CULTURAL;
@@ -447,6 +456,8 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
                 String strDia = sdfDate.format(hoy);
                 ((Viaje) listaViajes.getSelectedValue()).agregarLogAViaje(accion,strDia);
                 etqCorrecto.setText("Registro exitoso.");
+                etqCorrecto.setEnabled(true);
+                lblRegistered.setVisible(true);
                 etqError.setText(null);
                 inhabilitarCampos();
 		
@@ -489,6 +500,7 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private java.awt.Label lblRegistered;
     private javax.swing.JList listaViajes;
     private javax.swing.JPanel panelCrearJugador;
     private javax.swing.JPanel panelPrincipal;

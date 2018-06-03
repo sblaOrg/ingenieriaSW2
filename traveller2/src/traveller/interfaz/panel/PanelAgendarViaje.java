@@ -387,7 +387,8 @@ public class PanelAgendarViaje extends javax.swing.JPanel {
      * Inhabilita los campos de ingeso de datos.
      */
     private void inhabilitarCampos() {
-        //inhabilitarCampos
+        jCalInicio.setEnabled(false);
+        jCalFin.setEnabled(false);
         txtDescripcion.setEditable(false);
         txtNombre.setEditable(false);
         btnAceptar.setEnabled(false);
