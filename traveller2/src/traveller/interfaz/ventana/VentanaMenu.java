@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.border.LineBorder;
+import traveller.interfaz.panel.PanelCiudades;
 
 /**
  * La clase VentanaMenu se encarga de manejar la interfaz del menú principal y
@@ -994,7 +995,13 @@ public class VentanaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_subMiCuentaActionPerformed
 
     private void btnNuevoEvento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoEvento1ActionPerformed
-        // TODO add your handling code here:
+        /*
+         * Limpiar el panel actual y agregar el nuevo.
+         */
+        panelContenido.removeAll();
+        panelContenido.add(PanelCiudades panelCiudades = new PanelCiudades(this.sistema));
+        misViajes.setBounds(0, 0, 439, 660);
+        this.pack();
     }//GEN-LAST:event_btnNuevoEvento1ActionPerformed
 
     private void btnNuevoEvento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoEvento2ActionPerformed
