@@ -52,4 +52,17 @@ public interface ISistema {
     public int getPuerto();
 
     public void setPuerto(int puerto);
+    
+    public void altaCiudad(Ciudad unNombre);
+    
+    public void bajaCiudad(Ciudad unNombre);
+    
+    public boolean existeCiudad(Ciudad unaCiudad);
+    
+    public void altaTipoEvento(TipoEvento unTipo);
+    
+    public void bajaTipoEvento(TipoEvento unTipo);
+    
+    public boolean existeTipoEvento(TipoEvento unTipo);
+    
 }

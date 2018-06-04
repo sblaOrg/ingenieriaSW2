@@ -425,8 +425,8 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         String tipo = (String) comboTipo.getSelectedItem();
-        TipoEvento tipoEvento = null;
-        if (tipo.equals("Cultural")) {
+        TipoEvento tipoEvento = new TipoEvento(comboTipo.getSelectedItem().toString());
+        /*if (tipo.equals("Cultural")) {
             tipoEvento = TipoEvento.CULTURAL;
         } else if (tipo.equals("Deportivo")) {
             tipoEvento = TipoEvento.DEPORTIVO;
@@ -438,7 +438,7 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
             tipoEvento = TipoEvento.LABORAL;
         } else if (tipo.equals("Otro")) {
             tipoEvento = TipoEvento.OTRO;
-        }
+        }*/
         String[] date = sdf.format(jCal.getDate()).split("/");
         String nombre = txtNombre.getText();
         String dia = date[0];

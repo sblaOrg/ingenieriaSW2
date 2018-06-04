@@ -12,14 +12,43 @@ import traveller.notificaciones.movil.EnvioMensajeTexto;
 public class SistemaImp implements ISistema, Serializable {
 
     private ArrayList<Usuario> listaUsuarios;
+    private ArrayList<Ciudad> listaCiudades;
+    private ArrayList<TipoEvento> listaTipoEventos;
     private Usuario usuarioIdentificado; //Guarda el usuario actualmente identifiacdo en el sistema.
     private boolean modoDesarrollador;
+
+    public ArrayList<Ciudad> getListaCiudades() {
+        return listaCiudades;
+    }
+
+    public ArrayList<TipoEvento> getListaTipoEventos() {
+        return listaTipoEventos;
+    }
+
+    public void setListaTipoEventos(ArrayList<TipoEvento> listaTipoEventos) {
+        this.listaTipoEventos = listaTipoEventos;
+    }
+
+    public void setListaCiudades(ArrayList<Ciudad> listaCiudades) {
+        this.listaCiudades = listaCiudades;
+    }
     private boolean mostrarCartelInicio;
     private String proxy;
     private int puerto;
 
     public SistemaImp() {
 	this.listaUsuarios = new ArrayList<Usuario>();
+        this.listaTipoEventos = new ArrayList<TipoEvento>();
+        listaTipoEventos.add(new TipoEvento("CULTURAL"));
+        listaTipoEventos.add(new TipoEvento("DEPORTIVO"));
+        listaTipoEventos.add(new TipoEvento("COMERCIAL"));
+        listaTipoEventos.add(new TipoEvento("FAMILIAR"));
+        listaTipoEventos.add(new TipoEvento("OTRO"));
+        this.listaCiudades = new ArrayList<Ciudad>();
+        listaCiudades.add(new Ciudad("MADRID"));
+        listaCiudades.add(new Ciudad("PARIS"));
+        listaCiudades.add(new Ciudad("BSAS"));
+        listaCiudades.add(new Ciudad("MIAMI"));
 	this.usuarioIdentificado = null;
 	this.modoDesarrollador = false;
 	this.mostrarCartelInicio = true;
@@ -183,5 +212,33 @@ public class SistemaImp implements ISistema, Serializable {
     /* MÉTODOS PRIVADOS */
     private boolean existeNombreUsuario(String nombreUsuario) {
 	return this.listaUsuarios.contains(new Usuario(nombreUsuario));
+    }
+
+    public void altaCiudad(Ciudad unaCiudad) {
+        if(!this.existeCiudad(unaCiudad)){
+            this.getListaCiudades().add(unaCiudad);
+        }
+    }
+
+    public void bajaCiudad(Ciudad unaCiudad) {
+        this.getListaCiudades().remove(unaCiudad);
+    }
+    
+    public boolean existeCiudad(Ciudad unaCiudad) {
+        return !this.getListaCiudades().contains(unaCiudad);
+    }
+
+    public void altaTipoEvento(TipoEvento unTipo) {
+        if(!this.existeTipoEvento(unTipo)){
+            this.getListaTipoEventos().add(unTipo);
+        }
+    }
+
+    public void bajaTipoEvento(TipoEvento unTipo) {
+        this.getListaTipoEventos().remove(unTipo);
+    }
+    
+    public boolean existeTipoEvento(TipoEvento unTipo){
+        return !this.getListaTipoEventos().contains(unTipo);
     }
 }

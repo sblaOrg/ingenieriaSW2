@@ -318,16 +318,17 @@ public class PanelAgendarViaje extends javax.swing.JPanel {
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         String destino = (String) comboDestino.getSelectedItem();
 
-        Ciudad tipoCiudad = null;
-        if (destino.equals("Madrid")) {
-            tipoCiudad = Ciudad.MADRID;
+        String nombreCiudad = comboDestino.getSelectedItem().toString();
+        Ciudad ciudad = new Ciudad(nombreCiudad);
+        /*if (destino.equals("Madrid")) {
+            nombreCiudad = nombreCiudad.getNombre();
         } else if (destino.equals("Buenos Aires")) {
-            tipoCiudad = Ciudad.BSAS;
+            nombreCiudad = Ciudad.BSAS;
         } else if (destino.equals("Miami")) {
-            tipoCiudad = Ciudad.MIAMI;
+            nombreCiudad = Ciudad.MIAMI;
         } else if (destino.equals("París")) {
-            tipoCiudad = Ciudad.PARIS;
-        }
+            nombreCiudad = Ciudad.PARIS;
+        }*/
 
         String[] dateInicio = sdf.format(jCalInicio.getDate()).split("/");
         String[] dateFinal = sdf.format(jCalFin.getDate()).split("/");
@@ -342,15 +343,20 @@ public class PanelAgendarViaje extends javax.swing.JPanel {
         String descripcion = txtDescripcion.getText();
 
         try {
-            sistema.getUsuarioIdentificado().altaViaje(nombre, tipoCiudad, diaIni, mesIni, añoIni, diaFin, mesFin, añoFin, descripcion);
+            sistema.getUsuarioIdentificado().altaViaje(nombre, ciudad, diaIni, mesIni, añoIni, diaFin, mesFin, añoFin, descripcion);
             etqCorrecto.setText("Registro exitoso.");
             etqError.setText(null);
             this.inhabilitarCampos();
         } catch (ViajeException e) {
             etqError.setText(e.toString());
         } catch (FechaException e) {
+            etqError.setText(e.toString()); 
+        } 
+        /*    catch (ViajeException e) {
             etqError.setText(e.toString());
-        }
+        } catch (FechaException e) {
+            etqError.setText(e.toString());
+        }*/
 }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void txtNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyReleased
