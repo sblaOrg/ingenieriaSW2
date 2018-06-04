@@ -1,8 +1,9 @@
 package traveller.dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TipoEvento {
+public class TipoEvento implements Serializable{
 
     private String nombre;
 

@@ -1,6 +1,8 @@
 package traveller.dominio;
 
-public class Ciudad {
+import java.io.Serializable;
+
+public class Ciudad implements Serializable{
 
     private String nombre;
 
