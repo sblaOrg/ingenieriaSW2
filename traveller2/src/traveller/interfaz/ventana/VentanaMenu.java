@@ -68,8 +68,8 @@ public class VentanaMenu extends javax.swing.JFrame {
         etqCambio = new javax.swing.JLabel();
         etqModo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        btnNuevoEvento1 = new javax.swing.JButton();
-        btnNuevoEvento2 = new javax.swing.JButton();
+        btnCiudades = new javax.swing.JButton();
+        btnTiposEventos = new javax.swing.JButton();
         imgLogo1 = new javax.swing.JLabel();
         panelContenido = new javax.swing.JPanel();
         txtBusqueda = new javax.swing.JTextField();
@@ -349,18 +349,18 @@ public class VentanaMenu extends javax.swing.JFrame {
 
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
 
-        btnNuevoEvento1.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
-        btnNuevoEvento1.setForeground(new java.awt.Color(210, 180, 0));
-        btnNuevoEvento1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png"))); // NOI18N
-        btnNuevoEvento1.setText("Ciudades");
-        btnNuevoEvento1.setAlignmentY(0.0F);
-        btnNuevoEvento1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnNuevoEvento1.setFocusable(false);
-        btnNuevoEvento1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnNuevoEvento1.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        btnNuevoEvento1.setMaximumSize(new java.awt.Dimension(200, 36));
-        btnNuevoEvento1.setMinimumSize(new java.awt.Dimension(200, 36));
-        btnNuevoEvento1.setPreferredSize(new java.awt.Dimension(200, 36));
+        btnCiudades.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
+        btnCiudades.setForeground(new java.awt.Color(210, 180, 0));
+        btnCiudades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png"))); // NOI18N
+        btnCiudades.setText("Ciudades");
+        btnCiudades.setAlignmentY(0.0F);
+        btnCiudades.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCiudades.setFocusable(false);
+        btnCiudades.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCiudades.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btnCiudades.setMaximumSize(new java.awt.Dimension(200, 36));
+        btnCiudades.setMinimumSize(new java.awt.Dimension(200, 36));
+        btnCiudades.setPreferredSize(new java.awt.Dimension(200, 36));
         btnNuevoEvento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 if (opcionMenu != 2) {
@@ -373,24 +373,24 @@ public class VentanaMenu extends javax.swing.JFrame {
                 }
             }
         });
-        btnNuevoEvento1.addActionListener(new java.awt.event.ActionListener() {
+        btnCiudades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoEvento1ActionPerformed(evt);
+                btnCiudadesActionPerformed(evt);
             }
         });
 
-        btnNuevoEvento2.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
-        btnNuevoEvento2.setForeground(new java.awt.Color(89, 225, 61));
-        btnNuevoEvento2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png"))); // NOI18N
-        btnNuevoEvento2.setText("Tipos de eventos");
-        btnNuevoEvento2.setAlignmentY(0.0F);
-        btnNuevoEvento2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnNuevoEvento2.setFocusable(false);
-        btnNuevoEvento2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnNuevoEvento2.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        btnNuevoEvento2.setMaximumSize(new java.awt.Dimension(200, 36));
-        btnNuevoEvento2.setMinimumSize(new java.awt.Dimension(200, 36));
-        btnNuevoEvento2.setPreferredSize(new java.awt.Dimension(200, 36));
+        btnTiposEventos.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
+        btnTiposEventos.setForeground(new java.awt.Color(89, 225, 61));
+        btnTiposEventos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png"))); // NOI18N
+        btnTiposEventos.setText("Tipos de eventos");
+        btnTiposEventos.setAlignmentY(0.0F);
+        btnTiposEventos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnTiposEventos.setFocusable(false);
+        btnTiposEventos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTiposEventos.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btnTiposEventos.setMaximumSize(new java.awt.Dimension(200, 36));
+        btnTiposEventos.setMinimumSize(new java.awt.Dimension(200, 36));
+        btnTiposEventos.setPreferredSize(new java.awt.Dimension(200, 36));
         btnNuevoEvento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 if (opcionMenu != 2) {
@@ -403,9 +403,9 @@ public class VentanaMenu extends javax.swing.JFrame {
                 }
             }
         });
-        btnNuevoEvento2.addActionListener(new java.awt.event.ActionListener() {
+        btnTiposEventos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoEvento2ActionPerformed(evt);
+                btnTiposEventosActionPerformed(evt);
             }
         });
 
@@ -441,8 +441,8 @@ public class VentanaMenu extends javax.swing.JFrame {
                                 .addGap(33, 33, 33)
                                 .addComponent(etqModo)))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(btnNuevoEvento1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnNuevoEvento2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnCiudades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTiposEventos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addContainerGap()
@@ -465,9 +465,9 @@ public class VentanaMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(imgLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(btnNuevoEvento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnNuevoEvento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnTiposEventos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnMisViajes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
@@ -994,19 +994,26 @@ public class VentanaMenu extends javax.swing.JFrame {
         this.pack();
     }//GEN-LAST:event_subMiCuentaActionPerformed
 
-    private void btnNuevoEvento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoEvento1ActionPerformed
+    private void btnCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCiudadesActionPerformed
         /*
          * Limpiar el panel actual y agregar el nuevo.
          */
+        PanelCiudades ciudades = new PanelCiudades(this.sistema);
+        //btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png")));
+        
         panelContenido.removeAll();
-        panelContenido.add(PanelCiudades panelCiudades = new PanelCiudades(this.sistema));
-        misViajes.setBounds(0, 0, 439, 660);
+        panelContenido.add(ciudades);
+        ciudades.setBounds(0, 0, 439, 660);
         this.pack();
-    }//GEN-LAST:event_btnNuevoEvento1ActionPerformed
+        
+        /*
+         * Limpiar el panel actual y agregar el nuevo.
+         */
+    }//GEN-LAST:event_btnCiudadesActionPerformed
 
-    private void btnNuevoEvento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoEvento2ActionPerformed
+    private void btnTiposEventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiposEventosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevoEvento2ActionPerformed
+    }//GEN-LAST:event_btnTiposEventosActionPerformed
 
     private void imgLogo1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgLogo1MouseReleased
         // TODO add your handling code here:
@@ -1018,12 +1025,12 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnAgendarViaje1;
     private javax.swing.JButton btnAgendarViaje2;
     private javax.swing.JButton btnAmigos;
+    private javax.swing.JButton btnCiudades;
     private javax.swing.JButton btnMiCuenta;
     private javax.swing.JButton btnMisViajes;
     private javax.swing.JButton btnNuevoEvento;
-    private javax.swing.JButton btnNuevoEvento1;
-    private javax.swing.JButton btnNuevoEvento2;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnTiposEventos;
     private javax.swing.JComboBox comboCambio;
     private javax.swing.JLabel etqCambio;
     private javax.swing.JLabel etqModo;

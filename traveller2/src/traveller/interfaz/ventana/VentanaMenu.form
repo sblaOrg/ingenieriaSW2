@@ -228,8 +228,8 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="btnNuevoEvento1" alignment="0" max="32767" attributes="1"/>
-                          <Component id="btnNuevoEvento2" alignment="0" max="32767" attributes="1"/>
+                          <Component id="btnCiudades" alignment="0" max="32767" attributes="1"/>
+                          <Component id="btnTiposEventos" alignment="0" max="32767" attributes="1"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -259,9 +259,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="imgLogo1" min="-2" pref="49" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="btnNuevoEvento1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCiudades" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnNuevoEvento2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnTiposEventos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnMisViajes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -370,7 +370,7 @@
                 <Property name="text" type="java.lang.String" value="Mis viajes"/>
                 <Property name="alignmentY" type="float" value="0.0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
+                  <Color id="Default Cursor"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -408,7 +408,7 @@
                 <Property name="text" type="java.lang.String" value="Nuevo evento"/>
                 <Property name="alignmentY" type="float" value="0.0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
+                  <Color id="Default Cursor"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -446,7 +446,7 @@
                 <Property name="text" type="java.lang.String" value="Amigos"/>
                 <Property name="alignmentY" type="float" value="0.0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
+                  <Color id="Default Cursor"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -484,7 +484,7 @@
                 <Property name="text" type="java.lang.String" value="Mi cuenta"/>
                 <Property name="alignmentY" type="float" value="0.0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
+                  <Color id="Default Cursor"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -522,7 +522,7 @@
                 <Property name="text" type="java.lang.String" value="Salir"/>
                 <Property name="alignmentY" type="float" value="0.0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
+                  <Color id="Default Cursor"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -560,7 +560,7 @@
                 <Property name="text" type="java.lang.String" value="Agendar Viaje"/>
                 <Property name="alignmentY" type="float" value="0.0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
+                  <Color id="Default Cursor"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -624,7 +624,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
             </Container>
-            <Component class="javax.swing.JButton" name="btnNuevoEvento1">
+            <Component class="javax.swing.JButton" name="btnCiudades">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="15" style="0"/>
@@ -638,7 +638,7 @@
                 <Property name="text" type="java.lang.String" value="Ciudades"/>
                 <Property name="alignmentY" type="float" value="0.0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
+                  <Color id="Default Cursor"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -656,13 +656,13 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevoEvento1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCiudadesActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnNuevoEvento.addMouseListener(new java.awt.event.MouseAdapter() {&#xa;    public void mouseEntered(java.awt.event.MouseEvent evt) {&#xa;        if (opcionMenu != 2) {&#xa;            btnNuevoEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/traveller/interfaz/img/opcionMenuHover.png&quot;)));&#xa;        }&#xa;    }&#xa;    public void mouseExited(java.awt.event.MouseEvent evt) {&#xa;        if (opcionMenu != 2) {&#xa;            btnNuevoEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/traveller/interfaz/img/opcionMenu.png&quot;)));&#xa;        }&#xa;    }&#xa;});"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="btnNuevoEvento2">
+            <Component class="javax.swing.JButton" name="btnTiposEventos">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="15" style="0"/>
@@ -676,7 +676,7 @@
                 <Property name="text" type="java.lang.String" value="Tipos de eventos"/>
                 <Property name="alignmentY" type="float" value="0.0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
+                  <Color id="Default Cursor"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -694,7 +694,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevoEvento2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTiposEventosActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnNuevoEvento.addMouseListener(new java.awt.event.MouseAdapter() {&#xa;    public void mouseEntered(java.awt.event.MouseEvent evt) {&#xa;        if (opcionMenu != 2) {&#xa;            btnNuevoEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/traveller/interfaz/img/opcionMenuHover.png&quot;)));&#xa;        }&#xa;    }&#xa;    public void mouseExited(java.awt.event.MouseEvent evt) {&#xa;        if (opcionMenu != 2) {&#xa;            btnNuevoEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/traveller/interfaz/img/opcionMenu.png&quot;)));&#xa;        }&#xa;    }&#xa;});"/>
@@ -712,7 +712,7 @@
                   <Image iconType="3" name="/traveller/interfaz/img/icono.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
+                  <Color id="Default Cursor"/>
                 </Property>
               </Properties>
               <Events>
@@ -745,7 +745,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="756" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -782,7 +782,7 @@
               <Image iconType="3" name="/traveller/interfaz/img/icono.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Por defecto"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
           <Events>

@@ -12,6 +12,9 @@ import javax.swing.border.LineBorder;
 
 public final class SubPanelInvitarAmigo extends javax.swing.JPanel {
 
+    private ISistema sistema;
+    private Viaje viaje;
+    
     public SubPanelInvitarAmigo(ISistema sistema, Viaje viaje) {
         initComponents();
         this.sistema = sistema;
@@ -211,6 +214,5 @@ public final class SubPanelInvitarAmigo extends javax.swing.JPanel {
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JTextField txtBuscarAmigos;
     // End of variables declaration//GEN-END:variables
-    private ISistema sistema;
-    private Viaje viaje;
+
 }
