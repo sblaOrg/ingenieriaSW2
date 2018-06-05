@@ -5,6 +5,7 @@
  */
 package traveller.interfaz.panel;
 
+import java.awt.Rectangle;
 import traveller.dominio.ISistema;
 
 /**
@@ -23,6 +24,9 @@ public class PanelCiudades extends javax.swing.JPanel {
 	this.sistema = sistema;
 	nuevaCiudad = new SubPanelNuevaCiudad(this.sistema);
         ciudades = new SubPanelCiudades(this.sistema);
+        this.add(nuevaCiudad);
+        nuevaCiudad.setLocation(1400, 400);
+        nuevaCiudad.setVisible(true);
         
         
     }
@@ -154,9 +158,9 @@ public class PanelCiudades extends javax.swing.JPanel {
             PanelNuevaCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNuevaCiudadLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelNuevaCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CheckNuevoUsuario))
+                .addGroup(PanelNuevaCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNuevaCiudad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CheckNuevoUsuario, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
 
@@ -166,10 +170,10 @@ public class PanelCiudades extends javax.swing.JPanel {
             PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCiudadesLayout.createSequentialGroup()
                 .addGroup(PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(PanelSalidaDatosCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(PanelCiudadesLayout.createSequentialGroup()
-                            .addGap(75, 75, 75)
+                    .addGroup(PanelCiudadesLayout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PanelSalidaDatosCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(PanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PanelCiudadesLayout.createSequentialGroup()
                         .addGap(122, 122, 122)
@@ -212,14 +216,23 @@ public class PanelCiudades extends javax.swing.JPanel {
         boolean estaSeleccionado = CheckNuevoUsuario.isSelected();
         PanelSalidaDatosCiudad.removeAll();
         nuevaCiudad.setBounds(0, 0, 439, 660);
+        
         if (estaSeleccionado){
             nuevaCiudad = new SubPanelNuevaCiudad(this.sistema);
             PanelSalidaDatosCiudad.add(nuevaCiudad);
+            nuevaCiudad.setVisible(estaSeleccionado);
+            ciudades.setVisible(!estaSeleccionado);
+            PanelSalidaDatosCiudad.add(nuevaCiudad);
+            //Rectangle bounds = PanelSalidaDatosCiudad.getBounds();
+            //ciudades.setBounds(bounds);
         }
         else{
             ciudades = new SubPanelCiudades(this.sistema);
             PanelSalidaDatosCiudad.add(ciudades);
+            //ciudades.setci
         }
+        //PanelSalidaDatosCiudad.repaint();
+        PanelCiudades.repaint();
     }//GEN-LAST:event_CheckNuevoUsuarioActionPerformed
 
     private void btnAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCiudadActionPerformed
