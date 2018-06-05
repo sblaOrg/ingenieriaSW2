@@ -18,7 +18,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.border.LineBorder;
+import traveller.dominio.TipoEvento;
 import traveller.interfaz.panel.PanelCiudades;
+import traveller.interfaz.panel.PanelTipoEvento;
 
 /**
  * La clase VentanaMenu se encarga de manejar la interfaz del menú principal y
@@ -26,6 +28,8 @@ import traveller.interfaz.panel.PanelCiudades;
  */
 public class VentanaMenu extends javax.swing.JFrame {
 
+    private ISistema sistema;
+    
     public VentanaMenu(ISistema sistema, String nombreUsuario) {
         this.sistema = sistema;
         /*
@@ -1012,7 +1016,13 @@ public class VentanaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCiudadesActionPerformed
 
     private void btnTiposEventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiposEventosActionPerformed
-        // TODO add your handling code here:
+        PanelTipoEvento tipoEvento = new PanelTipoEvento(sistema);
+        //btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traveller/interfaz/img/opcionMenu.png")));
+        
+        panelContenido.removeAll();
+        panelContenido.add(tipoEvento);
+        tipoEvento.setBounds(0, 0, 439, 660);
+        this.pack();
     }//GEN-LAST:event_btnTiposEventosActionPerformed
 
     private void imgLogo1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgLogo1MouseReleased
@@ -1053,7 +1063,6 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem subOpcionSalir;
     private javax.swing.JTextField txtBusqueda;
     // End of variables declaration//GEN-END:variables
-    private ISistema sistema;
 
     /*
      * Guarda la opción del menu principal que estamos viendo.

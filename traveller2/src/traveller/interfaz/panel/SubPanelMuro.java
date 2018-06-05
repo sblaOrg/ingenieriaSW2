@@ -15,6 +15,9 @@ import java.util.Iterator;
 
 public final class SubPanelMuro extends javax.swing.JPanel {
 
+    private ISistema sistema;
+    private Viaje viaje;
+    
     public SubPanelMuro(ISistema sistema, Viaje viaje) {
         initComponents();
         this.sistema = sistema;
@@ -370,6 +373,5 @@ public final class SubPanelMuro extends javax.swing.JPanel {
     private javax.swing.JPanel panelMuro;
     private javax.swing.JTextArea txtPublicacion;
     // End of variables declaration//GEN-END:variables
-    private ISistema sistema;
-    private Viaje viaje;
+
 }

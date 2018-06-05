@@ -17,6 +17,8 @@ import javax.swing.border.LineBorder;
 import traveller.utill.Utilidades;
 
 public class PanelNuevoEvento extends javax.swing.JPanel {
+    
+    private ISistema sistema;
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public PanelNuevoEvento(ISistema sistema) {
@@ -510,7 +512,7 @@ public class PanelNuevoEvento extends javax.swing.JPanel {
     private javax.swing.JTextField txtLugar;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
-    private ISistema sistema;
+
 
     /**
      * Inhabilita los campos de ingeso de datos.
