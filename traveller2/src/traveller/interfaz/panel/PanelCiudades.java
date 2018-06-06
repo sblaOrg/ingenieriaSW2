@@ -6,6 +6,8 @@
 package traveller.interfaz.panel;
 
 import java.awt.Rectangle;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import traveller.dominio.ISistema;
 
 /**
@@ -13,22 +15,35 @@ import traveller.dominio.ISistema;
  * @author steffano.britos
  */
 public class PanelCiudades extends javax.swing.JPanel {
+
     private ISistema sistema;
     SubPanelNuevaCiudad nuevaCiudad;
     SubPanelCiudades ciudades;
+
     /**
      * Creates new form PanelCiudades
      */
-    public PanelCiudades(ISistema sistema) {
-	initComponents();
-	this.sistema = sistema;
-	nuevaCiudad = new SubPanelNuevaCiudad(this.sistema);
+    public PanelCiudades(final ISistema sistema) {
+        initComponents();
+        this.sistema = sistema;
+        nuevaCiudad = new SubPanelNuevaCiudad(this.sistema);
         ciudades = new SubPanelCiudades(this.sistema);
         this.add(nuevaCiudad);
         nuevaCiudad.setLocation(1400, 400);
         nuevaCiudad.setVisible(true);
-        
-        
+
+        CheckNuevoUsuario.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (CheckNuevoUsuario.isSelected()) {
+                    ciudades.setVisible(true);
+                    PanelCiudades.repaint();
+                } else {
+                    ciudades.setVisible(false);
+                    PanelCiudades.repaint();
+                }
+            }
+        });
     }
 
     /**
@@ -42,7 +57,6 @@ public class PanelCiudades extends javax.swing.JPanel {
 
         jPanel2 = new javax.swing.JPanel();
         PanelCiudades = new javax.swing.JPanel();
-        PanelSalidaDatosCiudad = new javax.swing.JPanel();
         PanelBotones = new javax.swing.JPanel();
         btnAgregarCiudad = new javax.swing.JButton();
         brnModificarCiudad = new javax.swing.JButton();
@@ -50,6 +64,8 @@ public class PanelCiudades extends javax.swing.JPanel {
         PanelNuevaCiudad = new javax.swing.JPanel();
         lblNuevaCiudad = new javax.swing.JLabel();
         CheckNuevoUsuario = new javax.swing.JCheckBox();
+        panelUsuarios = new javax.swing.JPanel();
+        comboUsuarios = new javax.swing.JComboBox();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -65,17 +81,6 @@ public class PanelCiudades extends javax.swing.JPanel {
         PanelCiudades.setBackground(new java.awt.Color(230, 255, 245));
         PanelCiudades.setBorder(new javax.swing.border.MatteBorder(null));
         PanelCiudades.setMinimumSize(new java.awt.Dimension(0, 0));
-
-        javax.swing.GroupLayout PanelSalidaDatosCiudadLayout = new javax.swing.GroupLayout(PanelSalidaDatosCiudad);
-        PanelSalidaDatosCiudad.setLayout(PanelSalidaDatosCiudadLayout);
-        PanelSalidaDatosCiudadLayout.setHorizontalGroup(
-            PanelSalidaDatosCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 236, Short.MAX_VALUE)
-        );
-        PanelSalidaDatosCiudadLayout.setVerticalGroup(
-            PanelSalidaDatosCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
-        );
 
         PanelBotones.setBackground(new java.awt.Color(230, 255, 245));
         PanelBotones.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -164,32 +169,58 @@ public class PanelCiudades extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        panelUsuarios.setBackground(new java.awt.Color(174, 174, 255));
+
+        comboUsuarios.setBackground(new java.awt.Color(230, 138, 0));
+        comboUsuarios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboUsuariosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelUsuariosLayout = new javax.swing.GroupLayout(panelUsuarios);
+        panelUsuarios.setLayout(panelUsuariosLayout);
+        panelUsuariosLayout.setHorizontalGroup(
+            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelUsuariosLayout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+        );
+        panelUsuariosLayout.setVerticalGroup(
+            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelUsuariosLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout PanelCiudadesLayout = new javax.swing.GroupLayout(PanelCiudades);
         PanelCiudades.setLayout(PanelCiudadesLayout);
         PanelCiudadesLayout.setHorizontalGroup(
             PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCiudadesLayout.createSequentialGroup()
-                .addGroup(PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelCiudadesLayout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(PanelSalidaDatosCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(PanelCiudadesLayout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(PanelNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(panelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCiudadesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PanelNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(141, 141, 141))
         );
         PanelCiudadesLayout.setVerticalGroup(
             PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCiudadesLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(PanelSalidaDatosCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(13, 13, 13)
+                .addComponent(panelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PanelNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -200,7 +231,9 @@ public class PanelCiudades extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelCiudades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -213,7 +246,7 @@ public class PanelCiudades extends javax.swing.JPanel {
     }//GEN-LAST:event_PanelBotonesFocusGained
 
     private void CheckNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckNuevoUsuarioActionPerformed
-        boolean estaSeleccionado = CheckNuevoUsuario.isSelected();
+        /*boolean estaSeleccionado = CheckNuevoUsuario.isSelected();
         PanelSalidaDatosCiudad.removeAll();
         nuevaCiudad.setBounds(0, 0, 439, 660);
         
@@ -232,12 +265,16 @@ public class PanelCiudades extends javax.swing.JPanel {
             //ciudades.setci
         }
         //PanelSalidaDatosCiudad.repaint();
-        PanelCiudades.repaint();
+        PanelCiudades.repaint();*/
     }//GEN-LAST:event_CheckNuevoUsuarioActionPerformed
 
     private void btnAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCiudadActionPerformed
         // usar Metodos del contrato
     }//GEN-LAST:event_btnAgregarCiudadActionPerformed
+
+    private void comboUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboUsuariosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -245,11 +282,12 @@ public class PanelCiudades extends javax.swing.JPanel {
     private javax.swing.JPanel PanelBotones;
     private javax.swing.JPanel PanelCiudades;
     private javax.swing.JPanel PanelNuevaCiudad;
-    private javax.swing.JPanel PanelSalidaDatosCiudad;
     private javax.swing.JButton brnModificarCiudad;
     private javax.swing.JButton btnAgregarCiudad;
     private javax.swing.JButton btnBorrarCiudad;
+    private javax.swing.JComboBox<String> comboUsuarios;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblNuevaCiudad;
+    private javax.swing.JPanel panelUsuarios;
     // End of variables declaration//GEN-END:variables
 }
