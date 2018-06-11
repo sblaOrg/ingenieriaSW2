@@ -34,10 +34,10 @@ public class SubPanelCiudades extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelUsuarios = new javax.swing.JPanel();
+        panelCiudades = new javax.swing.JPanel();
         comboUsuarios = new javax.swing.JComboBox();
 
-        panelUsuarios.setBackground(new java.awt.Color(174, 174, 255));
+        panelCiudades.setBackground(new java.awt.Color(174, 174, 255));
 
         comboUsuarios.setBackground(new java.awt.Color(230, 138, 0));
         comboUsuarios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -47,18 +47,18 @@ public class SubPanelCiudades extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelUsuariosLayout = new javax.swing.GroupLayout(panelUsuarios);
-        panelUsuarios.setLayout(panelUsuariosLayout);
-        panelUsuariosLayout.setHorizontalGroup(
-            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelUsuariosLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelCiudadesLayout = new javax.swing.GroupLayout(panelCiudades);
+        panelCiudades.setLayout(panelCiudadesLayout);
+        panelCiudadesLayout.setHorizontalGroup(
+            panelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCiudadesLayout.createSequentialGroup()
                 .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
         );
-        panelUsuariosLayout.setVerticalGroup(
-            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelUsuariosLayout.createSequentialGroup()
+        panelCiudadesLayout.setVerticalGroup(
+            panelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCiudadesLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -68,11 +68,11 @@ public class SubPanelCiudades extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -83,6 +83,6 @@ public class SubPanelCiudades extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboUsuarios;
-    private javax.swing.JPanel panelUsuarios;
+    private javax.swing.JPanel panelCiudades;
     // End of variables declaration//GEN-END:variables
 }
