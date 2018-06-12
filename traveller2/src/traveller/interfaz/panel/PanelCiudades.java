@@ -149,17 +149,17 @@ public class PanelCiudades extends javax.swing.JPanel {
             .addGroup(PanelBotonesLayout.createSequentialGroup()
                 .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelBotonesLayout.createSequentialGroup()
-                        .addGap(107, 107, 107)
+                        .addGap(125, 125, 125)
                         .addComponent(lblNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CheckNuevoUsuario))
                     .addGroup(PanelBotonesLayout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBorrarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(brnModificarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(73, Short.MAX_VALUE))
+                            .addComponent(btnAgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBorrarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         PanelBotonesLayout.setVerticalGroup(
             PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,16 +168,16 @@ public class PanelCiudades extends javax.swing.JPanel {
                 .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CheckNuevoUsuario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGap(18, 18, 18)
                 .addComponent(brnModificarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBorrarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        PanelCiudades.add(PanelBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 310, 180));
+        PanelCiudades.add(PanelBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         PanelDatosCiudad.setLayout(new java.awt.BorderLayout());
 
@@ -212,8 +212,6 @@ public class PanelCiudades extends javax.swing.JPanel {
 
         PanelDatosCiudad.add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        PanelCiudades.add(PanelDatosCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 12, -1, -1));
-
         jPanel3.setBackground(new java.awt.Color(204, 255, 204));
 
         comboUsuarios.setBackground(new java.awt.Color(230, 138, 0));
@@ -241,7 +239,9 @@ public class PanelCiudades extends javax.swing.JPanel {
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
-        PanelCiudades.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        PanelDatosCiudad.add(jPanel3, java.awt.BorderLayout.PAGE_START);
+
+        PanelCiudades.add(PanelDatosCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 12, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
