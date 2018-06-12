@@ -19,6 +19,7 @@ public class PanelCiudades extends javax.swing.JPanel {
     private ISistema sistema;
     SubPanelNuevaCiudad nuevaCiudad;
     SubPanelCiudades ciudades;
+    boolean estaSeleccionado;
 
     /**
      * Creates new form PanelCiudades
@@ -26,41 +27,39 @@ public class PanelCiudades extends javax.swing.JPanel {
     public PanelCiudades(final ISistema sistema) {
         initComponents();
         this.sistema = sistema;
-        nuevaCiudad = new SubPanelNuevaCiudad(this.sistema);
-        ciudades = new SubPanelCiudades(this.sistema);
-        this.add(nuevaCiudad);
-        nuevaCiudad.setLocation(1400, 400);
-        nuevaCiudad.setVisible(true);
+        //nuevaCiudad = new SubPanelNuevaCiudad(this.sistema);
+        //ciudades = new SubPanelCiudades(this.sistema);
+        //PanelDatosCiudad.removeAll();
+        //PanelDatosCiudad.add(nuevaCiudad);
+        //nuevaCiudad.setLocation(1400, 400);
+        //nuevaCiudad.setVisible(true);
+        //PanelDatosCiudad.repaint();
+
+        //Visivilidad
+        jPanel1.setVisible(false);
+        jPanel3.setVisible(false);
 
         CheckNuevoUsuario.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
+                //PanelDatosCiudad.removeAll();
                 if (CheckNuevoUsuario.isSelected()) {
-                    ciudades.setVisible(true);
+                    /*PanelDatosCiudad.add(nuevaCiudad);
+                    nuevaCiudad.setBounds(0, 0, 439, 660);*/
+                    jPanel1.setVisible(true);
+                    jPanel3.setVisible(false);
                     PanelCiudades.repaint();
                 } else {
-                    ciudades.setVisible(false);
+                    jPanel3.setVisible(true);
+                    jPanel1.setVisible(false);
                     PanelCiudades.repaint();
                 }
+                // PanelCiudades.repaint();
+                //PanelDatosCiudad.repaint();
+
             }
         });
-    }
-    
-    public void updateCheckNewCity(){
-        CheckNuevoUsuario.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if (CheckNuevoUsuario.isSelected()) {
-                    panelCiudades.setVisible(false);
-                    nuevaCiudad.setVisible(true);
-                    PanelCiudades.repaint();
-                } else {
-                    nuevaCiudad.setVisible(false);
-                    ciudades.setVisible(true);
-                    PanelCiudades.repaint();
-                }
-            }
-        });
+
     }
 
     /**
@@ -78,9 +77,14 @@ public class PanelCiudades extends javax.swing.JPanel {
         btnAgregarCiudad = new javax.swing.JButton();
         brnModificarCiudad = new javax.swing.JButton();
         btnBorrarCiudad = new javax.swing.JButton();
-        PanelNuevaCiudad = new javax.swing.JPanel();
         lblNuevaCiudad = new javax.swing.JLabel();
         CheckNuevoUsuario = new javax.swing.JCheckBox();
+        PanelDatosCiudad = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        lblNuevoUsuario = new javax.swing.JLabel();
+        txtNuevoUsuario = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        comboUsuarios = new javax.swing.JComboBox();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -96,6 +100,7 @@ public class PanelCiudades extends javax.swing.JPanel {
         PanelCiudades.setBackground(new java.awt.Color(230, 255, 245));
         PanelCiudades.setBorder(new javax.swing.border.MatteBorder(null));
         PanelCiudades.setMinimumSize(new java.awt.Dimension(0, 0));
+        PanelCiudades.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelBotones.setBackground(new java.awt.Color(230, 255, 245));
         PanelBotones.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -127,32 +132,6 @@ public class PanelCiudades extends javax.swing.JPanel {
         btnBorrarCiudad.setForeground(new java.awt.Color(50, 140, 50));
         btnBorrarCiudad.setText("Borrar");
 
-        javax.swing.GroupLayout PanelBotonesLayout = new javax.swing.GroupLayout(PanelBotones);
-        PanelBotones.setLayout(PanelBotonesLayout);
-        PanelBotonesLayout.setHorizontalGroup(
-            PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBotonesLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnBorrarCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                    .addComponent(brnModificarCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                    .addComponent(btnAgregarCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        PanelBotonesLayout.setVerticalGroup(
-            PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBotonesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(brnModificarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnBorrarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        PanelNuevaCiudad.setBackground(new java.awt.Color(180, 255, 245));
-
         lblNuevaCiudad.setBackground(new java.awt.Color(153, 102, 51));
         lblNuevaCiudad.setText("Ciudad nueva");
 
@@ -163,47 +142,106 @@ public class PanelCiudades extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout PanelNuevaCiudadLayout = new javax.swing.GroupLayout(PanelNuevaCiudad);
-        PanelNuevaCiudad.setLayout(PanelNuevaCiudadLayout);
-        PanelNuevaCiudadLayout.setHorizontalGroup(
-            PanelNuevaCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelNuevaCiudadLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(lblNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CheckNuevoUsuario)
-                .addContainerGap(18, Short.MAX_VALUE))
+        javax.swing.GroupLayout PanelBotonesLayout = new javax.swing.GroupLayout(PanelBotones);
+        PanelBotones.setLayout(PanelBotonesLayout);
+        PanelBotonesLayout.setHorizontalGroup(
+            PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBotonesLayout.createSequentialGroup()
+                .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelBotonesLayout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(lblNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CheckNuevoUsuario))
+                    .addGroup(PanelBotonesLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBorrarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(brnModificarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
-        PanelNuevaCiudadLayout.setVerticalGroup(
-            PanelNuevaCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNuevaCiudadLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelNuevaCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNuevaCiudad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CheckNuevoUsuario, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+        PanelBotonesLayout.setVerticalGroup(
+            PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBotonesLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CheckNuevoUsuario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(brnModificarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBorrarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout PanelCiudadesLayout = new javax.swing.GroupLayout(PanelCiudades);
-        PanelCiudades.setLayout(PanelCiudadesLayout);
-        PanelCiudadesLayout.setHorizontalGroup(
-            PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCiudadesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PanelNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(141, 141, 141))
+        PanelCiudades.add(PanelBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 310, 180));
+
+        PanelDatosCiudad.setLayout(new java.awt.BorderLayout());
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
+        lblNuevoUsuario.setText("Nueva ciudad");
+
+        txtNuevoUsuario.setBackground(new java.awt.Color(177, 174, 255));
+        txtNuevoUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNuevoUsuario.setText("ingrese ciudad");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNuevoUsuario)
+                    .addComponent(txtNuevoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
-        PanelCiudadesLayout.setVerticalGroup(
-            PanelCiudadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCiudadesLayout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(PanelNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblNuevoUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addComponent(txtNuevoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
+
+        PanelDatosCiudad.add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        PanelCiudades.add(PanelDatosCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 12, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
+
+        comboUsuarios.setBackground(new java.awt.Color(230, 138, 0));
+        comboUsuarios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboUsuariosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(106, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        PanelCiudades.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -213,35 +251,9 @@ public class PanelCiudades extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(PanelCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void CheckNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckNuevoUsuarioActionPerformed
-        updateCheckNewCity();
-        /*boolean estaSeleccionado = CheckNuevoUsuario.isSelected();
-        PanelSalidaDatosCiudad.removeAll();
-        nuevaCiudad.setBounds(0, 0, 439, 660);
-
-        if (estaSeleccionado){
-            nuevaCiudad = new SubPanelNuevaCiudad(this.sistema);
-            PanelSalidaDatosCiudad.add(nuevaCiudad);
-            nuevaCiudad.setVisible(estaSeleccionado);
-            ciudades.setVisible(!estaSeleccionado);
-            PanelSalidaDatosCiudad.add(nuevaCiudad);
-            //Rectangle bounds = PanelSalidaDatosCiudad.getBounds();
-            //ciudades.setBounds(bounds);
-        }
-        else{
-            ciudades = new SubPanelCiudades(this.sistema);
-            PanelSalidaDatosCiudad.add(ciudades);
-            //ciudades.setci
-        }
-        //PanelSalidaDatosCiudad.repaint();
-        PanelCiudades.repaint();*/
-    }//GEN-LAST:event_CheckNuevoUsuarioActionPerformed
 
     private void PanelBotonesFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PanelBotonesFocusGained
         // TODO add your handling code here:
@@ -255,16 +267,50 @@ public class PanelCiudades extends javax.swing.JPanel {
         // usar Metodos del contrato
     }//GEN-LAST:event_btnAgregarCiudadActionPerformed
 
+    private void comboUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboUsuariosActionPerformed
+
+    private void CheckNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckNuevoUsuarioActionPerformed
+        //updateCheckNewCity();
+        //boolean estaSeleccionado = CheckNuevoUsuario.isSelected();
+        /*CheckNuevoUsuario.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                PanelDatosCiudad.removeAll();
+                if (CheckNuevoUsuario.isSelected()) {
+                    PanelDatosCiudad.add(nuevaCiudad);
+                    nuevaCiudad.setBounds(0, 0, 439, 660);
+
+                } else {
+                    PanelDatosCiudad.add(ciudades);
+                    ciudades.setBounds(0, 0, 439, 660);
+                    PanelCiudades.repaint();
+                }
+                // PanelCiudades.repaint();
+                //PanelDatosCiudad.repaint();
+
+            }
+        });*/
+        PanelDatosCiudad.repaint();
+        PanelCiudades.repaint();
+    }//GEN-LAST:event_CheckNuevoUsuarioActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CheckNuevoUsuario;
     private javax.swing.JPanel PanelBotones;
     private javax.swing.JPanel PanelCiudades;
-    private javax.swing.JPanel PanelNuevaCiudad;
+    private javax.swing.JPanel PanelDatosCiudad;
     private javax.swing.JButton brnModificarCiudad;
     private javax.swing.JButton btnAgregarCiudad;
     private javax.swing.JButton btnBorrarCiudad;
+    private javax.swing.JComboBox<String> comboUsuarios;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblNuevaCiudad;
+    private javax.swing.JLabel lblNuevoUsuario;
+    private javax.swing.JTextField txtNuevoUsuario;
     // End of variables declaration//GEN-END:variables
 }

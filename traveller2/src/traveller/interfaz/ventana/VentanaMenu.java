@@ -17,6 +17,7 @@ import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import traveller.dominio.TipoEvento;
 import traveller.interfaz.panel.PanelCiudades;
@@ -1097,5 +1098,9 @@ public class VentanaMenu extends javax.swing.JFrame {
             grabacionSistema.close();
         } catch (IOException ex) {
         }
+    }
+    
+    public void actualizarContenedor(){
+        this.panelContenido.repaint();
     }
 }
