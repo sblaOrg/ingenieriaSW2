@@ -187,7 +187,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblNuevaCiudad" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNuevoUsuario" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                              <Component id="txtNuevaCiudad" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="166" max="32767" attributes="0"/>
                       </Group>
@@ -199,7 +199,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblNuevaCiudad" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtNuevoUsuario" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNuevaCiudad" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="49" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -211,7 +211,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre ciudad"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtNuevoUsuario">
+                <Component class="javax.swing.JTextField" name="txtNuevaCiudad">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ae" red="b1" type="rgb"/>

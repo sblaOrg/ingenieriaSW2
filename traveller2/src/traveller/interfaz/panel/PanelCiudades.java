@@ -89,7 +89,7 @@ public class PanelCiudades extends javax.swing.JPanel {
         PanelDatosCiudad = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lblNuevaCiudad = new javax.swing.JLabel();
-        txtNuevoUsuario = new javax.swing.JTextField();
+        txtNuevaCiudad = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         comboUsuarios = new javax.swing.JComboBox();
 
@@ -186,8 +186,8 @@ public class PanelCiudades extends javax.swing.JPanel {
 
         lblNuevaCiudad.setText("Nombre ciudad");
 
-        txtNuevoUsuario.setBackground(new java.awt.Color(177, 174, 255));
-        txtNuevoUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNuevaCiudad.setBackground(new java.awt.Color(177, 174, 255));
+        txtNuevaCiudad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -197,7 +197,7 @@ public class PanelCiudades extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNuevaCiudad)
-                    .addComponent(txtNuevoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(166, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -206,7 +206,7 @@ public class PanelCiudades extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(lblNuevaCiudad)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNuevoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
@@ -266,7 +266,7 @@ public class PanelCiudades extends javax.swing.JPanel {
         btnGrupoCiudades.add(radioBorrar);
         ButtonModel seleccion = btnGrupoCiudades.getSelection();
         int posicion = comboUsuarios.getSelectedIndex();
-        String nombreCiudad = txtNuevoUsuario.getText().toUpperCase();
+        String nombreCiudad = txtNuevaCiudad.getText().toUpperCase();
         Ciudad unaCiudad = new Ciudad(nombreCiudad);
         if (seleccion == radioAgregar.getModel()) {
             this.sistema.altaCiudad(unaCiudad);
@@ -275,7 +275,9 @@ public class PanelCiudades extends javax.swing.JPanel {
             this.sistema.modificarCiudad(nombreCiudad, posicion);
         }
         if (seleccion == radioBorrar.getModel()) {
-            this.sistema.bajaCiudad(unaCiudad);
+            int posABorrar = comboUsuarios.getSelectedIndex();
+            Ciudad unaCiudadABorrar = this.sistema.obtenerCiudad(posABorrar);
+            this.sistema.bajaCiudad(unaCiudadABorrar);
         }
         
     }//GEN-LAST:event_btnAplicarActionPerformed
@@ -317,6 +319,6 @@ public class PanelCiudades extends javax.swing.JPanel {
     private javax.swing.JRadioButton radioAgregar;
     private javax.swing.JRadioButton radioBorrar;
     private javax.swing.JRadioButton radioModificar;
-    private javax.swing.JTextField txtNuevoUsuario;
+    private javax.swing.JTextField txtNuevaCiudad;
     // End of variables declaration//GEN-END:variables
 }

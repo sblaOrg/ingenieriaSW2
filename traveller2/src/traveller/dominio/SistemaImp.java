@@ -253,6 +253,10 @@ public class SistemaImp implements ISistema, Serializable {
     public boolean existeCiudad(Ciudad unaCiudad) {
         return this.getListaCiudades().contains(unaCiudad);
     }
+    
+    public Ciudad obtenerCiudad(int posicionArray){
+        return this.getListaCiudades().get(posicionArray);
+    }
 
     public void altaTipoEvento(TipoEvento unTipo) {
         if(!this.existeTipoEvento(unTipo)){

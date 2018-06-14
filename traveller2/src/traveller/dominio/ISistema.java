@@ -67,6 +67,8 @@ public interface ISistema {
     
     public void bajaCiudad(Ciudad unNombre);
     
+    public Ciudad obtenerCiudad(int posicionArray);
+    
     public boolean existeCiudad(Ciudad unaCiudad);
     
     public void altaTipoEvento(TipoEvento unTipo);
