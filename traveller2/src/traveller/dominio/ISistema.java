@@ -24,6 +24,8 @@ public interface ISistema {
     public void bajaUsuario();
     
     public void modificarCiudad(String nuevoNombre, int posicion);
+    
+    //
 
     public ArrayList<Usuario> getListaUsuarios();
     

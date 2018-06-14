@@ -223,8 +223,13 @@ public class SistemaImp implements ISistema, Serializable {
         Ciudad unaCiudad = new Ciudad(nuevoNombre);
         if (!this.existeCiudad(unaCiudad)){
             this.getListaCiudades().get(posicion).setNombre(nuevoNombre);
+            System.out.println("Registra Exitoso.");
         }
     }
+    
+    /*public void borrarCiudad(Ciudad unaCiudad){
+        
+    }*/
 
     /* MÉTODOS PRIVADOS */
     private boolean existeNombreUsuario(String nombreUsuario) {
@@ -234,6 +239,10 @@ public class SistemaImp implements ISistema, Serializable {
     public void altaCiudad(Ciudad unaCiudad) {
         if(!this.existeCiudad(unaCiudad)){
             this.getListaCiudades().add(unaCiudad);
+            System.out.println("Registro exitoso.");
+        }
+        else{
+            System.out.println("No se registró.");
         }
     }
 
@@ -242,7 +251,7 @@ public class SistemaImp implements ISistema, Serializable {
     }
     
     public boolean existeCiudad(Ciudad unaCiudad) {
-        return !this.getListaCiudades().contains(unaCiudad);
+        return this.getListaCiudades().contains(unaCiudad);
     }
 
     public void altaTipoEvento(TipoEvento unTipo) {

@@ -82,46 +82,41 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-                              <Component id="lblNuevaCiudad" min="-2" pref="77" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CheckNuevoUsuario" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="radioAgregar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="radioModificar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="radioBorrar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="brnModificarCiudad" min="-2" pref="185" max="-2" attributes="0"/>
-                                  <Component id="btnAgregarCiudad" min="-2" pref="185" max="-2" attributes="0"/>
-                                  <Component id="btnBorrarCiudad" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="btnAplicar" min="-2" pref="201" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="127" max="32767" attributes="0"/>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblNuevaCiudad" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="CheckNuevoUsuario" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnAgregarCiudad" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="radioAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioModificar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="brnModificarCiudad" min="-2" pref="31" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnBorrarCiudad" min="-2" pref="34" max="-2" attributes="0"/>
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                      <Component id="btnAplicar" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace pref="108" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnAgregarCiudad">
+            <Component class="javax.swing.JButton" name="btnAplicar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="4d" green="4d" red="ff" type="rgb"/>
@@ -129,56 +124,37 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="32" green="8c" red="32" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Agregar"/>
+                <Property name="text" type="java.lang.String" value="Aplicar"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarCiudadActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAplicarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="brnModificarCiudad">
+            <Component class="javax.swing.JRadioButton" name="radioAgregar">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4d" green="4d" red="ff" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="32" green="8c" red="32" type="rgb"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Agregar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioAgregarActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="radioModificar">
+              <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brnModificarCiudadActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioModificarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnBorrarCiudad">
+            <Component class="javax.swing.JRadioButton" name="radioBorrar">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4d" green="4d" red="ff" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="32" green="8c" red="32" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Borrar"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblNuevaCiudad">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="66" red="99" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Ciudad nueva"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="CheckNuevoUsuario">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f5" green="fa" red="b4" type="rgb"/>
-                </Property>
-              </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CheckNuevoUsuarioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioBorrarActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -210,7 +186,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblNuevoUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNuevaCiudad" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="txtNuevoUsuario" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="166" max="32767" attributes="0"/>
@@ -221,7 +197,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblNuevoUsuario" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNuevaCiudad" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txtNuevoUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="49" max="32767" attributes="0"/>
@@ -230,9 +206,9 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="lblNuevoUsuario">
+                <Component class="javax.swing.JLabel" name="lblNuevaCiudad">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Nueva ciudad"/>
+                    <Property name="text" type="java.lang.String" value="Nombre ciudad"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtNuevoUsuario">
@@ -241,7 +217,6 @@
                       <Color blue="ff" green="ae" red="b1" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="ingrese ciudad"/>
                   </Properties>
                 </Component>
               </SubComponents>
