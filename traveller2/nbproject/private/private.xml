@@ -19,13 +19,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/ventana/VentanaMenu.java</file>
-            <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelInformacion.java</file>
-            <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelCiudades.java</file>
-            <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/PanelMiCuenta.java</file>
-            <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelTipoEvento.java</file>
-            <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelLog.java</file>
             <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelNuevoTipoEvento.java</file>
-            <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/ventana/VentanaInicio.java</file>
+            <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/dominio/ISistema.java</file>
+            <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/dominio/SistemaImp.java</file>
             <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/PanelAmigos.java</file>
             <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/PanelCiudades.java</file>
             <file>file:/D:/steffano/HOME/facultad/ingenieria2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelNuevaCiudad.java</file>

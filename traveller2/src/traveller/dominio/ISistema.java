@@ -22,8 +22,16 @@ public interface ISistema {
     public boolean hayUsuarioIdentificado();
 
     public void bajaUsuario();
+    
+    public void modificarCiudad(String nuevoNombre, int posicion);
 
     public ArrayList<Usuario> getListaUsuarios();
+    
+    public ArrayList<Ciudad> getListaCiudades();
+    
+    public ArrayList<String> getNombresCiudades();
+    
+    public ArrayList<TipoEvento> getListaTipoEventos();
 
     public boolean existeUsuario(String nombreUsuario);
 

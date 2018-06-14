@@ -8,6 +8,11 @@ package traveller.interfaz.panel;
 import java.awt.Rectangle;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import traveller.dominio.Ciudad;
 import traveller.dominio.ISistema;
 
 /**
@@ -27,17 +32,15 @@ public class PanelCiudades extends javax.swing.JPanel {
     public PanelCiudades(final ISistema sistema) {
         initComponents();
         this.sistema = sistema;
-        //nuevaCiudad = new SubPanelNuevaCiudad(this.sistema);
-        //ciudades = new SubPanelCiudades(this.sistema);
-        //PanelDatosCiudad.removeAll();
-        //PanelDatosCiudad.add(nuevaCiudad);
-        //nuevaCiudad.setLocation(1400, 400);
-        //nuevaCiudad.setVisible(true);
-        //PanelDatosCiudad.repaint();
-
+        ArrayList<String> nombresCiudades = this.sistema.getNombresCiudades();
+        comboUsuarios.setModel(new DefaultComboBoxModel(nombresCiudades.toArray()));
+        comboUsuarios.setSelectedIndex(0);
         //Visivilidad
         jPanel1.setVisible(false);
-        jPanel3.setVisible(false);
+        jPanel3.setVisible(true);
+        btnAgregarCiudad.setEnabled(false);
+        brnModificarCiudad.setEnabled(true);
+        btnBorrarCiudad.setEnabled(true);
 
         CheckNuevoUsuario.addItemListener(new ItemListener() {
             @Override
@@ -49,14 +52,17 @@ public class PanelCiudades extends javax.swing.JPanel {
                     jPanel1.setVisible(true);
                     jPanel3.setVisible(false);
                     PanelCiudades.repaint();
+                    btnAgregarCiudad.setEnabled(true);
+                    brnModificarCiudad.setEnabled(false);
+                    btnBorrarCiudad.setEnabled(false);
                 } else {
                     jPanel3.setVisible(true);
                     jPanel1.setVisible(false);
                     PanelCiudades.repaint();
+                    btnAgregarCiudad.setEnabled(false);
+                    brnModificarCiudad.setEnabled(true);
+                    btnBorrarCiudad.setEnabled(true);
                 }
-                // PanelCiudades.repaint();
-                //PanelDatosCiudad.repaint();
-
             }
         });
 
@@ -260,11 +266,15 @@ public class PanelCiudades extends javax.swing.JPanel {
     }//GEN-LAST:event_PanelBotonesFocusGained
 
     private void brnModificarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnModificarCiudadActionPerformed
-        // TODO add your handling code here:
+        int index = comboUsuarios.getSelectedIndex();
+        
+        //this.sistema.modificarCiudad(TOOL_TIP_TEXT_KEY, SOMEBITS);
     }//GEN-LAST:event_brnModificarCiudadActionPerformed
 
     private void btnAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCiudadActionPerformed
-        // usar Metodos del contrato
+        String nuevaCiudad = txtNuevoUsuario.getText();
+        Ciudad unaCiudad = new Ciudad(nuevaCiudad);
+        this.sistema.altaCiudad(unaCiudad);
     }//GEN-LAST:event_btnAgregarCiudadActionPerformed
 
     private void comboUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUsuariosActionPerformed

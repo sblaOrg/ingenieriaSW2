@@ -20,6 +20,15 @@ public class SistemaImp implements ISistema, Serializable {
     public ArrayList<Ciudad> getListaCiudades() {
         return listaCiudades;
     }
+    
+    public ArrayList<String> getNombresCiudades() {
+        ArrayList<String> nombresCiudades = new ArrayList<String>();
+        for (int i = 0; i < this.getListaCiudades().size(); i++){
+            Ciudad unaC = this.getListaCiudades().get(i);
+            nombresCiudades.add(unaC.getNombre());
+        }
+        return nombresCiudades;
+    }
 
     public ArrayList<TipoEvento> getListaTipoEventos() {
         return listaTipoEventos;
@@ -127,7 +136,8 @@ public class SistemaImp implements ISistema, Serializable {
     public ArrayList<Usuario> getListaUsuarios() {
 	return this.listaUsuarios;
     }
-
+    
+    
     @Override
     public boolean existeUsuario(String nombreUsuario) {
 	return this.listaUsuarios.contains(new Usuario(nombreUsuario));
@@ -207,6 +217,13 @@ public class SistemaImp implements ISistema, Serializable {
 		EnvioMail.mandarEmail(usuario.getEmail().toString(), titulo, novedadEmail);
 	    }
 	}
+    }
+    
+    public void modificarCiudad(String nuevoNombre, int posicion){
+        Ciudad unaCiudad = new Ciudad(nuevoNombre);
+        if (!this.existeCiudad(unaCiudad)){
+            this.getListaCiudades().get(posicion).setNombre(nuevoNombre);
+        }
     }
 
     /* MÉTODOS PRIVADOS */
