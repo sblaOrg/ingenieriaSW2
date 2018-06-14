@@ -25,8 +25,6 @@ public interface ISistema {
     
     public void modificarCiudad(String nuevoNombre, int posicion);
     
-    //
-
     public ArrayList<Usuario> getListaUsuarios();
     
     public ArrayList<Ciudad> getListaCiudades();
@@ -68,6 +66,10 @@ public interface ISistema {
     public void bajaCiudad(Ciudad unNombre);
     
     public Ciudad obtenerCiudad(int posicionArray);
+    
+    public TipoEvento obtenerTipoEvento(int posicionArray);
+    
+    public void modificarTipoEvento(String uNombrenTipoEvento, int posicion);
     
     public boolean existeCiudad(Ciudad unaCiudad);
     

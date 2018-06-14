@@ -257,6 +257,14 @@ public class SistemaImp implements ISistema, Serializable {
     public Ciudad obtenerCiudad(int posicionArray){
         return this.getListaCiudades().get(posicionArray);
     }
+    
+    public TipoEvento obtenerTipoEvento(int posicionArray){
+        return this.getListaTipoEventos().get(posicionArray);
+    }
+    
+    public void modificarTipoEvento(String unNombreTipoEvento, int posicion){
+        this.getListaTipoEventos().get(posicion).setNombre(unNombreTipoEvento);
+    }
 
     public void altaTipoEvento(TipoEvento unTipo) {
         if(!this.existeTipoEvento(unTipo)){
