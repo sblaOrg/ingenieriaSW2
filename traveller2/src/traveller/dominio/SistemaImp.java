@@ -277,6 +277,15 @@ public class SistemaImp implements ISistema, Serializable {
     }
     
     public boolean existeTipoEvento(TipoEvento unTipo){
-        return !this.getListaTipoEventos().contains(unTipo);
+        return this.getListaTipoEventos().contains(unTipo);
+    }
+    
+    public ArrayList<String> getNombresTiposEventos(){
+        ArrayList<String> nombresTiposEventos = new ArrayList<String>();
+        for (int i = 0; i < this.getListaTipoEventos().size(); i++){
+            TipoEvento unTipoEvento = this.getListaTipoEventos().get(i);
+            nombresTiposEventos.add(unTipoEvento.getNombre());
+        }
+        return nombresTiposEventos;
     }
 }

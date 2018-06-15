@@ -1,7 +1,9 @@
 package traveller.interfaz.panel;
 
+import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
+import javax.swing.DefaultComboBoxModel;
 import traveller.dominio.ISistema;
 import traveller.dominio.TipoEvento;
 
@@ -22,6 +24,8 @@ public class PanelTipoEvento extends javax.swing.JPanel {
     public PanelTipoEvento(ISistema miSistema) {
         initComponents();
         this.sistema = miSistema;
+        ArrayList<String> nombresTiposEventos = this.sistema.getNombresTiposEventos();
+        comboTipos.setModel(new DefaultComboBoxModel(nombresTiposEventos.toArray()));
         //nuevoTipo = new SubPanelNuevoTipoEvento(sistema);
         //tipo = new SubPanelTipoEvento(sistema);
         ButtonGroup btnGrupoTiposEventos = new ButtonGroup();
@@ -64,6 +68,7 @@ public class PanelTipoEvento extends javax.swing.JPanel {
         txtNuevoTipoEvento = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         comboTipos = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
 
         PanelTipoEvento.setBackground(new java.awt.Color(230, 255, 245));
 
@@ -74,24 +79,28 @@ public class PanelTipoEvento extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout PanelBotonesLayout = new javax.swing.GroupLayout(PanelBotones);
-        PanelBotones.setLayout(PanelBotonesLayout);
-        PanelBotonesLayout.setHorizontalGroup(
-            PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 451, Short.MAX_VALUE)
-        );
-        PanelBotonesLayout.setVerticalGroup(
-            PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 377, Short.MAX_VALUE)
-        );
-
         panelContenedorTipoEvento.setBackground(new java.awt.Color(230, 255, 245));
 
         radioAgregarTipoEvento.setText("Agregar");
+        radioAgregarTipoEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioAgregarTipoEventoActionPerformed(evt);
+            }
+        });
 
         radioModificarTipoEvento.setText("Modificar");
+        radioModificarTipoEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioModificarTipoEventoActionPerformed(evt);
+            }
+        });
 
         radioBorrarTipoEvento.setText("Borrar");
+        radioBorrarTipoEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioBorrarTipoEventoActionPerformed(evt);
+            }
+        });
 
         txtNuevoTipoEvento.setBackground(new java.awt.Color(204, 255, 204));
 
@@ -105,29 +114,40 @@ public class PanelTipoEvento extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("Enviar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelContenedorTipoEventoLayout = new javax.swing.GroupLayout(panelContenedorTipoEvento);
         panelContenedorTipoEvento.setLayout(panelContenedorTipoEventoLayout);
         panelContenedorTipoEventoLayout.setHorizontalGroup(
             panelContenedorTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelContenedorTipoEventoLayout.createSequentialGroup()
-                .addGroup(panelContenedorTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelContenedorTipoEventoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(radioAgregarTipoEvento)
-                        .addGap(23, 23, 23)
-                        .addComponent(radioModificarTipoEvento)
-                        .addGap(18, 18, 18)
-                        .addComponent(radioBorrarTipoEvento))
-                    .addGroup(panelContenedorTipoEventoLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(panelContenedorTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(comboTipos, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(88, Short.MAX_VALUE))
-            .addGroup(panelContenedorTipoEventoLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(txtNuevoTipoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panelContenedorTipoEventoLayout.createSequentialGroup()
+                .addGroup(panelContenedorTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelContenedorTipoEventoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelContenedorTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelContenedorTipoEventoLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(radioAgregarTipoEvento)
+                            .addGap(23, 23, 23)
+                            .addComponent(radioModificarTipoEvento)
+                            .addGap(18, 18, 18)
+                            .addComponent(radioBorrarTipoEvento))
+                        .addGroup(panelContenedorTipoEventoLayout.createSequentialGroup()
+                            .addGap(65, 65, 65)
+                            .addGroup(panelContenedorTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(comboTipos, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         panelContenedorTipoEventoLayout.setVerticalGroup(
             panelContenedorTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,27 +163,27 @@ public class PanelTipoEvento extends javax.swing.JPanel {
                     .addComponent(radioAgregarTipoEvento)
                     .addComponent(radioModificarTipoEvento)
                     .addComponent(radioBorrarTipoEvento))
-                .addGap(88, 88, 88))
+                .addGap(63, 63, 63)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        javax.swing.GroupLayout PanelTipoEventoLayout = new javax.swing.GroupLayout(PanelTipoEvento);
-        PanelTipoEvento.setLayout(PanelTipoEventoLayout);
-        PanelTipoEventoLayout.setHorizontalGroup(
-            PanelTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTipoEventoLayout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addGroup(PanelTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panelContenedorTipoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(118, Short.MAX_VALUE))
-        );
-        PanelTipoEventoLayout.setVerticalGroup(
-            PanelTipoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTipoEventoLayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelBotonesLayout = new javax.swing.GroupLayout(PanelBotones);
+        PanelBotones.setLayout(PanelBotonesLayout);
+        PanelBotonesLayout.setHorizontalGroup(
+            PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBotonesLayout.createSequentialGroup()
                 .addComponent(panelContenedorTipoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(PanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 93, Short.MAX_VALUE))
         );
+        PanelBotonesLayout.setVerticalGroup(
+            PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBotonesLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(panelContenedorTipoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(277, Short.MAX_VALUE))
+        );
+
+        PanelTipoEvento.add(PanelBotones);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -187,11 +207,49 @@ public class PanelTipoEvento extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboTiposActionPerformed
 
+    private void radioBorrarTipoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBorrarTipoEventoActionPerformed
+        txtNuevoTipoEvento.setEnabled(false);
+        comboTipos.setEnabled(true);
+    }//GEN-LAST:event_radioBorrarTipoEventoActionPerformed
+
+    private void radioModificarTipoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioModificarTipoEventoActionPerformed
+        txtNuevoTipoEvento.setEnabled(true);
+        comboTipos.setEnabled(true);
+    }//GEN-LAST:event_radioModificarTipoEventoActionPerformed
+
+    private void radioAgregarTipoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioAgregarTipoEventoActionPerformed
+        txtNuevoTipoEvento.setEnabled(true);
+        comboTipos.setEnabled(false);
+    }//GEN-LAST:event_radioAgregarTipoEventoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ButtonGroup btnGrupoTipoEventos = new ButtonGroup();
+        btnGrupoTipoEventos.add(radioAgregarTipoEvento);
+        btnGrupoTipoEventos.add(radioModificarTipoEvento);
+        btnGrupoTipoEventos.add(radioBorrarTipoEvento);
+        ButtonModel seleccion = btnGrupoTipoEventos.getSelection();
+        String unNombreTipoEvento = txtNuevoTipoEvento.getText().toUpperCase();
+        TipoEvento unTipoEvento = new TipoEvento(unNombreTipoEvento);
+        int posicion = comboTipos.getSelectedIndex();
+        if (seleccion == radioAgregarTipoEvento.getModel()) {
+            this.sistema.altaTipoEvento(unTipoEvento);
+        }
+        if (seleccion == radioModificarTipoEvento.getModel()) {
+            this.sistema.modificarTipoEvento(unNombreTipoEvento, posicion);
+        }
+        if (seleccion == radioBorrarTipoEvento.getModel()) {
+            int posABorrar = comboTipos.getSelectedIndex();
+            TipoEvento unTipoEventoABorrar = this.sistema.obtenerTipoEvento(posABorrar);
+            this.sistema.bajaTipoEvento(unTipoEventoABorrar);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelBotones;
     private javax.swing.JPanel PanelTipoEvento;
     private javax.swing.JComboBox<String> comboTipos;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel panelContenedorTipoEvento;
     private javax.swing.JRadioButton radioAgregarTipoEvento;

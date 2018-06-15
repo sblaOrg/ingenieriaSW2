@@ -31,6 +31,8 @@ public interface ISistema {
     
     public ArrayList<String> getNombresCiudades();
     
+    public ArrayList<String> getNombresTiposEventos();
+    
     public ArrayList<TipoEvento> getListaTipoEventos();
 
     public boolean existeUsuario(String nombreUsuario);
