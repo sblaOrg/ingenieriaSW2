@@ -16,6 +16,7 @@ import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import traveller.dominio.Ciudad;
 import traveller.dominio.ISistema;
 
@@ -43,8 +44,6 @@ public class PanelCiudades extends javax.swing.JPanel {
         jPanel1.setVisible(false);
         jPanel3.setVisible(true);
         btnAplicar.setEnabled(false);
-        //brnModificarCiudad.setEnabled(true);
-        //btnBorrarCiudad.setEnabled(true);
 
         btnAplicar.setEnabled(false);
 
@@ -269,7 +268,12 @@ public class PanelCiudades extends javax.swing.JPanel {
         String nombreCiudad = txtNuevaCiudad.getText().toUpperCase();
         Ciudad unaCiudad = new Ciudad(nombreCiudad);
         if (seleccion == radioAgregar.getModel()) {
-            this.sistema.altaCiudad(unaCiudad);
+            if (this.sistema.altaCiudad(unaCiudad)){
+                JOptionPane.showMessageDialog(PanelCiudades, "Registro exitoso.", "AVISO", JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                JOptionPane.showMessageDialog(PanelCiudades, "No se efectuó el registro.", "AVISO", JOptionPane.WARNING_MESSAGE);
+            }
         }
         if (seleccion == radioModificar.getModel()) {
             this.sistema.modificarCiudad(nombreCiudad, posicion);

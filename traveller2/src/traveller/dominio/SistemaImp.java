@@ -236,14 +236,13 @@ public class SistemaImp implements ISistema, Serializable {
 	return this.listaUsuarios.contains(new Usuario(nombreUsuario));
     }
 
-    public void altaCiudad(Ciudad unaCiudad) {
+    public boolean altaCiudad(Ciudad unaCiudad) {
+        boolean registroExitoso = false;
         if(!this.existeCiudad(unaCiudad)){
             this.getListaCiudades().add(unaCiudad);
-            System.out.println("Registro exitoso.");
+            registroExitoso = true;
         }
-        else{
-            System.out.println("No se registró.");
-        }
+        return registroExitoso;
     }
 
     public void bajaCiudad(Ciudad unaCiudad) {

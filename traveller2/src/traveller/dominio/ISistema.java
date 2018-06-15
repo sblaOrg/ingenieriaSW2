@@ -63,7 +63,7 @@ public interface ISistema {
 
     public void setPuerto(int puerto);
     
-    public void altaCiudad(Ciudad unNombre);
+    public boolean altaCiudad(Ciudad unNombre);
     
     public void bajaCiudad(Ciudad unNombre);
     
