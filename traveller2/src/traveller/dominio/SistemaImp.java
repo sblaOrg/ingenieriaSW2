@@ -265,10 +265,13 @@ public class SistemaImp implements ISistema, Serializable {
         this.getListaTipoEventos().get(posicion).setNombre(unNombreTipoEvento);
     }
 
-    public void altaTipoEvento(TipoEvento unTipo) {
+    public boolean altaTipoEvento(TipoEvento unTipo) {
+        boolean registroExtitoso = false;
         if(!this.existeTipoEvento(unTipo)){
             this.getListaTipoEventos().add(unTipo);
+            registroExtitoso = true;
         }
+        return registroExtitoso;
     }
 
     public void bajaTipoEvento(TipoEvento unTipo) {

@@ -75,7 +75,7 @@ public interface ISistema {
     
     public boolean existeCiudad(Ciudad unaCiudad);
     
-    public void altaTipoEvento(TipoEvento unTipo);
+    public boolean altaTipoEvento(TipoEvento unTipo);
     
     public void bajaTipoEvento(TipoEvento unTipo);
     

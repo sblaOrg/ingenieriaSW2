@@ -24,9 +24,9 @@ public class PanelAgendarViaje extends javax.swing.JPanel {
             this.txtNombre.requestFocusInWindow();
             this.txtNombre.setText("Vacaciones");
             this.txtDescripcion.setText("Nos vamos de vacaciones con la familia.");
-            Date defaultDate = new Date("01/01/1950");
-            String[] dateInicio = sdf.format(jCalInicio.getDate()).split("/");
-            String[] dateFinal = sdf.format(jCalFin.getDate()).split("/");
+            //Date defaultDate = new Date("01/01/1950");
+            //String[] dateInicio = sdf.format(jCalInicio.getDate()).split("/");
+          //  String[] dateFinal = sdf.format(jCalFin.getDate()).split("/");
         } else {
             this.txtNombre.requestFocusInWindow();
         }

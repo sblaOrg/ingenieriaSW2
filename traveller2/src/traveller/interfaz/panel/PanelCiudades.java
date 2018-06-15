@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package traveller.interfaz.panel;
 
 import java.awt.Dialog;
@@ -20,10 +15,6 @@ import javax.swing.JOptionPane;
 import traveller.dominio.Ciudad;
 import traveller.dominio.ISistema;
 
-/**
- *
- * @author steffano.britos
- */
 public class PanelCiudades extends javax.swing.JPanel {
 
     private ISistema sistema;
@@ -31,9 +22,6 @@ public class PanelCiudades extends javax.swing.JPanel {
     SubPanelCiudades ciudades;
     boolean estaSeleccionado;
 
-    /**
-     * Creates new form PanelCiudades
-     */
     public PanelCiudades(final ISistema sistema) {
         initComponents();
         this.sistema = sistema;
@@ -44,29 +32,7 @@ public class PanelCiudades extends javax.swing.JPanel {
         jPanel1.setVisible(false);
         jPanel3.setVisible(true);
         btnAplicar.setEnabled(false);
-
         btnAplicar.setEnabled(false);
-
-        //grupo.addItemListener(new ItemListener() {
-        /*@Override
-            public void itemStateChanged(ItemEvent e) {
-                //PanelDatosCiudad.removeAll();
-                if (grupoCiudd.isSelected()) {
-                    
-                    jPanel1.setVisible(true);
-                    jPanel3.setVisible(false);
-                    PanelCiudades.repaint();
-                    btnAplicar.setEnabled(true);
-                   
-                } else {
-                    jPanel3.setVisible(true);
-                    jPanel1.setVisible(false);
-                    PanelCiudades.repaint();
-                    btnAplicar.setEnabled(false);
-                   
-                }
-            }*/
-        //});
     }
 
     /**
@@ -283,7 +249,7 @@ public class PanelCiudades extends javax.swing.JPanel {
             Ciudad unaCiudadABorrar = this.sistema.obtenerCiudad(posABorrar);
             this.sistema.bajaCiudad(unaCiudadABorrar);
         }
-        
+        txtNuevaCiudad.setText("");
     }//GEN-LAST:event_btnAplicarActionPerformed
 
     private void comboUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUsuariosActionPerformed

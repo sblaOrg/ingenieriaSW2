@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import traveller.dominio.ISistema;
 import traveller.dominio.TipoEvento;
 
@@ -33,21 +34,8 @@ public class PanelTipoEvento extends javax.swing.JPanel {
         btnGrupoTiposEventos.add(radioModificarTipoEvento);
         btnGrupoTiposEventos.add(radioBorrarTipoEvento);
         ButtonModel seleccion = btnGrupoTiposEventos.getSelection();
-        int posicion = comboTipos.getSelectedIndex();
-        String nombreTipoEvento = txtNuevoTipoEvento.getText().toUpperCase();
         
-        TipoEvento tipoEvento = new TipoEvento(nombreTipoEvento);
-        if (seleccion == radioAgregarTipoEvento.getModel()) {
-            this.sistema.altaTipoEvento(tipoEvento);
-        }
-        if (seleccion == radioModificarTipoEvento.getModel()) {
-            this.sistema.modificarTipoEvento(nombreTipoEvento, posicion);
-        }
-        if (seleccion == radioBorrarTipoEvento.getModel()) {
-            int posABorrar = comboTipos.getSelectedIndex();
-           TipoEvento tipoEventoABorrar = this.sistema.obtenerTipoEvento(posABorrar);
-            this.sistema.bajaTipoEvento(tipoEventoABorrar);
-        }
+        //String nombreTipoEvento = txtNuevoTipoEvento.getText().toUpperCase();
     }
 
     /**
@@ -229,19 +217,27 @@ public class PanelTipoEvento extends javax.swing.JPanel {
         btnGrupoTipoEventos.add(radioBorrarTipoEvento);
         ButtonModel seleccion = btnGrupoTipoEventos.getSelection();
         String unNombreTipoEvento = txtNuevoTipoEvento.getText().toUpperCase();
-        TipoEvento unTipoEvento = new TipoEvento(unNombreTipoEvento);
         int posicion = comboTipos.getSelectedIndex();
+        TipoEvento tipoEvento = new TipoEvento(unNombreTipoEvento);
         if (seleccion == radioAgregarTipoEvento.getModel()) {
-            this.sistema.altaTipoEvento(unTipoEvento);
+            if(this.sistema.altaTipoEvento(tipoEvento)){
+                JOptionPane.showMessageDialog(PanelBotones, "Registro exitoso.", "AVISO", JOptionPane.WARNING_MESSAGE);
+                System.out.println("Registrado");
+            }
+            else{
+                JOptionPane.showMessageDialog(PanelBotones, "No se efectuó el registro.", "AVISO", JOptionPane.WARNING_MESSAGE);
+                System.out.println("NO Registrado");
+            }
         }
         if (seleccion == radioModificarTipoEvento.getModel()) {
             this.sistema.modificarTipoEvento(unNombreTipoEvento, posicion);
         }
         if (seleccion == radioBorrarTipoEvento.getModel()) {
             int posABorrar = comboTipos.getSelectedIndex();
-            TipoEvento unTipoEventoABorrar = this.sistema.obtenerTipoEvento(posABorrar);
-            this.sistema.bajaTipoEvento(unTipoEventoABorrar);
+           TipoEvento tipoEventoABorrar = this.sistema.obtenerTipoEvento(posABorrar);
+            this.sistema.bajaTipoEvento(tipoEventoABorrar);
         }
+        txtNuevoTipoEvento.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
