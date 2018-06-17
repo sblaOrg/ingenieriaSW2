@@ -66,7 +66,7 @@ public class UsuarioTest {
     @Test
     public void testExisteNombreViajeTrue() throws ViajeException, FechaException {
         boolean expResult = true;
-        instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                 "23", "12", "2014", "descripcion");
         boolean result = instance.existeNombreViaje("Vacaciones");
         assertEquals(expResult, result);
@@ -78,7 +78,7 @@ public class UsuarioTest {
     @Test
     public void testExisteNombreViajeFalse() throws ViajeException, FechaException {
         boolean expResult = false;
-        instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                 "23", "12", "2014", "descripcion");
         boolean result = instance.existeNombreViaje("Vacaciones ");
         assertEquals(expResult, result);
@@ -89,7 +89,7 @@ public class UsuarioTest {
      */
     @Test
     public void testBajaViaje() throws ViajeException, FechaException {
-        instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                 "23", "12", "2014", "descripcion");
         instance.bajaViaje(new Viaje("Vacaciones"));
         assert (!instance.getListaViajes().contains(new Viaje("Vacaciones")));
@@ -100,7 +100,7 @@ public class UsuarioTest {
      */
     @Test
     public void testAltaViajeOK1() throws Exception {
-        instance.altaViaje("Vaca", Ciudad.MADRID, "01", "11", "2013",
+        instance.altaViaje("Vaca", new Ciudad("MADRID"), "01", "11", "2013",
                 "23", "12", "2014", "");
         assert (instance.existeNombreViaje("Vaca"));
     }
@@ -110,7 +110,7 @@ public class UsuarioTest {
      */
     @Test
     public void testAltaViajeOK2() throws Exception {
-        instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                 "01", "11", "2013", "");
         assert (instance.existeNombreViaje("Vacaciones"));
     }
@@ -120,9 +120,9 @@ public class UsuarioTest {
      */
     @Test
     public void testAltaViajeOK3() throws Exception {
-        instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                 "23", "12", "2016", ".    ");
-        instance.altaViaje("Vacacion", Ciudad.MADRID, "01", "11", "2013",
+        instance.altaViaje("Vacacion", new Ciudad("MADRID"), "01", "11", "2013",
                 "23", "12", "2016", ".    ");
         assert (instance.existeNombreViaje("Vacaciones")
                 && instance.existeNombreViaje("Vacacion"));
@@ -134,9 +134,9 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorNombreExistente() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                     "23", "12", "2014", "descripcion");
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                     "23", "12", "2014", "descripcion");
             assert (false);
         } catch (ViajeExistenteException e) {
@@ -150,7 +150,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorDiaIniVacio() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "", "11", "2013",
                     "23", "12", "2014", "descripcion");
             assert (false);
         } catch (FechaVaciaException e) {
@@ -164,7 +164,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorMesIniVacio() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "", "2013",
                     "23", "12", "2014", "descripcion");
             assert (false);
         } catch (FechaVaciaException e) {
@@ -178,7 +178,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorAñoIniVacio() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "",
                     "23", "12", "2014", "descripcion");
             assert (false);
         } catch (FechaVaciaException e) {
@@ -192,7 +192,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorDiaFinVacio() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                     "", "12", "2014", "descripcion");
             assert (false);
         } catch (FechaVaciaException e) {
@@ -206,7 +206,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorMesFinVacio() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                     "23", "", "2014", "descripcion");
             assert (false);
         } catch (FechaVaciaException e) {
@@ -220,7 +220,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorAñoFinVacio() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                     "23", "12", "", "descripcion");
             assert (false);
         } catch (FechaVaciaException e) {
@@ -234,7 +234,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorFormatoDiaIni() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "DD", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "DD", "11", "2013",
                     "23", "12", "2014", "descripcion");
             assert (false);
         } catch (FormatoFechaInicioException e) {
@@ -248,7 +248,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorFormatoMesIni() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "13", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "13", "2013",
                     "23", "12", "2014", "descripcion");
             assert (false);
         } catch (FormatoFechaInicioException e) {
@@ -262,7 +262,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorFormatoAñoIni() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "1900",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "1900",
                     "23", "12", "2014", "descripcion");
             assert (false);
         } catch (FormatoFechaInicioException e) {
@@ -276,7 +276,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorFormatoDiaFin() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                     ".", "12", "2014", "descripcion");
             assert (false);
         } catch (FormatoFechaFinException e) {
@@ -290,7 +290,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorFormatoMesFin() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                     "23", "MM", "2014", "descripcion");
             assert (false);
         } catch (FormatoFechaFinException e) {
@@ -304,7 +304,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorFormatoAñoFin() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "01", "11", "2013",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
                     "23", "12", "yyyy", "descripcion");
             assert (false);
         } catch (FormatoFechaFinException e) {
@@ -318,7 +318,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorFechaIni() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "23", "11", "2012",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "23", "11", "2012",
                     "23", "12", "2014", "descripcion");
             assert (false);
         } catch (FechaInicioAnteriorException e) {
@@ -332,7 +332,7 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorFechaFin() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", Ciudad.MADRID, "24", "12", "2014",
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "24", "12", "2014",
                     "23", "12", "2014", "descripcion");
             assert (false);
         } catch (FechaFinAnteriorInicioException e) {

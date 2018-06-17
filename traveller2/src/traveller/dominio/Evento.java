@@ -17,6 +17,10 @@ public final class Evento implements Serializable{
     
     public Evento(String nombre) {
 	this.nombre = nombre;
+        this.setTipoEvento(new TipoEvento("Generico"));
+        this.setFecha(new Date("01/01/1950"));
+        this.setLugar("Montevideo");
+        this.setDescripcion("Evento creado por defecto.");
     }
 	
     public Evento(String nombre, TipoEvento tipoEvento, Date fecha, String lugar, String descripcion) throws EventoException{

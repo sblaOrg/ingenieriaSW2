@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelMisViajes.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;traveller&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">traveller.interfaz.panel</a> &gt; <span class="el_source">PanelMisViajes.java</span></div><h1>PanelMisViajes.java</h1><pre class="source lang-java linenums">package traveller.interfaz.panel;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelMisViajes.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;traveller2&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">traveller.interfaz.panel</a> &gt; <span class="el_source">PanelMisViajes.java</span></div><h1>PanelMisViajes.java</h1><pre class="source lang-java linenums">package traveller.interfaz.panel;
 
 import traveller.dominio.Evento;
 import traveller.dominio.ISistema;
@@ -294,21 +294,21 @@ public class PanelMisViajes extends javax.swing.JPanel {
 <span class="nc" id="L294">            SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
 <span class="nc" id="L295">            Viaje viaje = ((Viaje) listaViajes.getSelectedValue());</span>
 
-<span class="nc" id="L297">            String ciudad = null;</span>
-<span class="nc bnc" id="L298" title="All 5 branches missed.">            switch (viaje.getDestino()) {</span>
-                case MADRID:
-<span class="nc" id="L300">                    ciudad = &quot;Madrid&quot;;</span>
-<span class="nc" id="L301">                    break;</span>
-                case PARIS:
-<span class="nc" id="L303">                    ciudad = &quot;París&quot;;</span>
-<span class="nc" id="L304">                    break;</span>
-                case MIAMI:
-<span class="nc" id="L306">                    ciudad = &quot;Miami&quot;;</span>
-<span class="nc" id="L307">                    break;</span>
-                case BSAS:
-<span class="nc" id="L309">                    ciudad = &quot;Buenos Aires&quot;;</span>
+<span class="nc" id="L297">            String ciudad = viaje.getDestino().getNombre();</span>
+            /*switch (viaje.getDestino().getNombre()) {
+                case &quot;MADRID&quot;:
+                    ciudad = &quot;Madrid&quot;;
                     break;
-            }
+                case &quot;PARIS&quot;:
+                    ciudad = &quot;París&quot;;
+                    break;
+                case &quot;MIAMI&quot;:
+                    ciudad = &quot;Miami&quot;;
+                    break;
+                case &quot;BSAS&quot;:
+                    ciudad = &quot;Buenos Aires&quot;;
+                    break;
+            }*/
 
 <span class="nc" id="L313">            etqNombreViaje.setText(viaje.getNombre());</span>
 <span class="nc" id="L314">            etqFechas.setText((dateFormat.format(viaje.getFechaInicio())</span>
@@ -331,89 +331,67 @@ public class PanelMisViajes extends javax.swing.JPanel {
 <span class="nc bnc" id="L331" title="All 2 branches missed.">        if (!listaEventos.isSelectionEmpty()) {</span>
 <span class="nc" id="L332">            SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
 <span class="nc" id="L333">            Evento evento = ((Evento) listaEventos.getSelectedValue());</span>
+<span class="nc" id="L334">            String tipoEvento = evento.getTipoEvento().getNombre();</span>
+<span class="nc" id="L335">            etqTipoEvento.setText(&quot;Tipo: &quot; + tipoEvento);</span>
+<span class="nc" id="L336">            etqNombreEvento.setText(evento.getNombre());</span>
+<span class="nc" id="L337">            etqFechaEvento.setText(dateFormat.format(evento.getFecha()));</span>
 
-<span class="nc" id="L335">            String tipoEvento = null;</span>
-<span class="nc bnc" id="L336" title="All 7 branches missed.">            switch (evento.getTipoEvento()) {</span>
-                case CULTURAL:
-<span class="nc" id="L338">                    tipoEvento = &quot;Cultural&quot;;</span>
-<span class="nc" id="L339">                    break;</span>
-                case DEPORTIVO:
-<span class="nc" id="L341">                    tipoEvento = &quot;Deportivo&quot;;</span>
-<span class="nc" id="L342">                    break;</span>
-                case LABORAL:
-<span class="nc" id="L344">                    tipoEvento = &quot;Laboral&quot;;</span>
-<span class="nc" id="L345">                    break;</span>
-                case COMERCIAL:
-<span class="nc" id="L347">                    tipoEvento = &quot;Comercial&quot;;</span>
-<span class="nc" id="L348">                    break;</span>
-                case FAMILIAR:
-<span class="nc" id="L350">                    tipoEvento = &quot;Familiar&quot;;</span>
-<span class="nc" id="L351">                    break;</span>
-                case OTRO:
-<span class="nc" id="L353">                    tipoEvento = &quot;Otro&quot;;</span>
-                    break;
-            }
+<span class="nc" id="L339">            etqLugarEvento.setText(evento.getLugar());</span>
+<span class="nc" id="L340">            etqDescripcionEvento.setText(evento.getDescripcion());</span>
+<span class="nc" id="L341">            btnEliminarEvento.setVisible(true);</span>
+<span class="nc" id="L342">        } else {</span>
+<span class="nc" id="L343">            etqTipoEvento.setText(null);</span>
+<span class="nc" id="L344">            etqNombreEvento.setText(null);</span>
+<span class="nc" id="L345">            etqFechaEvento.setText(null);</span>
 
-<span class="nc" id="L357">            etqTipoEvento.setText(&quot;Tipo: &quot; + tipoEvento);</span>
-<span class="nc" id="L358">            etqNombreEvento.setText(evento.getNombre());</span>
-<span class="nc" id="L359">            etqFechaEvento.setText(dateFormat.format(evento.getFecha()));</span>
-
-<span class="nc" id="L361">            etqLugarEvento.setText(evento.getLugar());</span>
-<span class="nc" id="L362">            etqDescripcionEvento.setText(evento.getDescripcion());</span>
-<span class="nc" id="L363">            btnEliminarEvento.setVisible(true);</span>
-<span class="nc" id="L364">        } else {</span>
-<span class="nc" id="L365">            etqTipoEvento.setText(null);</span>
-<span class="nc" id="L366">            etqNombreEvento.setText(null);</span>
-<span class="nc" id="L367">            etqFechaEvento.setText(null);</span>
-
-<span class="nc" id="L369">            etqLugarEvento.setText(null);</span>
-<span class="nc" id="L370">            etqDescripcionEvento.setText(null);</span>
-<span class="nc" id="L371">            btnEliminarEvento.setVisible(false);</span>
-<span class="nc" id="L372">            this.refrescarListaEventos();</span>
+<span class="nc" id="L347">            etqLugarEvento.setText(null);</span>
+<span class="nc" id="L348">            etqDescripcionEvento.setText(null);</span>
+<span class="nc" id="L349">            btnEliminarEvento.setVisible(false);</span>
+<span class="nc" id="L350">            this.refrescarListaEventos();</span>
         }
-<span class="nc" id="L374">    }//GEN-LAST:event_listaEventosValueChanged</span>
+<span class="nc" id="L352">    }//GEN-LAST:event_listaEventosValueChanged</span>
 
     private void btnEliminarViajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarViajeActionPerformed
-<span class="nc bnc" id="L377" title="All 2 branches missed.">        if (listaViajes.getSelectedValue() != null) {</span>
-<span class="nc" id="L378">            sistema.getUsuarioIdentificado().bajaViaje(((Viaje) listaViajes.getSelectedValue()));</span>
+<span class="nc bnc" id="L355" title="All 2 branches missed.">        if (listaViajes.getSelectedValue() != null) {</span>
+<span class="nc" id="L356">            sistema.getUsuarioIdentificado().bajaViaje(((Viaje) listaViajes.getSelectedValue()));</span>
         }
-<span class="nc" id="L380">        this.refrescarListaViajes();</span>
-<span class="nc" id="L381">        this.refrescarListaEventos();</span>
+<span class="nc" id="L358">        this.refrescarListaViajes();</span>
+<span class="nc" id="L359">        this.refrescarListaEventos();</span>
 
-<span class="nc" id="L383">    }//GEN-LAST:event_btnEliminarViajeActionPerformed</span>
+<span class="nc" id="L361">    }//GEN-LAST:event_btnEliminarViajeActionPerformed</span>
 
     private void btnEliminarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEventoActionPerformed
-<span class="nc bnc" id="L386" title="All 2 branches missed.">        if (listaEventos.getSelectedValue() != null) {</span>
-<span class="nc" id="L387">            ((Viaje) listaViajes.getSelectedValue()).bajaEvento((Evento) listaEventos.getSelectedValue());</span>
+<span class="nc bnc" id="L364" title="All 2 branches missed.">        if (listaEventos.getSelectedValue() != null) {</span>
+<span class="nc" id="L365">            ((Viaje) listaViajes.getSelectedValue()).bajaEvento((Evento) listaEventos.getSelectedValue());</span>
         }
 
-<span class="nc" id="L390">        String accion = &quot;&lt;html&gt;&lt;b&gt;&quot; + this.sistema.getUsuarioIdentificado().getNombre() + &quot; &quot;</span>
-<span class="nc" id="L391">                + this.sistema.getUsuarioIdentificado().getApellido() + &quot;&lt;/b&gt; eliminó el evento &lt;i&gt;&quot; + ((Evento) listaEventos.getSelectedValue()).getNombre() + &quot;&lt;/i&gt; del viaje.&quot;;</span>
-<span class="nc" id="L392">        SimpleDateFormat sdfDate = new SimpleDateFormat(&quot;dd/MM/yyyy - HH:mm&quot;);</span>
-<span class="nc" id="L393">        Date hoy = new Date();</span>
-<span class="nc" id="L394">        String strDia = sdfDate.format(hoy);</span>
-<span class="nc" id="L395">        ((Viaje) listaViajes.getSelectedValue()).agregarLogAViaje(accion, strDia);</span>
+<span class="nc" id="L368">        String accion = &quot;&lt;html&gt;&lt;b&gt;&quot; + this.sistema.getUsuarioIdentificado().getNombre() + &quot; &quot;</span>
+<span class="nc" id="L369">                + this.sistema.getUsuarioIdentificado().getApellido() + &quot;&lt;/b&gt; eliminó el evento &lt;i&gt;&quot; + ((Evento) listaEventos.getSelectedValue()).getNombre() + &quot;&lt;/i&gt; del viaje.&quot;;</span>
+<span class="nc" id="L370">        SimpleDateFormat sdfDate = new SimpleDateFormat(&quot;dd/MM/yyyy - HH:mm&quot;);</span>
+<span class="nc" id="L371">        Date hoy = new Date();</span>
+<span class="nc" id="L372">        String strDia = sdfDate.format(hoy);</span>
+<span class="nc" id="L373">        ((Viaje) listaViajes.getSelectedValue()).agregarLogAViaje(accion, strDia);</span>
 
-<span class="nc" id="L397">        String mensaje = this.sistema.getUsuarioIdentificado().getNombre() + &quot; &quot; + this.sistema.getUsuarioIdentificado().getApellido() + &quot; elimino el evento &quot; + ((Evento) listaEventos.getSelectedValue()).getNombre() + &quot; del viaje &quot;</span>
-<span class="nc" id="L398">                + ((Viaje) listaViajes.getSelectedValue()).getNombre();</span>
+<span class="nc" id="L375">        String mensaje = this.sistema.getUsuarioIdentificado().getNombre() + &quot; &quot; + this.sistema.getUsuarioIdentificado().getApellido() + &quot; elimino el evento &quot; + ((Evento) listaEventos.getSelectedValue()).getNombre() + &quot; del viaje &quot;</span>
+<span class="nc" id="L376">                + ((Viaje) listaViajes.getSelectedValue()).getNombre();</span>
 
-<span class="nc" id="L400">        String mensajeEmail = &quot;Le notificamos que el usuario &quot; + this.sistema.getUsuarioIdentificado().getNombre() + &quot; &quot; + this.sistema.getUsuarioIdentificado().getApellido() + &quot; eliminó el evento &quot; + ((Evento) listaEventos.getSelectedValue()).getNombre() + &quot; del viaje &quot;</span>
-<span class="nc" id="L401">                + ((Viaje) listaViajes.getSelectedValue()).getNombre() + &quot;\n\n Le recordamos que si no desea ser notificado mediante este medio puede darse&quot;</span>
+<span class="nc" id="L378">        String mensajeEmail = &quot;Le notificamos que el usuario &quot; + this.sistema.getUsuarioIdentificado().getNombre() + &quot; &quot; + this.sistema.getUsuarioIdentificado().getApellido() + &quot; eliminó el evento &quot; + ((Evento) listaEventos.getSelectedValue()).getNombre() + &quot; del viaje &quot;</span>
+<span class="nc" id="L379">                + ((Viaje) listaViajes.getSelectedValue()).getNombre() + &quot;\n\n Le recordamos que si no desea ser notificado mediante este medio puede darse&quot;</span>
                 + &quot;de baja seleccionando la opción en 'Mi Cuenta' \n\nGracias,\n\ntraveller.&quot;;
-<span class="nc" id="L403">        String titulo = this.sistema.getUsuarioIdentificado().getNombre() + &quot; &quot; + this.sistema.getUsuarioIdentificado().getApellido() + &quot; ha modificado un viaje.&quot;;</span>
-<span class="nc" id="L404">        this.sistema.notificarNovedad(mensaje, mensajeEmail, titulo, (Viaje) listaViajes.getSelectedValue());</span>
+<span class="nc" id="L381">        String titulo = this.sistema.getUsuarioIdentificado().getNombre() + &quot; &quot; + this.sistema.getUsuarioIdentificado().getApellido() + &quot; ha modificado un viaje.&quot;;</span>
+<span class="nc" id="L382">        this.sistema.notificarNovedad(mensaje, mensajeEmail, titulo, (Viaje) listaViajes.getSelectedValue());</span>
 
-<span class="nc" id="L406">        this.refrescarListaEventos();</span>
-<span class="nc" id="L407">    }//GEN-LAST:event_btnEliminarEventoActionPerformed</span>
+<span class="nc" id="L384">        this.refrescarListaEventos();</span>
+<span class="nc" id="L385">    }//GEN-LAST:event_btnEliminarEventoActionPerformed</span>
 
     private void btnVerViajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerViajeActionPerformed
-<span class="nc bnc" id="L410" title="All 2 branches missed.">        if (listaViajes.getSelectedValue() != null) {</span>
-<span class="nc" id="L411">            this.ventana.verViaje((Viaje) listaViajes.getSelectedValue());</span>
-<span class="nc" id="L412">            this.etqError.setText(null);</span>
+<span class="nc bnc" id="L388" title="All 2 branches missed.">        if (listaViajes.getSelectedValue() != null) {</span>
+<span class="nc" id="L389">            this.ventana.verViaje((Viaje) listaViajes.getSelectedValue());</span>
+<span class="nc" id="L390">            this.etqError.setText(null);</span>
         } else {
-<span class="nc" id="L414">            this.etqError.setText(&quot;Debes seleccionar un viaje.&quot;);</span>
+<span class="nc" id="L392">            this.etqError.setText(&quot;Debes seleccionar un viaje.&quot;);</span>
         }
-<span class="nc" id="L416">    }//GEN-LAST:event_btnVerViajeActionPerformed</span>
+<span class="nc" id="L394">    }//GEN-LAST:event_btnVerViajeActionPerformed</span>
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelConsultaJugadores;
     private javax.swing.JButton btnEliminarEvento;
@@ -449,27 +427,27 @@ public class PanelMisViajes extends javax.swing.JPanel {
      * Le carga a listaJugadores la lista de jugadores del dominio ordenada.
      */
     private void refrescarListaViajes() {
-<span class="nc" id="L452">        ArrayList&lt;Viaje&gt; aux = new ArrayList&lt;Viaje&gt;();</span>
+<span class="nc" id="L430">        ArrayList&lt;Viaje&gt; aux = new ArrayList&lt;Viaje&gt;();</span>
 
-<span class="nc" id="L454">        Iterator&lt;Viaje&gt; it = sistema.getUsuarioIdentificado().getListaViajes().iterator();</span>
-<span class="nc bnc" id="L455" title="All 2 branches missed.">        while (it.hasNext()) {</span>
-<span class="nc" id="L456">            aux.add(it.next());</span>
+<span class="nc" id="L432">        Iterator&lt;Viaje&gt; it = sistema.getUsuarioIdentificado().getListaViajes().iterator();</span>
+<span class="nc bnc" id="L433" title="All 2 branches missed.">        while (it.hasNext()) {</span>
+<span class="nc" id="L434">            aux.add(it.next());</span>
         }
-<span class="nc bnc" id="L458" title="All 2 branches missed.">        if (aux != null) {</span>
-<span class="nc" id="L459">            listaViajes.setListData(aux.toArray());</span>
+<span class="nc bnc" id="L436" title="All 2 branches missed.">        if (aux != null) {</span>
+<span class="nc" id="L437">            listaViajes.setListData(aux.toArray());</span>
         }
-<span class="nc" id="L461">    }</span>
+<span class="nc" id="L439">    }</span>
 
     private void refrescarListaEventos() {
         ArrayList&lt;Evento&gt; aux;
-<span class="nc bnc" id="L465" title="All 2 branches missed.">        if (!listaViajes.isSelectionEmpty()) {</span>
-<span class="nc" id="L466">            aux = ((Viaje) listaViajes.getSelectedValue()).getListaEventos();</span>
+<span class="nc bnc" id="L443" title="All 2 branches missed.">        if (!listaViajes.isSelectionEmpty()) {</span>
+<span class="nc" id="L444">            aux = ((Viaje) listaViajes.getSelectedValue()).getListaEventos();</span>
         } else {
-<span class="nc" id="L468">            aux = new ArrayList&lt;Evento&gt;();</span>
+<span class="nc" id="L446">            aux = new ArrayList&lt;Evento&gt;();</span>
         }
-<span class="nc bnc" id="L470" title="All 2 branches missed.">        if (aux != null) {</span>
-<span class="nc" id="L471">            listaEventos.setListData(aux.toArray());</span>
+<span class="nc bnc" id="L448" title="All 2 branches missed.">        if (aux != null) {</span>
+<span class="nc" id="L449">            listaEventos.setListData(aux.toArray());</span>
         }
-<span class="nc" id="L473">    }</span>
+<span class="nc" id="L451">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

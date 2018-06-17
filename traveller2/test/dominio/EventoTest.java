@@ -39,7 +39,7 @@ public class EventoTest {
 
     @Before
     public void setUp() throws EventoException {
-        instance = new Evento("Parque de agua", TipoEvento.FAMILIAR,
+        instance = new Evento("Parque de agua", new TipoEvento("FAMILIAR"),
                 Calendar.getInstance().getTime(), "Acuamania", "De vacaciones");
     }
 
@@ -182,7 +182,7 @@ public class EventoTest {
      */
     @Test
     public void testGetTipoEvento() {
-        TipoEvento expResult = TipoEvento.FAMILIAR;
+        TipoEvento expResult = new TipoEvento("FAMILIAR");
         TipoEvento result = instance.getTipoEvento();
         assertEquals(expResult, result);
     }
@@ -192,9 +192,11 @@ public class EventoTest {
      */
     @Test
     public void testSetTipoEvento() {
-        TipoEvento tipoEvento = TipoEvento.LABORAL;
-        instance.setTipoEvento(tipoEvento);
-        assertEquals(tipoEvento, instance.getTipoEvento());
+        String nombreTipoEvento = "FAMILIAR";
+        TipoEvento tipoEvento = new TipoEvento("FAMILIAR");
+        Evento e = new Evento(nombreTipoEvento);
+        e.setTipoEvento(tipoEvento);
+        assertEquals(tipoEvento, e.getTipoEvento());
     }
 
     /**
@@ -222,10 +224,10 @@ public class EventoTest {
      */
     @Test
     public void testEquals() throws EventoException {
-        Object obj = new Evento("Parque de agua", TipoEvento.FAMILIAR,
+        Object obj = new Evento("Parque de agua", new TipoEvento("FAMILIAR"),
                 Calendar.getInstance().getTime(), "Acuamania", "De vacaciones");
-        boolean expResult = true;
         boolean result = instance.equals(obj);
+        boolean expResult = true;
         assertEquals(expResult, result);
     }
 
@@ -234,7 +236,7 @@ public class EventoTest {
      */
     @Test
     public void testEqualsError1() throws EventoException {
-        Object obj = new Evento("Parque de agua.", TipoEvento.FAMILIAR,
+        Object obj = new Evento("Parque de agua", new TipoEvento("FAMILIAR"),
                 Calendar.getInstance().getTime(), "Acuamania", "De vacaciones");
         boolean expResult = false;
         boolean result = instance.equals(obj);
@@ -242,7 +244,7 @@ public class EventoTest {
     }
 
     public void testEqualsError2() throws EventoException {
-        Object obj = new Evento("Parque acuático", TipoEvento.FAMILIAR,
+        Object obj = new Evento("Parque de agua", new TipoEvento("FAMILIAR"),
                 Calendar.getInstance().getTime(), "Acuamania", "De vacaciones");
         boolean expResult = false;
         boolean result = instance.equals(obj);

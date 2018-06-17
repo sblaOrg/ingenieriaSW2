@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package dominio;
 
 import traveller.dominio.Ciudad;
@@ -59,7 +55,7 @@ public class ViajeTest {
                     + Integer.parseInt("11") + "/" + Integer.parseInt("2014"));
         } catch (ParseException ex) {
         }
-        instance = new Viaje("Vacaciones", Ciudad.MADRID,
+        instance = new Viaje("Vacaciones", new Ciudad("MADRID"),
                 Calendar.getInstance().getTime(), fechaFin, "Descripcion");
     }
 
@@ -115,7 +111,7 @@ public class ViajeTest {
     @Test
     public void testAltaEventoOK1() throws Exception {
         instance.altaEvento("Visita al parque", "12", "12", "2012", "Parque",
-                "descripcion", TipoEvento.FAMILIAR);
+                "descripcion", new TipoEvento("FAMILIAR"));
         assert (instance.existeEvento(new Evento("Visita al parque")));
     }
 
@@ -125,9 +121,9 @@ public class ViajeTest {
     @Test
     public void testAltaEventoOK2() throws Exception {
         instance.altaEvento("Visita al parque", "12", "12", "2012", "Parque",
-                "descripcion", TipoEvento.FAMILIAR);
+                "descripcion", new TipoEvento("FAMILIAR"));
         instance.altaEvento("Visita al parque2", "12", "12", "2012", "Parque",
-                "descripcion", TipoEvento.FAMILIAR);
+                "descripcion", new TipoEvento("FAMILIAR"));
         assert (instance.existeEvento(new Evento("Visita al parque")) && 
                 instance.existeEvento(new Evento("Visita al parque2")));
     }
@@ -138,7 +134,7 @@ public class ViajeTest {
     @Test
     public void testAltaEventoOK3Bordes() throws Exception {
         instance.altaEvento("Park", "23", "11", "2014", "Parque",
-                "descripcion", TipoEvento.FAMILIAR);
+                "descripcion", new TipoEvento("FAMILIAR"));
         assert (instance.existeEvento(new Evento("Park")));
     }
 
@@ -149,9 +145,9 @@ public class ViajeTest {
     public void testAltaEventoErrorNombreExistente() throws Exception {
         try {
             instance.altaEvento("Parque Acuatico", "01", "01", "2014", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             instance.altaEvento("Parque Acuatico", "02", "02", "2013", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (EventoExistenteException e) {
             assert (true);
@@ -165,7 +161,7 @@ public class ViajeTest {
     public void testAltaEventoErrorDiaVacio() throws Exception {
         try {
             instance.altaEvento("Parque Acuatico", "", "01", "2014", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (FechaVaciaException e) {
             assert (true);
@@ -179,7 +175,7 @@ public class ViajeTest {
     public void testAltaEventoErrorMesVacio() throws Exception {
         try {
             instance.altaEvento("Parque Acuatico", "02", "", "2013", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (FechaVaciaException e) {
             assert (true);
@@ -193,7 +189,7 @@ public class ViajeTest {
     public void testAltaEventoErrorAñoVacio() throws Exception {
         try {
             instance.altaEvento("Parque Acuatico", "02", "02", "", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (FechaVaciaException e) {
             assert (true);
@@ -207,7 +203,7 @@ public class ViajeTest {
     public void testAltaEventoErrorFormatoFecha1() throws Exception {
         try {
             instance.altaEvento("Parque Acuatico", "02A", "02", "2013", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (FormatoFechaInicioException e) {
             assert (true);
@@ -221,7 +217,7 @@ public class ViajeTest {
     public void testAltaEventoErrorFormatoFecha2() throws Exception {
         try {
             instance.altaEvento("Parque Acuatico", "02d", "13", "2013", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (FormatoFechaInicioException e) {
             assert (true);
@@ -235,7 +231,7 @@ public class ViajeTest {
     public void testAltaEventoErrorFormatoFecha3() throws Exception {
         try {
             instance.altaEvento("Parque Acuatico", "DD", "MM", "AAAA", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (FormatoFechaInicioException e) {
             assert (true);
@@ -249,7 +245,7 @@ public class ViajeTest {
     public void testAltaEventoErrorFueraDeFecha1() throws Exception {
         try {
             instance.altaEvento("Parque Acuatico", "02", "02", "2011", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (FechaEventoFueraViajeException e) {
             assert (true);
@@ -263,7 +259,7 @@ public class ViajeTest {
     public void testAltaEventoErrorFueraDeFecha2() throws Exception {
         try {
             instance.altaEvento("Parque Acuatico", "24", "11", "2014", "Aquopolis",
-                    "Descripcion", TipoEvento.FAMILIAR);
+                    "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (FechaEventoFueraViajeException e) {
             assert (true);
@@ -277,7 +273,7 @@ public class ViajeTest {
     public void testExisteNombreEventoTrue() throws EventoException, FechaException {
         boolean expResult = true;
         instance.altaEvento("Park", "23", "11", "2014", "Parque",
-                "descripcion", TipoEvento.FAMILIAR);
+                "descripcion", new TipoEvento("FAMILIAR"));
         boolean result = instance.existeNombreEvento("Park");
         assertEquals(expResult, result);
     }
@@ -289,7 +285,7 @@ public class ViajeTest {
     public void testExisteNombreEventoFalse() throws EventoException, FechaException {
         boolean expResult = false;
         instance.altaEvento("Park", "23", "11", "2014", "Parque",
-                "descripcion", TipoEvento.FAMILIAR);
+                "descripcion", new TipoEvento("FAMILIAR"));
         boolean result = instance.existeNombreEvento("Park ");
         assertEquals(expResult, result);
     }
@@ -352,7 +348,7 @@ public class ViajeTest {
      */
     @Test
     public void testGetDestino() {
-        Ciudad expResult = Ciudad.MADRID;
+        Ciudad expResult = new Ciudad("MADRID");
         Ciudad result = instance.getDestino();
         assertEquals(expResult, result);
     }
@@ -362,7 +358,7 @@ public class ViajeTest {
      */
     @Test
     public void testSetDestino() {
-        Ciudad destino = Ciudad.MIAMI;
+        Ciudad destino = new Ciudad("MIAMI");
         instance.setDestino(destino);
         assertEquals(destino, instance.getDestino());
     }
@@ -515,7 +511,7 @@ public class ViajeTest {
      */
     @Test
     public void testEqualsOK() throws ViajeException {
-        Object obj = new Viaje("Vacaciones", Ciudad.MADRID, Calendar.getInstance().getTime(),
+        Object obj = new Viaje("Vacaciones", new Ciudad("MADRID"), Calendar.getInstance().getTime(),
                 Calendar.getInstance().getTime(), "Descripcion");
         boolean expResult = true;
         boolean result = instance.equals(obj);
@@ -524,7 +520,7 @@ public class ViajeTest {
 
     @Test
     public void testEqualsError1() throws ViajeException {
-        Object obj = new Viaje("VACACIONES", Ciudad.MADRID, Calendar.getInstance().getTime(),
+        Object obj = new Viaje("VACACIONES", new Ciudad("MADRID"), Calendar.getInstance().getTime(),
                 Calendar.getInstance().getTime(), "Descripcion");
         boolean expResult = false;
         boolean result = instance.equals(obj);
@@ -533,7 +529,7 @@ public class ViajeTest {
 
     @Test
     public void testEqualsError2() throws ViajeException {
-        Object obj = new Viaje("Negocio", Ciudad.BSAS, Calendar.getInstance().getTime(),
+        Object obj = new Viaje("Negocio", new Ciudad("BSAS"), Calendar.getInstance().getTime(),
                 Calendar.getInstance().getTime(), "Descripcion");
         boolean expResult = false;
         boolean result = instance.equals(obj);

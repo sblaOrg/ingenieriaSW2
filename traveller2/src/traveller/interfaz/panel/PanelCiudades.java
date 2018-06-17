@@ -52,12 +52,12 @@ public class PanelCiudades extends javax.swing.JPanel {
         radioModificar = new javax.swing.JRadioButton();
         radioBorrar = new javax.swing.JRadioButton();
         PanelDatosCiudad = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        comboUsuarios = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblNuevaCiudad = new javax.swing.JLabel();
         txtNuevaCiudad = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        comboUsuarios = new javax.swing.JComboBox();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -117,75 +117,35 @@ public class PanelCiudades extends javax.swing.JPanel {
         PanelBotones.setLayout(PanelBotonesLayout);
         PanelBotonesLayout.setHorizontalGroup(
             PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBotonesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
             .addGroup(PanelBotonesLayout.createSequentialGroup()
-                .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelBotonesLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(radioAgregar)
-                        .addGap(18, 18, 18)
-                        .addComponent(radioModificar)
-                        .addGap(18, 18, 18)
-                        .addComponent(radioBorrar))
-                    .addGroup(PanelBotonesLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(btnAplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(radioAgregar)
+                .addGap(18, 18, 18)
+                .addComponent(radioModificar)
+                .addGap(18, 18, 18)
+                .addComponent(radioBorrar)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         PanelBotonesLayout.setVerticalGroup(
             PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBotonesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radioAgregar)
                     .addComponent(radioModificar)
                     .addComponent(radioBorrar))
                 .addGap(18, 18, 18)
                 .addComponent(btnAplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
 
         PanelCiudades.add(PanelBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 300, 180));
 
         PanelDatosCiudad.setLayout(new java.awt.BorderLayout());
-
-        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
-
-        comboUsuarios.setBackground(new java.awt.Color(230, 138, 0));
-        comboUsuarios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboUsuariosActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setBackground(new java.awt.Color(255, 204, 255));
-        jLabel2.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("Administración de ciudades");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(0, 24, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-
-        PanelDatosCiudad.add(jPanel3, java.awt.BorderLayout.PAGE_START);
-
         PanelCiudades.add(PanelDatosCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 12, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
@@ -213,10 +173,45 @@ public class PanelCiudades extends javax.swing.JPanel {
                 .addComponent(lblNuevaCiudad)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        PanelCiudades.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        PanelCiudades.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 310, 80));
+
+        jLabel2.setBackground(new java.awt.Color(255, 204, 255));
+        jLabel2.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel2.setText("Administración de ciudades");
+        PanelCiudades.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
+
+        comboUsuarios.setBackground(new java.awt.Color(230, 138, 0));
+        comboUsuarios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboUsuariosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(comboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        PanelCiudades.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 230, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

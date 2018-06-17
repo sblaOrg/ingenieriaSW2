@@ -6,7 +6,11 @@ import java.util.ArrayList;
 public class TipoEvento implements Serializable{
 
     private String nombre;
-
+    
+public TipoEvento(String nuevoTipo){
+        nombre = nuevoTipo;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -17,10 +21,6 @@ public class TipoEvento implements Serializable{
     
     public TipoEvento() {
         nombre = "Sin datos";
-    }
-    
-    public TipoEvento(String nuevoTipo){
-        nombre = nuevoTipo;
     }
     
     @Override
