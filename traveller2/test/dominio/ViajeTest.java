@@ -52,7 +52,7 @@ public class ViajeTest {
         Date fechaFin = null;
         try {
             fechaFin = formatter.parse(Integer.parseInt("23") + "/"
-                    + Integer.parseInt("11") + "/" + Integer.parseInt("2014"));
+                    + Integer.parseInt("11") + "/" + Integer.parseInt("2018"));
         } catch (ParseException ex) {
         }
         instance = new Viaje("Vacaciones", new Ciudad("MADRID"),
@@ -109,8 +109,9 @@ public class ViajeTest {
      * Test of altaEvento method, of class Viaje.
      */
     @Test
-    public void testAltaEventoOK1() throws Exception {
-        instance.altaEvento("Visita al parque", "12", "12", "2012", "Parque",
+    //@Test(expected=EventoExistenteException.class)
+    public void testAltaEvento() throws Exception {
+        instance.altaEvento("Visita al parque", "10", "10", "2018", "Parque",
                 "descripcion", new TipoEvento("FAMILIAR"));
         assert (instance.existeEvento(new Evento("Visita al parque")));
     }
@@ -118,24 +119,25 @@ public class ViajeTest {
     /**
      * Test of altaEvento method, of class Viaje.
      */
-    @Test
-    public void testAltaEventoOK2() throws Exception {
-        instance.altaEvento("Visita al parque", "12", "12", "2012", "Parque",
+    @Test(expected=EventoExistenteException.class)
+    public void testAltaEventoExistente() throws Exception {
+        
+                
+                
+        instance.altaEvento("Visita al parque", "01", "10", "2018", "Parque",
                 "descripcion", new TipoEvento("FAMILIAR"));
-        instance.altaEvento("Visita al parque2", "12", "12", "2012", "Parque",
+        instance.altaEvento("Visita al parque", "01", "10", "2018", "Parque",
                 "descripcion", new TipoEvento("FAMILIAR"));
-        assert (instance.existeEvento(new Evento("Visita al parque")) && 
-                instance.existeEvento(new Evento("Visita al parque2")));
     }
 
     /**
      * Test of altaEvento method, of class Viaje.
      */
     @Test
-    public void testAltaEventoOK3Bordes() throws Exception {
-        instance.altaEvento("Park", "23", "11", "2014", "Parque",
+    public void testAltaEventoCasoBorde() throws Exception {
+        instance.altaEvento("Park", "23", "11", "2018", "Parque",
                 "descripcion", new TipoEvento("FAMILIAR"));
-        assert (instance.existeEvento(new Evento("Park")));
+        assertTrue (instance.existeEvento(new Evento("Park")));
     }
 
     /**
@@ -144,9 +146,9 @@ public class ViajeTest {
     @Test
     public void testAltaEventoErrorNombreExistente() throws Exception {
         try {
-            instance.altaEvento("Parque Acuatico", "01", "01", "2014", "Aquopolis",
+            instance.altaEvento("Parque Acuatico", "01", "08", "2018", "Aquopolis",
                     "Descripcion", new TipoEvento("FAMILIAR"));
-            instance.altaEvento("Parque Acuatico", "02", "02", "2013", "Aquopolis",
+            instance.altaEvento("Parque Acuatico", "07", "08", "2018", "Aquopolis",
                     "Descripcion", new TipoEvento("FAMILIAR"));
             assert (false);
         } catch (EventoExistenteException e) {
@@ -272,10 +274,10 @@ public class ViajeTest {
     @Test
     public void testExisteNombreEventoTrue() throws EventoException, FechaException {
         boolean expResult = true;
-        instance.altaEvento("Park", "23", "11", "2014", "Parque",
+        instance.altaEvento("Park", "23", "09", "2018", "Parque",
                 "descripcion", new TipoEvento("FAMILIAR"));
         boolean result = instance.existeNombreEvento("Park");
-        assertEquals(expResult, result);
+        assertTrue(instance.existeNombreEvento("Park"));
     }
 
     /**
@@ -283,11 +285,11 @@ public class ViajeTest {
      */
     @Test
     public void testExisteNombreEventoFalse() throws EventoException, FechaException {
-        boolean expResult = false;
-        instance.altaEvento("Park", "23", "11", "2014", "Parque",
+        //boolean expResult = false;
+        instance.altaEvento("Park", "23", "11", "2018", "Parque",
                 "descripcion", new TipoEvento("FAMILIAR"));
-        boolean result = instance.existeNombreEvento("Park ");
-        assertEquals(expResult, result);
+        //boolean result = instance.existeNombreEvento("Park ");
+        assertFalse(instance.existeNombreEvento("Park "));
     }
 
     /**
@@ -372,7 +374,7 @@ public class ViajeTest {
         Date expResult = null;
         try {
             expResult = formatter.parse(Integer.parseInt("23") + "/" + Integer.parseInt("11")
-                    + "/" + Integer.parseInt("2014"));
+                    + "/" + Integer.parseInt("2018"));
         } catch (ParseException ex) {
         }
 

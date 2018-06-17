@@ -69,8 +69,8 @@ public final class Viaje implements Serializable {
     public void altaEvento(String nombreEvento, String dia, String mes, String año, String lugar,
             String descripcion, TipoEvento tipoEvento) throws EventoException, FechaException {
 
-<span class="pc bpc" id="L72" title="1 of 2 branches missed.">        if (this.existeNombreEvento(nombreEvento)) {</span>
-<span class="nc" id="L73">            throw new EventoExistenteException();</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if (this.existeNombreEvento(nombreEvento)) {</span>
+<span class="fc" id="L73">            throw new EventoExistenteException();</span>
         }
        /* Validaciones fecha */
 <span class="fc bfc" id="L76" title="All 6 branches covered.">        if (dia.isEmpty() || mes.isEmpty() || año.isEmpty()) {</span>
@@ -90,9 +90,9 @@ public final class Viaje implements Serializable {
 <span class="fc" id="L90">            throw new FechaEventoFueraViajeException();</span>
         } 
 
-<span class="nc" id="L93">        Evento nuevoEvento = new Evento(nombreEvento, tipoEvento, fecha, lugar, descripcion);</span>
-<span class="nc" id="L94">        this.agregarEventos(nuevoEvento);</span>
-<span class="nc" id="L95">    }</span>
+<span class="fc" id="L93">        Evento nuevoEvento = new Evento(nombreEvento, tipoEvento, fecha, lugar, descripcion);</span>
+<span class="fc" id="L94">        this.agregarEventos(nuevoEvento);</span>
+<span class="fc" id="L95">    }</span>
 
     public boolean existeNombreEvento(String nombreEvento) {
 <span class="fc" id="L98">        return this.getListaEventos().contains(new Evento(nombreEvento));</span>

@@ -66,8 +66,8 @@ public class UsuarioTest {
     @Test
     public void testExisteNombreViajeTrue() throws ViajeException, FechaException {
         boolean expResult = true;
-        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
-                "23", "12", "2014", "descripcion");
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "20", "10", "2018",
+                "23", "10", "2018", "descripcion");
         boolean result = instance.existeNombreViaje("Vacaciones");
         assertEquals(expResult, result);
     }
@@ -78,8 +78,8 @@ public class UsuarioTest {
     @Test
     public void testExisteNombreViajeFalse() throws ViajeException, FechaException {
         boolean expResult = false;
-        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
-                "23", "12", "2014", "descripcion");
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "10", "2018",
+                "23", "10", "2018", "descripcion");
         boolean result = instance.existeNombreViaje("Vacaciones ");
         assertEquals(expResult, result);
     }
@@ -89,8 +89,8 @@ public class UsuarioTest {
      */
     @Test
     public void testBajaViaje() throws ViajeException, FechaException {
-        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
-                "23", "12", "2014", "descripcion");
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "05", "10", "2018",
+                "09", "10", "2018", "descripcion");
         instance.bajaViaje(new Viaje("Vacaciones"));
         assert (!instance.getListaViajes().contains(new Viaje("Vacaciones")));
     }
@@ -100,8 +100,8 @@ public class UsuarioTest {
      */
     @Test
     public void testAltaViajeOK1() throws Exception {
-        instance.altaViaje("Vaca", new Ciudad("MADRID"), "01", "11", "2013",
-                "23", "12", "2014", "");
+        instance.altaViaje("Vaca", new Ciudad("MADRID"), "01", "11", "2018",
+                "05", "11", "2018", "");
         assert (instance.existeNombreViaje("Vaca"));
     }
 
@@ -110,8 +110,8 @@ public class UsuarioTest {
      */
     @Test
     public void testAltaViajeOK2() throws Exception {
-        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
-                "01", "11", "2013", "");
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "10", "2018",
+                "01", "11", "2018", "");
         assert (instance.existeNombreViaje("Vacaciones"));
     }
 
@@ -120,10 +120,10 @@ public class UsuarioTest {
      */
     @Test
     public void testAltaViajeOK3() throws Exception {
-        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
-                "23", "12", "2016", ".    ");
-        instance.altaViaje("Vacacion", new Ciudad("MADRID"), "01", "11", "2013",
-                "23", "12", "2016", ".    ");
+        instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "08", "2018",
+                "07", "08", "2018", ".    ");
+        instance.altaViaje("Vacacion", new Ciudad("MADRID"), "08", "08", "2018",
+                "15", "08", "2018", ".    ");
         assert (instance.existeNombreViaje("Vacaciones")
                 && instance.existeNombreViaje("Vacacion"));
     }
@@ -134,10 +134,10 @@ public class UsuarioTest {
     @Test
     public void testAltaViajeErrorNombreExistente() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
-                    "23", "12", "2014", "descripcion");
-            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "11", "2013",
-                    "23", "12", "2014", "descripcion");
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "09", "2018",
+                    "04", "09", "2018", "descripcion");
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "02", "10", "2018",
+                    "04", "10", "2018", "descripcion");
             assert (false);
         } catch (ViajeExistenteException e) {
             assert (true);
@@ -329,11 +329,11 @@ public class UsuarioTest {
     /**
      * Test of altaViaje method, of class Usuario.
      */
-    @Test
+    @Test(expected=FechaFinAnteriorInicioException.class)
     public void testAltaViajeErrorFechaFin() throws Exception {
         try {
-            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "24", "12", "2014",
-                    "23", "12", "2014", "descripcion");
+            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "09", "2018",
+                    "31", "08", "2018", "descripcion");
             assert (false);
         } catch (FechaFinAnteriorInicioException e) {
             assert (true);
@@ -684,4 +684,44 @@ public class UsuarioTest {
         String result = instance.toString();
         assertEquals(expResult, result);
     }
+    
+    @Test
+    public void testListadoBuscarAmigos() throws UsuarioException {
+        Usuario amigoA = new Usuario("jupa", "ab123456", "Anial", "Porte", new Email("tony@gmail.com"));
+        Usuario amigoB = new Usuario("tulo", "ab123456", "Tony", "Roman", new Email("juanjuan@gmail.com"));
+        amigoA.agregarAmigo(amigoB);
+        ArrayList<Usuario> amigos;// = new ArrayList<Usuario>();
+        ArrayList<Usuario> resultadoEsperado = new ArrayList<Usuario>();
+        resultadoEsperado.add(amigoB);
+        amigos = amigoA.listadoBuscarAmigos("Tony Roman");
+        assertEquals(amigos, resultadoEsperado);
+    }
+    
+    @Test
+    public void testListadoBuscarAmigosEnComun() throws UsuarioException {
+        Usuario amigoA = new Usuario("jupa", "ab123456", "Anial", "Porte", new Email("tony@gmail.com"));
+        Usuario amigoB = new Usuario("tulo", "ab123456", "Tony", "Roman", new Email("juanjuan@gmail.com"));
+        Usuario amigoC = new Usuario("tulo", "ab123456", "Roberto", "Roman", new Email("rob@gmail.com"));
+        amigoA.agregarAmigo(amigoC);
+        amigoB.agregarAmigo(amigoC);
+        ArrayList<Usuario> amigosEnComun;// = new ArrayList<Usuario>();
+        ArrayList<Usuario> resultadoEsperado = new ArrayList<Usuario>();
+        resultadoEsperado.add(amigoC);
+        amigosEnComun = amigoA.listadoAmigosEnComun(amigoB);
+        assertEquals(amigosEnComun, resultadoEsperado);
+    }
+    
+    /*@Test
+    public void testBajaViaje() throws UsuarioException {
+        Usuario amigoA = new Usuario("jupa", "ab123456", "Anial", "Porte", new Email("tony@gmail.com"));
+        Usuario amigoB = new Usuario("tulo", "ab123456", "Tony", "Roman", new Email("juan@juan@gmail.com"));
+        Usuario amigoC = new Usuario("tulo", "ab123456", "Roberto", "Roman", new Email("rob@gmail.com"));
+        amigoA.agregarAmigo(amigoC);
+        amigoB.agregarAmigo(amigoC);
+        ArrayList<Usuario> amigosEnComun;// = new ArrayList<Usuario>();
+        ArrayList<Usuario> resultadoEsperado = new ArrayList<Usuario>();
+        resultadoEsperado.add(amigoC);
+        amigosEnComun = amigoA.listadoAmigosEnComun(amigoB);
+        assertEquals(amigosEnComun, resultadoEsperado);
+    }*/
 }

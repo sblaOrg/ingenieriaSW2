@@ -59,31 +59,31 @@ public final class Usuario implements Serializable {
 <span class="fc" id="L59">    }</span>
 
     public ArrayList&lt;Usuario&gt; listadoAmigosEnComun(Usuario amigo) {
-<span class="nc" id="L62">        ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
+<span class="fc" id="L62">        ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
 
-<span class="nc" id="L64">        Iterator&lt;Usuario&gt; it = this.getListaAmigos().iterator();</span>
-<span class="nc bnc" id="L65" title="All 2 branches missed.">        while (it.hasNext()) {</span>
-<span class="nc" id="L66">            Usuario aux = it.next();</span>
-<span class="nc bnc" id="L67" title="All 2 branches missed.">            if (amigo.getListaAmigos().contains(aux)) {</span>
-<span class="nc" id="L68">                retorno.add(aux);</span>
+<span class="fc" id="L64">        Iterator&lt;Usuario&gt; it = this.getListaAmigos().iterator();</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        while (it.hasNext()) {</span>
+<span class="fc" id="L66">            Usuario aux = it.next();</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">            if (amigo.getListaAmigos().contains(aux)) {</span>
+<span class="fc" id="L68">                retorno.add(aux);</span>
             }
-<span class="nc" id="L70">        }</span>
+<span class="fc" id="L70">        }</span>
 
-<span class="nc" id="L72">        return retorno;</span>
+<span class="fc" id="L72">        return retorno;</span>
     }
 
     public ArrayList&lt;Usuario&gt; listadoBuscarAmigos(String cadena) {
-<span class="nc" id="L76">        ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
+<span class="fc" id="L76">        ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
 
-<span class="nc" id="L78">        Iterator&lt;Usuario&gt; it = this.getListaAmigos().iterator();</span>
-<span class="nc bnc" id="L79" title="All 2 branches missed.">        while (it.hasNext()) {</span>
-<span class="nc" id="L80">            Usuario usuario = it.next();</span>
-<span class="nc bnc" id="L81" title="All 2 branches missed.">            if ((usuario.getNombre() + &quot; &quot; + usuario.getApellido()).toLowerCase().startsWith(cadena.toLowerCase())) {</span>
-<span class="nc" id="L82">                retorno.add(usuario);</span>
+<span class="fc" id="L78">        Iterator&lt;Usuario&gt; it = this.getListaAmigos().iterator();</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        while (it.hasNext()) {</span>
+<span class="fc" id="L80">            Usuario usuario = it.next();</span>
+<span class="pc bpc" id="L81" title="1 of 2 branches missed.">            if ((usuario.getNombre() + &quot; &quot; + usuario.getApellido()).toLowerCase().startsWith(cadena.toLowerCase())) {</span>
+<span class="fc" id="L82">                retorno.add(usuario);</span>
             }
-<span class="nc" id="L84">        }</span>
+<span class="fc" id="L84">        }</span>
 
-<span class="nc" id="L86">        return retorno;</span>
+<span class="fc" id="L86">        return retorno;</span>
     }
 
     public String getCelular() {
@@ -123,15 +123,15 @@ public final class Usuario implements Serializable {
     }
 
     public void bajaViaje(Viaje viaje) {
-<span class="nc" id="L126">        this.listaViajes.remove(viaje);</span>
-<span class="nc" id="L127">    }</span>
+<span class="fc" id="L126">        this.listaViajes.remove(viaje);</span>
+<span class="fc" id="L127">    }</span>
 
     public void altaViaje(String nombreViaje, Ciudad ciudad, String diaIni, String mesIni, String añoIni,
             String diaFin, String mesFin, String añoFin, String descripcion)
             throws ViajeException, FechaException {
 
-<span class="pc bpc" id="L133" title="1 of 2 branches missed.">        if (existeNombreViaje(nombreViaje)) {</span>
-<span class="nc" id="L134">            throw new ViajeExistenteException();</span>
+<span class="fc bfc" id="L133" title="All 2 branches covered.">        if (existeNombreViaje(nombreViaje)) {</span>
+<span class="fc" id="L134">            throw new ViajeExistenteException();</span>
         }
         /* Validaciones fechas */
 <span class="fc bfc" id="L137" title="All 6 branches covered.">        if (diaIni.isEmpty() || diaFin.isEmpty() || mesIni.isEmpty()</span>
@@ -156,16 +156,16 @@ public final class Usuario implements Serializable {
 
 <span class="fc" id="L157">        Date today = Calendar.getInstance().getTime();</span>
 
-<span class="pc bpc" id="L159" title="1 of 2 branches missed.">        if (fechaInicio.before(today)) {</span>
+<span class="fc bfc" id="L159" title="All 2 branches covered.">        if (fechaInicio.before(today)) {</span>
 <span class="fc" id="L160">            throw new FechaInicioAnteriorException();</span>
         }
-<span class="nc bnc" id="L162" title="All 2 branches missed.">        if (fechaFin.before(fechaInicio)) {</span>
-<span class="nc" id="L163">            throw new FechaFinAnteriorInicioException();</span>
+<span class="fc bfc" id="L162" title="All 2 branches covered.">        if (fechaFin.before(fechaInicio)) {</span>
+<span class="fc" id="L163">            throw new FechaFinAnteriorInicioException();</span>
         }
 
-<span class="nc" id="L166">        Viaje nuevoViaje = new Viaje(nombreViaje, ciudad, fechaInicio, fechaFin, descripcion);</span>
-<span class="nc" id="L167">        this.agregarViajes(nuevoViaje);</span>
-<span class="nc" id="L168">    }</span>
+<span class="fc" id="L166">        Viaje nuevoViaje = new Viaje(nombreViaje, ciudad, fechaInicio, fechaFin, descripcion);</span>
+<span class="fc" id="L167">        this.agregarViajes(nuevoViaje);</span>
+<span class="fc" id="L168">    }</span>
 
     public boolean igualContraseña(String contraseña) {
 <span class="fc" id="L171">        return Utilidades.md5(contraseña).equals(this.contraseña);</span>

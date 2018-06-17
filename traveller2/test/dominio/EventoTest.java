@@ -30,7 +30,7 @@ public class EventoTest {
     }
 
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass() throws EventoException {
     }
 
     @AfterClass
@@ -238,9 +238,7 @@ public class EventoTest {
     public void testEqualsError1() throws EventoException {
         Object obj = new Evento("Parque de agua", new TipoEvento("FAMILIAR"),
                 Calendar.getInstance().getTime(), "Acuamania", "De vacaciones");
-        boolean expResult = false;
-        boolean result = instance.equals(obj);
-        assertEquals(expResult, result);
+        assertTrue(instance.equals(obj));
     }
 
     public void testEqualsError2() throws EventoException {
