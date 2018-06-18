@@ -164,8 +164,8 @@ public final class Usuario implements Serializable {
 <span class="fc bfc" id="L164" title="All 2 branches covered.">        if (fechaInicio.before(today)) {</span>
 <span class="fc" id="L165">            throw new FechaInicioAnteriorException();</span>
         }
-<span class="fc bfc" id="L167" title="All 2 branches covered.">        if (fechaFin.before(fechaInicio)) {</span>
-<span class="fc" id="L168">            throw new FechaFinAnteriorInicioException();</span>
+<span class="pc bpc" id="L167" title="1 of 2 branches missed.">        if (fechaFin.before(fechaInicio)) {</span>
+<span class="nc" id="L168">            throw new FechaFinAnteriorInicioException();</span>
         }
 
 <span class="fc" id="L171">        Viaje nuevoViaje = new Viaje(nombreViaje, ciudad, fechaInicio, fechaFin, descripcion);</span>

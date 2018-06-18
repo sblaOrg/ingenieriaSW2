@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package dominio;
 
 import traveller.dominio.Usuario;
@@ -32,10 +28,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Pablo
- */
 public class UsuarioTest {
 
     private Usuario instance;
@@ -323,18 +315,6 @@ public class UsuarioTest {
             assert (false);
         } catch (FechaInicioAnteriorException e) {
             assert (true);
-        }
-    }
-
-    /**
-     * Test of altaViaje method, of class Usuario.
-     */
-    @Test(expected=FechaFinAnteriorInicioException.class)
-    public void testAltaViajeErrorFechaFin() throws Exception {
-        try {
-            instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "09", "2018",
-                    "31", "08", "2018", "descripcion");
-        } catch (FechaFinAnteriorInicioException e) {
         }
     }
 
@@ -721,17 +701,4 @@ public class UsuarioTest {
         instance.setCelular(celular);
         assertEquals(instance.getCelular(), celular);
     }
-    /*@Test
-    public void testBajaViaje() throws UsuarioException {
-        Usuario amigoA = new Usuario("jupa", "ab123456", "Anial", "Porte", new Email("tony@gmail.com"));
-        Usuario amigoB = new Usuario("tulo", "ab123456", "Tony", "Roman", new Email("juan@juan@gmail.com"));
-        Usuario amigoC = new Usuario("tulo", "ab123456", "Roberto", "Roman", new Email("rob@gmail.com"));
-        amigoA.agregarAmigo(amigoC);
-        amigoB.agregarAmigo(amigoC);
-        ArrayList<Usuario> amigosEnComun;// = new ArrayList<Usuario>();
-        ArrayList<Usuario> resultadoEsperado = new ArrayList<Usuario>();
-        resultadoEsperado.add(amigoC);
-        amigosEnComun = amigoA.listadoAmigosEnComun(amigoB);
-        assertEquals(amigosEnComun, resultadoEsperado);
-    }*/
 }

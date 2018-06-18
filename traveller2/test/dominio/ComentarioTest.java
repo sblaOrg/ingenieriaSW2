@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package dominio;
 
 import traveller.dominio.Comentario;
@@ -14,10 +10,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Pablo
- */
 public class ComentarioTest {
 
     private Comentario instance;
