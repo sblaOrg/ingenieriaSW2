@@ -19,12 +19,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/PanelMisViajes.java</file>
+            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/test/dominio/SistemaImpTest.java</file>
+            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/PanelVerViaje.java</file>
             <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/dominio/SistemaImp.java</file>
-            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelCiudades.java</file>
-            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/dominio/ISistema.java</file>
-            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/PanelCiudades.java</file>
-            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/interfaz/ventana/VentanaMenu.java</file>
-            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/PanelTipoEvento.java</file>
+            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelNuevaCiudad.java</file>
+            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelInformacion.java</file>
+            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/interfaz/panel/SubPanelMuro.java</file>
+            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/dominio/Comentario.java</file>
+            <file>file:/C:/Users/steffano/Documents/Facultad/ORT/IngSw2-obl2/ingenieriaSW2/traveller2/src/traveller/dominio/Usuario.java</file>
         </group>
     </open-files>
 </project-private>

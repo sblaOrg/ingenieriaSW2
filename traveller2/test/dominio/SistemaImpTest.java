@@ -24,10 +24,6 @@ import traveller.dominio.Viaje;
 import traveller.excepciones.fecha.FechaException;
 import traveller.excepciones.viaje.ViajeException;
 
-/**
- *
- * @author Pablo
- */
 public class SistemaImpTest {
 
     private ISistema instance;
@@ -46,23 +42,6 @@ public class SistemaImpTest {
 
     @Before
     public void setUp() throws ViajeException, FechaException {
-        /*DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date fechaFin = null;
-        try {
-            fechaFin = formatter.parse(Integer.parseInt("23") + "/"
-                    + Integer.parseInt("11") + "/" + Integer.parseInt("2018"));
-        } catch (ParseException ex) {
-        }
-        instance = new Viaje("Vacaciones", new Ciudad("MADRID"),
-                Calendar.getInstance().getTime(), fechaFin, "Descripcion");
-        instance = new SistemaImp();
-        Usuario usuarioA = new Usuario("Mario");
-        Usuario usuarioB = new Usuario("Juan");
-        usuarioA.altaViaje("Viaje a Madrid", new Ciudad("Madrid"), "13", "08", 
-                "2018", "18", "08", "2018", "Viaje de vacaciones");
-        usuarioB.altaViaje("Viaje a Madrid", new Ciudad("Madrid"), "13", "08", 
-                "2018", "18", "08", "2018", "Viaje de vacaciones");
-        */
     }
 
     @After
@@ -316,25 +295,6 @@ public class SistemaImpTest {
     public void testSetModoDesarrolladorFalse() {
         instance.setModoDesarrollador(false);
         assertFalse(instance.esModoDesarrollador());
-    }
-    
-    @Test
-    public void testObtenerGrupoDeViaje() {
-        //dado un viaje voy recorriendo la lista de viajes de usuarios y veo si lo tienen entre sus viajes
-        /*ArrayList<Usuario> usuariosARetornar;
-        Usuario usuarioA = new Usuario("Mario");
-        Usuario usuarioB = new Usuario("Hector");
-        Viaje viajeMadrid = new Viaje("Madrid");
-        usuarioA.agregarViajes(viajeMadrid);
-        usuarioB.agregarViajes(viajeMadrid);
-        instance.getListaUsuarios().add(usuarioA);
-        instance.getListaUsuarios().add(usuarioB);
-        usuariosARetornar = instance.obtenerGrupoDeViaje(viajeMadrid);
-        ArrayList<Usuario> retornoEsperado = new ArrayList<Usuario>();
-        retornoEsperado.add(usuarioA);
-        retornoEsperado.add(usuarioB);
-        assertEquals(retornoEsperado, usuariosARetornar);*/
-        
     }
     
     @Test

@@ -227,10 +227,6 @@ public class SistemaImp implements ISistema, Serializable {
         }
     }
     
-    /*public void borrarCiudad(Ciudad unaCiudad){
-        
-    }*/
-
     /* MÉTODOS PRIVADOS */
     private boolean existeNombreUsuario(String nombreUsuario) {
 	return this.listaUsuarios.contains(new Usuario(nombreUsuario));

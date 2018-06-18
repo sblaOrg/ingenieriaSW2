@@ -273,7 +273,7 @@ public class ViajeTest {
         boolean expResult = true;
         instance.altaEvento("Park", "23", "09", "2018", "Parque",
                 "descripcion", new TipoEvento("FAMILIAR"));
-        boolean result = instance.existeNombreEvento("Park");
+        //boolean result = instance.existeNombreEvento("Park");
         assertTrue(instance.existeNombreEvento("Park"));
     }
 
