@@ -8,6 +8,9 @@ import java.util.Date;
 import traveller.utill.Utilidades;
 
 public final class Evento implements Serializable{
+    
+    private static final long serialVersionUID = 114L;
+    
     private String nombre;
     private TipoEvento tipoEvento;
     private Date fecha;

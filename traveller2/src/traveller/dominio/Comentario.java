@@ -4,7 +4,9 @@ import traveller.excepciones.comentario.ContenidoVacioException;
 import traveller.excepciones.comentario.ComentarioException;
 import java.io.Serializable;
 
-public final class Comentario implements Serializable{
+public final class Comentario implements Serializable {
+
+    private static final long serialVersionUID = 112L;
 
     private String fecha;
     private String contenido;
@@ -49,11 +51,17 @@ public final class Comentario implements Serializable{
     public void setAutor(String autor) {
         this.autor = autor;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
-            return this.getAutor().equals(((Comentario) obj).getAutor())
-                    && this.getFecha().equals(((Comentario) obj).getFecha())
-                    && this.getContenido().equals(((Comentario) obj).getContenido());
+        try{
+        return this.getAutor().equals(((Comentario) obj).getAutor())
+                && this.getFecha().equals(((Comentario) obj).getFecha())
+                && this.getContenido().equals(((Comentario) obj).getContenido());
     }
+    catch(NullPointerException e){
+            return false;
+        }
+    }
+    
 }

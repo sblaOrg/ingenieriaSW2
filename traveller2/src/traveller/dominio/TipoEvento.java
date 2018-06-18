@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class TipoEvento implements Serializable{
 
+    private static final long serialVersionUID = 117L;
+    
     private String nombre;
     
 public TipoEvento(String nuevoTipo){
@@ -25,7 +27,12 @@ public TipoEvento(String nuevoTipo){
     
     @Override
     public boolean equals(Object obj){
+        try{
         return this.getNombre().equals(((TipoEvento) obj).getNombre());
+        }
+        catch(NullPointerException e){
+            return false;
+        }
     }
     
     @Override

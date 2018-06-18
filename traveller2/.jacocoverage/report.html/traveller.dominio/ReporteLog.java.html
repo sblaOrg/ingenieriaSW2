@@ -3,38 +3,41 @@
 import java.io.Serializable;
 
 public class ReporteLog implements Serializable{
+    
+    private static final long serialVersionUID = 115L;
+    
     private String accion;
     private String fecha;
 
-<span class="fc" id="L9">    public ReporteLog(String accion, String fecha) {</span>
-<span class="fc" id="L10">        this.accion = accion;</span>
-<span class="fc" id="L11">        this.fecha = fecha;</span>
-<span class="fc" id="L12">    }</span>
+<span class="fc" id="L12">    public ReporteLog(String accion, String fecha) {</span>
+<span class="fc" id="L13">        this.accion = accion;</span>
+<span class="fc" id="L14">        this.fecha = fecha;</span>
+<span class="fc" id="L15">    }</span>
 
-<span class="fc" id="L14">    public ReporteLog(){</span>
-<span class="fc" id="L15">        this.accion = &quot;Sin datos&quot;;</span>
-<span class="fc" id="L16">        this.fecha = &quot;01/01/2018&quot;;</span>
-<span class="fc" id="L17">    }</span>
+<span class="fc" id="L17">    public ReporteLog(){</span>
+<span class="fc" id="L18">        this.accion = &quot;Sin datos&quot;;</span>
+<span class="fc" id="L19">        this.fecha = &quot;01/01/2018&quot;;</span>
+<span class="fc" id="L20">    }</span>
     
     public String getAccion() {
-<span class="fc" id="L20">        return accion;</span>
+<span class="fc" id="L23">        return accion;</span>
     }
 
     public void setAccion(String accion) {
-<span class="fc" id="L24">        this.accion = accion;</span>
-<span class="fc" id="L25">    }</span>
+<span class="fc" id="L27">        this.accion = accion;</span>
+<span class="fc" id="L28">    }</span>
 
     public String getFecha() {
-<span class="fc" id="L28">        return fecha;</span>
+<span class="fc" id="L31">        return fecha;</span>
     }
 
     public void setFecha(String fecha) {
-<span class="fc" id="L32">        this.fecha = fecha;</span>
-<span class="fc" id="L33">    }</span>
+<span class="fc" id="L35">        this.fecha = fecha;</span>
+<span class="fc" id="L36">    }</span>
     
     @Override
     public String toString(){
-<span class="fc" id="L37">        return this.fecha + &quot; - &quot; + this.accion;</span>
+<span class="fc" id="L40">        return this.fecha + &quot; - &quot; + this.accion;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

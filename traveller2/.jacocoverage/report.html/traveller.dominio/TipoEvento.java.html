@@ -5,32 +5,39 @@ import java.util.ArrayList;
 
 public class TipoEvento implements Serializable{
 
+    private static final long serialVersionUID = 117L;
+    
     private String nombre;
     
-<span class="fc" id="L10">public TipoEvento(String nuevoTipo){</span>
-<span class="fc" id="L11">        nombre = nuevoTipo;</span>
-<span class="fc" id="L12">    }</span>
+<span class="fc" id="L12">public TipoEvento(String nuevoTipo){</span>
+<span class="fc" id="L13">        nombre = nuevoTipo;</span>
+<span class="fc" id="L14">    }</span>
     
     public String getNombre() {
-<span class="fc" id="L15">        return nombre;</span>
+<span class="fc" id="L17">        return nombre;</span>
     }
 
     public void setNombre(String nombre) {
-<span class="fc" id="L19">        this.nombre = nombre;</span>
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L21">        this.nombre = nombre;</span>
+<span class="fc" id="L22">    }</span>
     
-<span class="fc" id="L22">    public TipoEvento() {</span>
-<span class="fc" id="L23">        nombre = &quot;Sin datos&quot;;</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L24">    public TipoEvento() {</span>
+<span class="fc" id="L25">        nombre = &quot;Sin datos&quot;;</span>
+<span class="fc" id="L26">    }</span>
     
     @Override
     public boolean equals(Object obj){
-<span class="fc" id="L28">        return this.getNombre().equals(((TipoEvento) obj).getNombre());</span>
+        try{
+<span class="fc" id="L31">        return this.getNombre().equals(((TipoEvento) obj).getNombre());</span>
+        }
+<span class="nc" id="L33">        catch(NullPointerException e){</span>
+<span class="nc" id="L34">            return false;</span>
+        }
     }
     
     @Override
     public String toString(){
-<span class="fc" id="L33">        return nombre;</span>
+<span class="fc" id="L40">        return nombre;</span>
     }
     
 }

@@ -10,7 +10,9 @@ import traveller.noticiaciones.email.EnvioMail;
 import traveller.notificaciones.movil.EnvioMensajeTexto;
 
 public class SistemaImp implements ISistema, Serializable {
-
+    
+    private static final long serialVersionUID = 116L;
+    
     private ArrayList<Usuario> listaUsuarios;
     private ArrayList<Ciudad> listaCiudades;
     private ArrayList<TipoEvento> listaTipoEventos;

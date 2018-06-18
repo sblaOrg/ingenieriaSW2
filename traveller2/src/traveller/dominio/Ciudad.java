@@ -3,6 +3,8 @@ package traveller.dominio;
 import java.io.Serializable;
 
 public class Ciudad implements Serializable {
+    
+    private static final long serialVersionUID = 111L;
 
     private String nombre;
 
@@ -24,7 +26,12 @@ public class Ciudad implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-            return this.getNombre().equals(((Ciudad) obj).getNombre());
+        try{    
+        return this.getNombre().equals(((Ciudad) obj).getNombre());
+        }
+        catch(NullPointerException e){
+            return false;
+        }
     }
 
     @Override

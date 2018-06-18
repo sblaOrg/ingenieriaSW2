@@ -30,6 +30,8 @@ import traveller.utill.Utilidades;
 
 public final class Usuario implements Serializable {
 
+    private static final long serialVersionUID = 118L;
+    
     private String nombreUsuario;
     private String nombre;
     private String contraseña;
@@ -41,220 +43,225 @@ public final class Usuario implements Serializable {
     private boolean notificarCelular;
     private String celular;
 
-<span class="fc" id="L44">    public Usuario(String nombreUsuario) {</span>
-<span class="fc" id="L45">        this.nombreUsuario = nombreUsuario;</span>
-<span class="fc" id="L46">        this.contraseña = this.nombreUsuario;</span>
-<span class="fc" id="L47">        this.listaViajes = new ArrayList&lt;Viaje&gt;();</span>
-<span class="fc" id="L48">        this.listaAmigos = new ArrayList&lt;Usuario&gt;();</span>
-<span class="fc" id="L49">    }</span>
+<span class="fc" id="L46">    public Usuario(String nombreUsuario) {</span>
+<span class="fc" id="L47">        this.nombreUsuario = nombreUsuario;</span>
+<span class="fc" id="L48">        this.contraseña = this.nombreUsuario;</span>
+<span class="fc" id="L49">        this.listaViajes = new ArrayList&lt;Viaje&gt;();</span>
+<span class="fc" id="L50">        this.listaAmigos = new ArrayList&lt;Usuario&gt;();</span>
+<span class="fc" id="L51">    }</span>
 
-<span class="fc" id="L51">    public Usuario(String nombreUsuario, String contraseña, String nombre, String apellido, Email email) throws UsuarioException {</span>
-<span class="fc" id="L52">        this.setNombreUsuario(nombreUsuario);</span>
-<span class="fc" id="L53">        this.setContraseña(contraseña);</span>
-<span class="fc" id="L54">        this.setNombre(nombre);</span>
-<span class="fc" id="L55">        this.setApellido(apellido);</span>
-<span class="fc" id="L56">        this.setEmail(email);</span>
-<span class="fc" id="L57">        this.listaViajes = new ArrayList&lt;Viaje&gt;();</span>
-<span class="fc" id="L58">        this.listaAmigos = new ArrayList&lt;Usuario&gt;();</span>
-<span class="fc" id="L59">        this.notificarEmail = false;</span>
-<span class="fc" id="L60">        this.notificarCelular = false;</span>
-<span class="fc" id="L61">        this.celular = &quot;&quot;;</span>
-<span class="fc" id="L62">    }</span>
+<span class="fc" id="L53">    public Usuario(String nombreUsuario, String contraseña, String nombre, String apellido, Email email) throws UsuarioException {</span>
+<span class="fc" id="L54">        this.setNombreUsuario(nombreUsuario);</span>
+<span class="fc" id="L55">        this.setContraseña(contraseña);</span>
+<span class="fc" id="L56">        this.setNombre(nombre);</span>
+<span class="fc" id="L57">        this.setApellido(apellido);</span>
+<span class="fc" id="L58">        this.setEmail(email);</span>
+<span class="fc" id="L59">        this.listaViajes = new ArrayList&lt;Viaje&gt;();</span>
+<span class="fc" id="L60">        this.listaAmigos = new ArrayList&lt;Usuario&gt;();</span>
+<span class="fc" id="L61">        this.notificarEmail = false;</span>
+<span class="fc" id="L62">        this.notificarCelular = false;</span>
+<span class="fc" id="L63">        this.celular = &quot;&quot;;</span>
+<span class="fc" id="L64">    }</span>
 
     public ArrayList&lt;Usuario&gt; listadoAmigosEnComun(Usuario amigo) {
-<span class="fc" id="L65">        ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
+<span class="fc" id="L67">        ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
 
-<span class="fc" id="L67">        Iterator&lt;Usuario&gt; it = this.getListaAmigos().iterator();</span>
-<span class="fc bfc" id="L68" title="All 2 branches covered.">        while (it.hasNext()) {</span>
-<span class="fc" id="L69">            Usuario aux = it.next();</span>
-<span class="pc bpc" id="L70" title="1 of 2 branches missed.">            if (amigo.getListaAmigos().contains(aux)) {</span>
-<span class="fc" id="L71">                retorno.add(aux);</span>
+<span class="fc" id="L69">        Iterator&lt;Usuario&gt; it = this.getListaAmigos().iterator();</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        while (it.hasNext()) {</span>
+<span class="fc" id="L71">            Usuario aux = it.next();</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">            if (amigo.getListaAmigos().contains(aux)) {</span>
+<span class="fc" id="L73">                retorno.add(aux);</span>
             }
-<span class="fc" id="L73">        }</span>
+<span class="fc" id="L75">        }</span>
 
-<span class="fc" id="L75">        return retorno;</span>
+<span class="fc" id="L77">        return retorno;</span>
     }
 
     public ArrayList&lt;Usuario&gt; listadoBuscarAmigos(String cadena) {
-<span class="fc" id="L79">        ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
+<span class="fc" id="L81">        ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
 
-<span class="fc" id="L81">        Iterator&lt;Usuario&gt; it = this.getListaAmigos().iterator();</span>
-<span class="fc bfc" id="L82" title="All 2 branches covered.">        while (it.hasNext()) {</span>
-<span class="fc" id="L83">            Usuario usuario = it.next();</span>
-<span class="pc bpc" id="L84" title="1 of 2 branches missed.">            if ((usuario.getNombre() + &quot; &quot; + usuario.getApellido()).toLowerCase().startsWith(cadena.toLowerCase())) {</span>
-<span class="fc" id="L85">                retorno.add(usuario);</span>
+<span class="fc" id="L83">        Iterator&lt;Usuario&gt; it = this.getListaAmigos().iterator();</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">        while (it.hasNext()) {</span>
+<span class="fc" id="L85">            Usuario usuario = it.next();</span>
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">            if ((usuario.getNombre() + &quot; &quot; + usuario.getApellido()).toLowerCase().startsWith(cadena.toLowerCase())) {</span>
+<span class="fc" id="L87">                retorno.add(usuario);</span>
             }
-<span class="fc" id="L87">        }</span>
+<span class="fc" id="L89">        }</span>
 
-<span class="fc" id="L89">        return retorno;</span>
+<span class="fc" id="L91">        return retorno;</span>
     }
 
     public String getCelular() {
-<span class="nc" id="L93">        return celular;</span>
+<span class="fc" id="L95">        return celular;</span>
     }
 
     public void setCelular(String celular) {
-<span class="nc" id="L97">        this.celular = celular;</span>
-<span class="nc" id="L98">    }</span>
+<span class="fc" id="L99">        this.celular = celular;</span>
+<span class="fc" id="L100">    }</span>
 
     public boolean isNotificarCelular() {
-<span class="nc" id="L101">        return notificarCelular;</span>
+<span class="nc" id="L103">        return notificarCelular;</span>
     }
 
     public void setNotificarCelular(boolean notificarCelular) {
-<span class="nc" id="L105">        this.notificarCelular = notificarCelular;</span>
-<span class="nc" id="L106">    }</span>
+<span class="nc" id="L107">        this.notificarCelular = notificarCelular;</span>
+<span class="nc" id="L108">    }</span>
 
     public boolean isNotificarEmail() {
-<span class="nc" id="L109">        return notificarEmail;</span>
+<span class="nc" id="L111">        return notificarEmail;</span>
     }
 
     public void setNotificarEmail(boolean notificarEmail) {
-<span class="nc" id="L113">        this.notificarEmail = notificarEmail;</span>
-<span class="nc" id="L114">    }</span>
+<span class="nc" id="L115">        this.notificarEmail = notificarEmail;</span>
+<span class="nc" id="L116">    }</span>
 
     public ArrayList&lt;Usuario&gt; getListaAmigos() {
-<span class="fc" id="L117">        return this.listaAmigos;</span>
+<span class="fc" id="L119">        return this.listaAmigos;</span>
     }
 
     public boolean existeNombreViaje(String nombreViaje) {
-<span class="fc" id="L121">        return this.getListaViajes().contains(new Viaje(nombreViaje));</span>
+<span class="fc" id="L123">        return this.getListaViajes().contains(new Viaje(nombreViaje));</span>
     }
 
     public ArrayList&lt;Viaje&gt; getListaViajes() {
-<span class="fc" id="L125">        return this.listaViajes;</span>
+<span class="fc" id="L127">        return this.listaViajes;</span>
     }
 
     public void bajaViaje(Viaje viaje) {
-<span class="fc" id="L129">        this.listaViajes.remove(viaje);</span>
-<span class="fc" id="L130">    }</span>
+<span class="fc" id="L131">        this.listaViajes.remove(viaje);</span>
+<span class="fc" id="L132">    }</span>
 
     public void altaViaje(String nombreViaje, Ciudad ciudad, String diaIni, String mesIni, String añoIni,
             String diaFin, String mesFin, String añoFin, String descripcion)
             throws ViajeException, FechaException {
 
-<span class="fc bfc" id="L136" title="All 2 branches covered.">        if (existeNombreViaje(nombreViaje)) {</span>
-<span class="fc" id="L137">            throw new ViajeExistenteException();</span>
+<span class="fc bfc" id="L138" title="All 2 branches covered.">        if (existeNombreViaje(nombreViaje)) {</span>
+<span class="fc" id="L139">            throw new ViajeExistenteException();</span>
         }
         /* Validaciones fechas */
-<span class="fc bfc" id="L140" title="All 6 branches covered.">        if (diaIni.isEmpty() || diaFin.isEmpty() || mesIni.isEmpty()</span>
-<span class="fc bfc" id="L141" title="All 6 branches covered.">                || mesFin.isEmpty() || añoIni.isEmpty() || añoFin.isEmpty()) {</span>
-<span class="fc" id="L142">            throw new FechaVaciaException();</span>
+<span class="fc bfc" id="L142" title="All 6 branches covered.">        if (diaIni.isEmpty() || diaFin.isEmpty() || mesIni.isEmpty()</span>
+<span class="fc bfc" id="L143" title="All 6 branches covered.">                || mesFin.isEmpty() || añoIni.isEmpty() || añoFin.isEmpty()) {</span>
+<span class="fc" id="L144">            throw new FechaVaciaException();</span>
         }
-<span class="fc bfc" id="L144" title="All 2 branches covered.">        if (!Utilidades.formatoFechaValido(diaIni, mesIni, añoIni)) {</span>
-<span class="fc" id="L145">            throw new FormatoFechaInicioException();</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">        if (!Utilidades.formatoFechaValido(diaIni, mesIni, añoIni)) {</span>
+<span class="fc" id="L147">            throw new FormatoFechaInicioException();</span>
         }
-<span class="fc bfc" id="L147" title="All 2 branches covered.">        if (!Utilidades.formatoFechaValido(diaFin, mesFin, añoFin)) {</span>
-<span class="fc" id="L148">            throw new FormatoFechaFinException();</span>
+<span class="fc bfc" id="L149" title="All 2 branches covered.">        if (!Utilidades.formatoFechaValido(diaFin, mesFin, añoFin)) {</span>
+<span class="fc" id="L150">            throw new FormatoFechaFinException();</span>
         }
 
-<span class="fc" id="L151">        DateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
-<span class="fc" id="L152">        Date fechaInicio = null;</span>
-<span class="fc" id="L153">        Date fechaFin = null;</span>
+<span class="fc" id="L153">        DateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="fc" id="L154">        Date fechaInicio = null;</span>
+<span class="fc" id="L155">        Date fechaFin = null;</span>
         try {
-<span class="fc" id="L155">            fechaInicio = formatter.parse(Integer.parseInt(diaIni) + &quot;/&quot; + Integer.parseInt(mesIni) + &quot;/&quot; + Integer.parseInt(añoIni));</span>
-<span class="fc" id="L156">            fechaFin = formatter.parse(Integer.parseInt(diaFin) + &quot;/&quot; + Integer.parseInt(mesFin) + &quot;/&quot; + Integer.parseInt(añoFin));</span>
-<span class="nc" id="L157">        } catch (ParseException ex) {</span>
-<span class="fc" id="L158">        }</span>
+<span class="fc" id="L157">            fechaInicio = formatter.parse(Integer.parseInt(diaIni) + &quot;/&quot; + Integer.parseInt(mesIni) + &quot;/&quot; + Integer.parseInt(añoIni));</span>
+<span class="fc" id="L158">            fechaFin = formatter.parse(Integer.parseInt(diaFin) + &quot;/&quot; + Integer.parseInt(mesFin) + &quot;/&quot; + Integer.parseInt(añoFin));</span>
+<span class="nc" id="L159">        } catch (ParseException ex) {</span>
+<span class="fc" id="L160">        }</span>
 
-<span class="fc" id="L160">        Date today = Calendar.getInstance().getTime();</span>
+<span class="fc" id="L162">        Date today = Calendar.getInstance().getTime();</span>
 
-<span class="fc bfc" id="L162" title="All 2 branches covered.">        if (fechaInicio.before(today)) {</span>
-<span class="fc" id="L163">            throw new FechaInicioAnteriorException();</span>
+<span class="fc bfc" id="L164" title="All 2 branches covered.">        if (fechaInicio.before(today)) {</span>
+<span class="fc" id="L165">            throw new FechaInicioAnteriorException();</span>
         }
-<span class="fc bfc" id="L165" title="All 2 branches covered.">        if (fechaFin.before(fechaInicio)) {</span>
-<span class="fc" id="L166">            throw new FechaFinAnteriorInicioException();</span>
+<span class="fc bfc" id="L167" title="All 2 branches covered.">        if (fechaFin.before(fechaInicio)) {</span>
+<span class="fc" id="L168">            throw new FechaFinAnteriorInicioException();</span>
         }
 
-<span class="fc" id="L169">        Viaje nuevoViaje = new Viaje(nombreViaje, ciudad, fechaInicio, fechaFin, descripcion);</span>
-<span class="fc" id="L170">        this.agregarViajes(nuevoViaje);</span>
-<span class="fc" id="L171">    }</span>
+<span class="fc" id="L171">        Viaje nuevoViaje = new Viaje(nombreViaje, ciudad, fechaInicio, fechaFin, descripcion);</span>
+<span class="fc" id="L172">        this.agregarViajes(nuevoViaje);</span>
+<span class="fc" id="L173">    }</span>
 
     public boolean igualContraseña(String contraseña) {
-<span class="fc" id="L174">        return Utilidades.md5(contraseña).equals(this.contraseña);</span>
+<span class="fc" id="L176">        return Utilidades.md5(contraseña).equals(this.contraseña);</span>
     }
 
     public void setContraseña(String clave) throws UsuarioException {
-<span class="pc bpc" id="L178" title="1 of 2 branches missed.">        if (clave.length() &lt; 8) {</span>
-<span class="nc" id="L179">            throw new LargoClaveInvalidoException(8);</span>
+<span class="pc bpc" id="L180" title="1 of 2 branches missed.">        if (clave.length() &lt; 8) {</span>
+<span class="nc" id="L181">            throw new LargoClaveInvalidoException(8);</span>
         }
-<span class="pc bpc" id="L181" title="1 of 2 branches missed.">        if (!Utilidades.esAlfanumerico(clave)) {</span>
-<span class="nc" id="L182">            throw new ClaveInseguraException();</span>
+<span class="pc bpc" id="L183" title="1 of 2 branches missed.">        if (!Utilidades.esAlfanumerico(clave)) {</span>
+<span class="nc" id="L184">            throw new ClaveInseguraException();</span>
         }
 
-<span class="fc" id="L185">        this.contraseña = Utilidades.md5(clave);</span>
-<span class="fc" id="L186">    }</span>
+<span class="fc" id="L187">        this.contraseña = Utilidades.md5(clave);</span>
+<span class="fc" id="L188">    }</span>
 
     public void agregarViajes(Viaje viaje) {
-<span class="fc" id="L189">        this.listaViajes.add(viaje);</span>
-<span class="fc" id="L190">    }</span>
+<span class="fc" id="L191">        this.listaViajes.add(viaje);</span>
+<span class="fc" id="L192">    }</span>
 
     public void agregarAmigo(Usuario usuario) {
-<span class="fc" id="L193">        this.listaAmigos.add(usuario);</span>
-<span class="fc" id="L194">    }</span>
+<span class="fc" id="L195">        this.listaAmigos.add(usuario);</span>
+<span class="fc" id="L196">    }</span>
 
     public String getApellido() {
-<span class="fc" id="L197">        return apellido;</span>
+<span class="fc" id="L199">        return apellido;</span>
     }
 
     public void setApellido(String apellido) throws UsuarioException {
-<span class="fc bfc" id="L201" title="All 2 branches covered.">        if (apellido.isEmpty()) {</span>
-<span class="fc" id="L202">            throw new ApellidoVacioException();</span>
+<span class="fc bfc" id="L203" title="All 2 branches covered.">        if (apellido.isEmpty()) {</span>
+<span class="fc" id="L204">            throw new ApellidoVacioException();</span>
         }
-<span class="fc bfc" id="L204" title="All 2 branches covered.">        if (!Utilidades.largoValido(apellido, 2, 20)) {</span>
-<span class="fc" id="L205">            throw new LargoApellidoInvalidoException(2, 20);</span>
+<span class="fc bfc" id="L206" title="All 2 branches covered.">        if (!Utilidades.largoValido(apellido, 2, 20)) {</span>
+<span class="fc" id="L207">            throw new LargoApellidoInvalidoException(2, 20);</span>
         }
-<span class="fc" id="L207">        this.apellido = apellido;</span>
-<span class="fc" id="L208">    }</span>
+<span class="fc" id="L209">        this.apellido = apellido;</span>
+<span class="fc" id="L210">    }</span>
 
     public Email getEmail() {
-<span class="fc" id="L211">        return email;</span>
+<span class="fc" id="L213">        return email;</span>
     }
 
     public void setEmail(Email email) throws UsuarioException {
-<span class="fc bfc" id="L215" title="All 2 branches covered.">        if (!Utilidades.emailValido(email)) {</span>
-<span class="fc" id="L216">            throw new EmailInvalidoException();</span>
+<span class="fc bfc" id="L217" title="All 2 branches covered.">        if (!Utilidades.emailValido(email)) {</span>
+<span class="fc" id="L218">            throw new EmailInvalidoException();</span>
         }
-<span class="fc" id="L218">        this.email = email;</span>
-<span class="fc" id="L219">    }</span>
+<span class="fc" id="L220">        this.email = email;</span>
+<span class="fc" id="L221">    }</span>
 
     public String getNombre() {
-<span class="fc" id="L222">        return nombre;</span>
+<span class="fc" id="L224">        return nombre;</span>
     }
 
     public void setNombre(String nombre) throws UsuarioException {
-<span class="fc bfc" id="L226" title="All 2 branches covered.">        if (nombre.isEmpty()) {</span>
-<span class="fc" id="L227">            throw new NombreVacioException();</span>
+<span class="fc bfc" id="L228" title="All 2 branches covered.">        if (nombre.isEmpty()) {</span>
+<span class="fc" id="L229">            throw new NombreVacioException();</span>
         }
-<span class="fc bfc" id="L229" title="All 2 branches covered.">        if (!Utilidades.largoValido(nombre, 2, 20)) {</span>
-<span class="fc" id="L230">            throw new LargoNombreInvalidoException(2, 20);</span>
+<span class="fc bfc" id="L231" title="All 2 branches covered.">        if (!Utilidades.largoValido(nombre, 2, 20)) {</span>
+<span class="fc" id="L232">            throw new LargoNombreInvalidoException(2, 20);</span>
         }
-<span class="fc" id="L232">        this.nombre = nombre;</span>
-<span class="fc" id="L233">    }</span>
+<span class="fc" id="L234">        this.nombre = nombre;</span>
+<span class="fc" id="L235">    }</span>
 
     public String getNombreUsuario() {
-<span class="fc" id="L236">        return nombreUsuario;</span>
+<span class="fc" id="L238">        return nombreUsuario;</span>
     }
 
     public void setNombreUsuario(String nombreUsuario) throws UsuarioException {
-<span class="fc bfc" id="L240" title="All 2 branches covered.">        if (nombreUsuario.isEmpty()) {</span>
-<span class="fc" id="L241">            throw new NombreUsuarioVacioException();</span>
+<span class="fc bfc" id="L242" title="All 2 branches covered.">        if (nombreUsuario.isEmpty()) {</span>
+<span class="fc" id="L243">            throw new NombreUsuarioVacioException();</span>
         }
-<span class="fc bfc" id="L243" title="All 2 branches covered.">        if (!Utilidades.largoValido(nombreUsuario, 4, 20)) {</span>
-<span class="fc" id="L244">            throw new LargoNombreUsuarioInvalidoException(4, 20);</span>
+<span class="fc bfc" id="L245" title="All 2 branches covered.">        if (!Utilidades.largoValido(nombreUsuario, 4, 20)) {</span>
+<span class="fc" id="L246">            throw new LargoNombreUsuarioInvalidoException(4, 20);</span>
         }
 
-<span class="fc" id="L247">        this.nombreUsuario = nombreUsuario;</span>
-<span class="fc" id="L248">    }</span>
+<span class="fc" id="L249">        this.nombreUsuario = nombreUsuario;</span>
+<span class="fc" id="L250">    }</span>
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc" id="L252">        return this.getNombreUsuario().equals(((Usuario) obj).getNombreUsuario());</span>
+        try{
+<span class="fc" id="L255">        return this.getNombreUsuario().equals(((Usuario) obj).getNombreUsuario());</span>
+        }
+<span class="nc" id="L257">        catch(NullPointerException e){</span>
+<span class="nc" id="L258">            return false;</span>
+        }
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L257">        return nombre + &quot; &quot; + apellido;</span>
+<span class="fc" id="L264">        return nombre + &quot; &quot; + apellido;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -10,7 +10,9 @@ import traveller.noticiaciones.email.EnvioMail;
 import traveller.notificaciones.movil.EnvioMensajeTexto;
 
 public class SistemaImp implements ISistema, Serializable {
-
+    
+    private static final long serialVersionUID = 116L;
+    
     private ArrayList&lt;Usuario&gt; listaUsuarios;
     private ArrayList&lt;Ciudad&gt; listaCiudades;
     private ArrayList&lt;TipoEvento&gt; listaTipoEventos;
@@ -18,273 +20,273 @@ public class SistemaImp implements ISistema, Serializable {
     private boolean modoDesarrollador;
 
     public ArrayList&lt;Ciudad&gt; getListaCiudades() {
-<span class="fc" id="L21">        return listaCiudades;</span>
+<span class="fc" id="L23">        return listaCiudades;</span>
     }
     
     public ArrayList&lt;String&gt; getNombresCiudades() {
-<span class="fc" id="L25">        ArrayList&lt;String&gt; nombresCiudades = new ArrayList&lt;String&gt;();</span>
-<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (int i = 0; i &lt; this.getListaCiudades().size(); i++){</span>
-<span class="fc" id="L27">            Ciudad unaC = this.getListaCiudades().get(i);</span>
-<span class="fc" id="L28">            nombresCiudades.add(unaC.getNombre());</span>
+<span class="fc" id="L27">        ArrayList&lt;String&gt; nombresCiudades = new ArrayList&lt;String&gt;();</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        for (int i = 0; i &lt; this.getListaCiudades().size(); i++){</span>
+<span class="fc" id="L29">            Ciudad unaC = this.getListaCiudades().get(i);</span>
+<span class="fc" id="L30">            nombresCiudades.add(unaC.getNombre());</span>
         }
-<span class="fc" id="L30">        return nombresCiudades;</span>
+<span class="fc" id="L32">        return nombresCiudades;</span>
     }
 
     public ArrayList&lt;TipoEvento&gt; getListaTipoEventos() {
-<span class="fc" id="L34">        return listaTipoEventos;</span>
+<span class="fc" id="L36">        return listaTipoEventos;</span>
     }
 
     public void setListaTipoEventos(ArrayList&lt;TipoEvento&gt; listaTipoEventos) {
-<span class="nc" id="L38">        this.listaTipoEventos = listaTipoEventos;</span>
-<span class="nc" id="L39">    }</span>
+<span class="nc" id="L40">        this.listaTipoEventos = listaTipoEventos;</span>
+<span class="nc" id="L41">    }</span>
 
     public void setListaCiudades(ArrayList&lt;Ciudad&gt; listaCiudades) {
-<span class="nc" id="L42">        this.listaCiudades = listaCiudades;</span>
-<span class="nc" id="L43">    }</span>
+<span class="nc" id="L44">        this.listaCiudades = listaCiudades;</span>
+<span class="nc" id="L45">    }</span>
     private boolean mostrarCartelInicio;
     private String proxy;
     private int puerto;
 
-<span class="fc" id="L48">    public SistemaImp() {</span>
-<span class="fc" id="L49">	this.listaUsuarios = new ArrayList&lt;Usuario&gt;();</span>
-<span class="fc" id="L50">        this.listaTipoEventos = new ArrayList&lt;TipoEvento&gt;();</span>
-<span class="fc" id="L51">        listaTipoEventos.add(new TipoEvento(&quot;CULTURAL&quot;));</span>
-<span class="fc" id="L52">        listaTipoEventos.add(new TipoEvento(&quot;DEPORTIVO&quot;));</span>
-<span class="fc" id="L53">        listaTipoEventos.add(new TipoEvento(&quot;COMERCIAL&quot;));</span>
-<span class="fc" id="L54">        listaTipoEventos.add(new TipoEvento(&quot;FAMILIAR&quot;));</span>
-<span class="fc" id="L55">        listaTipoEventos.add(new TipoEvento(&quot;OTRO&quot;));</span>
-<span class="fc" id="L56">        this.listaCiudades = new ArrayList&lt;Ciudad&gt;();</span>
-<span class="fc" id="L57">        listaCiudades.add(new Ciudad(&quot;MADRID&quot;));</span>
-<span class="fc" id="L58">        listaCiudades.add(new Ciudad(&quot;PARIS&quot;));</span>
-<span class="fc" id="L59">        listaCiudades.add(new Ciudad(&quot;BSAS&quot;));</span>
-<span class="fc" id="L60">        listaCiudades.add(new Ciudad(&quot;MIAMI&quot;));</span>
-<span class="fc" id="L61">	this.usuarioIdentificado = null;</span>
-<span class="fc" id="L62">	this.modoDesarrollador = false;</span>
-<span class="fc" id="L63">	this.mostrarCartelInicio = true;</span>
-<span class="fc" id="L64">        this.proxy = &quot;&quot;;</span>
-<span class="fc" id="L65">        this.puerto = 0;</span>
-<span class="fc" id="L66">    }</span>
+<span class="fc" id="L50">    public SistemaImp() {</span>
+<span class="fc" id="L51">	this.listaUsuarios = new ArrayList&lt;Usuario&gt;();</span>
+<span class="fc" id="L52">        this.listaTipoEventos = new ArrayList&lt;TipoEvento&gt;();</span>
+<span class="fc" id="L53">        listaTipoEventos.add(new TipoEvento(&quot;CULTURAL&quot;));</span>
+<span class="fc" id="L54">        listaTipoEventos.add(new TipoEvento(&quot;DEPORTIVO&quot;));</span>
+<span class="fc" id="L55">        listaTipoEventos.add(new TipoEvento(&quot;COMERCIAL&quot;));</span>
+<span class="fc" id="L56">        listaTipoEventos.add(new TipoEvento(&quot;FAMILIAR&quot;));</span>
+<span class="fc" id="L57">        listaTipoEventos.add(new TipoEvento(&quot;OTRO&quot;));</span>
+<span class="fc" id="L58">        this.listaCiudades = new ArrayList&lt;Ciudad&gt;();</span>
+<span class="fc" id="L59">        listaCiudades.add(new Ciudad(&quot;MADRID&quot;));</span>
+<span class="fc" id="L60">        listaCiudades.add(new Ciudad(&quot;PARIS&quot;));</span>
+<span class="fc" id="L61">        listaCiudades.add(new Ciudad(&quot;BSAS&quot;));</span>
+<span class="fc" id="L62">        listaCiudades.add(new Ciudad(&quot;MIAMI&quot;));</span>
+<span class="fc" id="L63">	this.usuarioIdentificado = null;</span>
+<span class="fc" id="L64">	this.modoDesarrollador = false;</span>
+<span class="fc" id="L65">	this.mostrarCartelInicio = true;</span>
+<span class="fc" id="L66">        this.proxy = &quot;&quot;;</span>
+<span class="fc" id="L67">        this.puerto = 0;</span>
+<span class="fc" id="L68">    }</span>
 
     @Override
     public void altaUsuario(String nombreUsuario, String clave, Email email, String nombre, String apellido) throws UsuarioException {
 	/* ¿Ya existe nombre usuario? */
-<span class="fc bfc" id="L71" title="All 2 branches covered.">	if (existeNombreUsuario(nombreUsuario)) {</span>
-<span class="fc" id="L72">	    throw new UsuarioExistenteException(nombreUsuario);</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">	if (existeNombreUsuario(nombreUsuario)) {</span>
+<span class="fc" id="L74">	    throw new UsuarioExistenteException(nombreUsuario);</span>
 	}
 
-<span class="fc" id="L75">	Usuario nuevoUsuario = new Usuario(nombreUsuario, clave, nombre, apellido, email);</span>
-<span class="fc" id="L76">	this.listaUsuarios.add(nuevoUsuario);</span>
-<span class="fc" id="L77">    }</span>
+<span class="fc" id="L77">	Usuario nuevoUsuario = new Usuario(nombreUsuario, clave, nombre, apellido, email);</span>
+<span class="fc" id="L78">	this.listaUsuarios.add(nuevoUsuario);</span>
+<span class="fc" id="L79">    }</span>
 
     @Override
     public void identificacionUsuario(String nombreUsuario, String clave) throws UsuarioException {
-<span class="fc" id="L81">	boolean entro = false;</span>
-<span class="fc" id="L82">	Iterator&lt;Usuario&gt; it = this.listaUsuarios.iterator();</span>
+<span class="fc" id="L83">	boolean entro = false;</span>
+<span class="fc" id="L84">	Iterator&lt;Usuario&gt; it = this.listaUsuarios.iterator();</span>
 
-<span class="fc bfc" id="L84" title="All 2 branches covered.">	while (it.hasNext()) {</span>
-<span class="fc" id="L85">	    Usuario usuario = it.next();</span>
-<span class="fc bfc" id="L86" title="All 2 branches covered.">	    if (usuario.getNombreUsuario().equals(nombreUsuario)) {</span>
-<span class="fc bfc" id="L87" title="All 2 branches covered.">		if (usuario.igualContraseña(clave)) {</span>
-<span class="fc" id="L88">		    this.usuarioIdentificado = usuario;</span>
-<span class="fc" id="L89">		    entro = true;</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">	while (it.hasNext()) {</span>
+<span class="fc" id="L87">	    Usuario usuario = it.next();</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">	    if (usuario.getNombreUsuario().equals(nombreUsuario)) {</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">		if (usuario.igualContraseña(clave)) {</span>
+<span class="fc" id="L90">		    this.usuarioIdentificado = usuario;</span>
+<span class="fc" id="L91">		    entro = true;</span>
 		} else {
-<span class="fc" id="L91">		    throw new IdentificacionInvalidaException();</span>
+<span class="fc" id="L93">		    throw new IdentificacionInvalidaException();</span>
 		}
 	    }
-<span class="fc" id="L94">	}</span>
+<span class="fc" id="L96">	}</span>
 
-<span class="fc bfc" id="L96" title="All 2 branches covered.">	if (!entro) {</span>
-<span class="fc" id="L97">	    throw new IdentificacionInvalidaException();</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">	if (!entro) {</span>
+<span class="fc" id="L99">	    throw new IdentificacionInvalidaException();</span>
 	}
-<span class="fc" id="L99">    }</span>
+<span class="fc" id="L101">    }</span>
 
     @Override
     public void logoutUsuario() {
-<span class="fc" id="L103">	this.usuarioIdentificado = null;</span>
-<span class="fc" id="L104">    }</span>
+<span class="fc" id="L105">	this.usuarioIdentificado = null;</span>
+<span class="fc" id="L106">    }</span>
 
     @Override
     public boolean hayUsuarioIdentificado() {
-<span class="fc bfc" id="L108" title="All 2 branches covered.">	return this.usuarioIdentificado != null;</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">	return this.usuarioIdentificado != null;</span>
     }
 
     @Override
     public void bajaUsuario() {
-<span class="pc bpc" id="L113" title="1 of 2 branches missed.">	if (this.hayUsuarioIdentificado()) {</span>
-<span class="fc" id="L114">	    this.listaUsuarios.remove(this.usuarioIdentificado);</span>
-<span class="fc" id="L115">	    this.logoutUsuario();</span>
+<span class="pc bpc" id="L115" title="1 of 2 branches missed.">	if (this.hayUsuarioIdentificado()) {</span>
+<span class="fc" id="L116">	    this.listaUsuarios.remove(this.usuarioIdentificado);</span>
+<span class="fc" id="L117">	    this.logoutUsuario();</span>
 	}
-<span class="fc" id="L117">    }</span>
+<span class="fc" id="L119">    }</span>
 
     public String getProxy() {
-<span class="fc" id="L120">        return proxy;</span>
+<span class="fc" id="L122">        return proxy;</span>
     }
 
     public void setProxy(String proxy) {
-<span class="fc" id="L124">        this.proxy = proxy;</span>
-<span class="fc" id="L125">    }</span>
+<span class="fc" id="L126">        this.proxy = proxy;</span>
+<span class="fc" id="L127">    }</span>
 
     public int getPuerto() {
-<span class="fc" id="L128">        return puerto;</span>
+<span class="fc" id="L130">        return puerto;</span>
     }
 
     public void setPuerto(int puerto) {
-<span class="fc" id="L132">        this.puerto = puerto;</span>
-<span class="fc" id="L133">    }</span>
+<span class="fc" id="L134">        this.puerto = puerto;</span>
+<span class="fc" id="L135">    }</span>
     
     @Override
     public ArrayList&lt;Usuario&gt; getListaUsuarios() {
-<span class="fc" id="L137">	return this.listaUsuarios;</span>
+<span class="fc" id="L139">	return this.listaUsuarios;</span>
     }
     
     
     @Override
     public boolean existeUsuario(String nombreUsuario) {
-<span class="fc" id="L143">	return this.listaUsuarios.contains(new Usuario(nombreUsuario));</span>
+<span class="fc" id="L145">	return this.listaUsuarios.contains(new Usuario(nombreUsuario));</span>
     }
 
     @Override
     public Usuario getUsuarioIdentificado() {
-<span class="fc" id="L148">	return this.usuarioIdentificado;</span>
+<span class="fc" id="L150">	return this.usuarioIdentificado;</span>
     }
 
     @Override
     public ArrayList&lt;Usuario&gt; listadoBuscarUsuarios(String cadena) {
-<span class="fc" id="L153">	ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
-<span class="fc" id="L154">	Usuario identificado = this.getUsuarioIdentificado();</span>
-<span class="fc" id="L155">	Iterator&lt;Usuario&gt; it = this.listaUsuarios.iterator();</span>
-<span class="fc bfc" id="L156" title="All 2 branches covered.">	while (it.hasNext()) {</span>
-<span class="fc" id="L157">	    Usuario usuario = it.next();</span>
-<span class="pc bpc" id="L158" title="1 of 4 branches missed.">	    if (!usuario.equals(identificado) &amp;&amp; !identificado.getListaAmigos().contains(usuario)) {</span>
-<span class="pc bpc" id="L159" title="1 of 2 branches missed.">		if ((usuario.getNombre() +&quot; &quot;+ usuario.getApellido()).toLowerCase().startsWith(cadena.toLowerCase())) {</span>
-<span class="fc" id="L160">		    retorno.add(usuario);</span>
+<span class="fc" id="L155">	ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
+<span class="fc" id="L156">	Usuario identificado = this.getUsuarioIdentificado();</span>
+<span class="fc" id="L157">	Iterator&lt;Usuario&gt; it = this.listaUsuarios.iterator();</span>
+<span class="fc bfc" id="L158" title="All 2 branches covered.">	while (it.hasNext()) {</span>
+<span class="fc" id="L159">	    Usuario usuario = it.next();</span>
+<span class="pc bpc" id="L160" title="1 of 4 branches missed.">	    if (!usuario.equals(identificado) &amp;&amp; !identificado.getListaAmigos().contains(usuario)) {</span>
+<span class="pc bpc" id="L161" title="1 of 2 branches missed.">		if ((usuario.getNombre() +&quot; &quot;+ usuario.getApellido()).toLowerCase().startsWith(cadena.toLowerCase())) {</span>
+<span class="fc" id="L162">		    retorno.add(usuario);</span>
 		}
 	    }
-<span class="fc" id="L163">	}</span>
-<span class="fc" id="L164">	return retorno;</span>
+<span class="fc" id="L165">	}</span>
+<span class="fc" id="L166">	return retorno;</span>
     }
 
     @Override
     public ArrayList&lt;Usuario&gt; obtenerGrupoDeViaje(Viaje viaje) {
-<span class="nc" id="L169">	ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
-<span class="nc" id="L170">	retorno.add(this.getUsuarioIdentificado());</span>
+<span class="nc" id="L171">	ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
+<span class="nc" id="L172">	retorno.add(this.getUsuarioIdentificado());</span>
 
-<span class="nc" id="L172">	Iterator&lt;Usuario&gt; it = this.getListaUsuarios().iterator();</span>
-<span class="nc bnc" id="L173" title="All 2 branches missed.">	while (it.hasNext()) {</span>
-<span class="nc" id="L174">	    Usuario usuarioAux = it.next();</span>
-<span class="nc bnc" id="L175" title="All 2 branches missed.">	    if (!usuarioAux.equals(this.getUsuarioIdentificado())) {</span>
-<span class="nc bnc" id="L176" title="All 2 branches missed.">		if (usuarioAux.getListaViajes().contains(viaje)) {</span>
-<span class="nc" id="L177">		    retorno.add(usuarioAux);</span>
+<span class="nc" id="L174">	Iterator&lt;Usuario&gt; it = this.getListaUsuarios().iterator();</span>
+<span class="nc bnc" id="L175" title="All 2 branches missed.">	while (it.hasNext()) {</span>
+<span class="nc" id="L176">	    Usuario usuarioAux = it.next();</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">	    if (!usuarioAux.equals(this.getUsuarioIdentificado())) {</span>
+<span class="nc bnc" id="L178" title="All 2 branches missed.">		if (usuarioAux.getListaViajes().contains(viaje)) {</span>
+<span class="nc" id="L179">		    retorno.add(usuarioAux);</span>
 		}
 	    }
-<span class="nc" id="L180">	}</span>
-<span class="nc" id="L181">	return retorno;</span>
+<span class="nc" id="L182">	}</span>
+<span class="nc" id="L183">	return retorno;</span>
     }
 
     @Override
     public void setModoDesarrollador(boolean modoDesarrollador) {
-<span class="fc" id="L186">	this.modoDesarrollador = modoDesarrollador;</span>
-<span class="fc" id="L187">    }</span>
+<span class="fc" id="L188">	this.modoDesarrollador = modoDesarrollador;</span>
+<span class="fc" id="L189">    }</span>
 
     @Override
     public boolean esModoDesarrollador() {
-<span class="fc" id="L191">	return this.modoDesarrollador;</span>
+<span class="fc" id="L193">	return this.modoDesarrollador;</span>
     }
 
     public boolean isMostrarCartelInicio() {
-<span class="fc" id="L195">	return mostrarCartelInicio;</span>
+<span class="fc" id="L197">	return mostrarCartelInicio;</span>
     }
 
     public void setMostrarCartelInicio(boolean mostrarCartelInicio) {
-<span class="fc" id="L199">	this.mostrarCartelInicio = mostrarCartelInicio;</span>
-<span class="fc" id="L200">    }</span>
+<span class="fc" id="L201">	this.mostrarCartelInicio = mostrarCartelInicio;</span>
+<span class="fc" id="L202">    }</span>
     
     @Override
     public void identificar(Usuario usuario) {
-<span class="fc" id="L204">	this.usuarioIdentificado = usuario;</span>
-<span class="fc" id="L205">    }</span>
+<span class="fc" id="L206">	this.usuarioIdentificado = usuario;</span>
+<span class="fc" id="L207">    }</span>
 
     @Override
     public void notificarNovedad(String novedad, String novedadEmail, String titulo, Viaje viaje) {
-<span class="nc" id="L209">	Iterator&lt;Usuario&gt; iterador = this.getListaUsuarios().iterator();</span>
-<span class="nc bnc" id="L210" title="All 2 branches missed.">	while (iterador.hasNext()) {</span>
-<span class="nc" id="L211">	    Usuario usuario = iterador.next();</span>
-<span class="nc bnc" id="L212" title="All 4 branches missed.">	    if (usuario.existeNombreViaje(viaje.getNombre()) &amp;&amp; usuario.isNotificarCelular()) {</span>
-<span class="nc" id="L213">		EnvioMensajeTexto envio = new EnvioMensajeTexto(this.proxy, this.puerto);</span>
-<span class="nc" id="L214">		envio.mandarMensaje(novedad, usuario.getCelular());</span>
+<span class="nc" id="L211">	Iterator&lt;Usuario&gt; iterador = this.getListaUsuarios().iterator();</span>
+<span class="nc bnc" id="L212" title="All 2 branches missed.">	while (iterador.hasNext()) {</span>
+<span class="nc" id="L213">	    Usuario usuario = iterador.next();</span>
+<span class="nc bnc" id="L214" title="All 4 branches missed.">	    if (usuario.existeNombreViaje(viaje.getNombre()) &amp;&amp; usuario.isNotificarCelular()) {</span>
+<span class="nc" id="L215">		EnvioMensajeTexto envio = new EnvioMensajeTexto(this.proxy, this.puerto);</span>
+<span class="nc" id="L216">		envio.mandarMensaje(novedad, usuario.getCelular());</span>
 	    }
-<span class="nc bnc" id="L216" title="All 4 branches missed.">            if (usuario.existeNombreViaje(viaje.getNombre()) &amp;&amp; usuario.isNotificarEmail()) {</span>
-<span class="nc" id="L217">		EnvioMail.mandarEmail(usuario.getEmail().toString(), titulo, novedadEmail);</span>
+<span class="nc bnc" id="L218" title="All 4 branches missed.">            if (usuario.existeNombreViaje(viaje.getNombre()) &amp;&amp; usuario.isNotificarEmail()) {</span>
+<span class="nc" id="L219">		EnvioMail.mandarEmail(usuario.getEmail().toString(), titulo, novedadEmail);</span>
 	    }
-<span class="nc" id="L219">	}</span>
-<span class="nc" id="L220">    }</span>
+<span class="nc" id="L221">	}</span>
+<span class="nc" id="L222">    }</span>
     
     public void modificarCiudad(String nuevoNombre, int posicion){
-<span class="fc" id="L223">        Ciudad unaCiudad = new Ciudad(nuevoNombre);</span>
-<span class="pc bpc" id="L224" title="1 of 2 branches missed.">        if (!this.existeCiudad(unaCiudad)){</span>
-<span class="fc" id="L225">            this.getListaCiudades().get(posicion).setNombre(nuevoNombre);</span>
-<span class="fc" id="L226">            System.out.println(&quot;Registra Exitoso.&quot;);</span>
+<span class="fc" id="L225">        Ciudad unaCiudad = new Ciudad(nuevoNombre);</span>
+<span class="pc bpc" id="L226" title="1 of 2 branches missed.">        if (!this.existeCiudad(unaCiudad)){</span>
+<span class="fc" id="L227">            this.getListaCiudades().get(posicion).setNombre(nuevoNombre);</span>
+<span class="fc" id="L228">            System.out.println(&quot;Registra Exitoso.&quot;);</span>
         }
-<span class="fc" id="L228">    }</span>
+<span class="fc" id="L230">    }</span>
     
     /* MÉTODOS PRIVADOS */
     private boolean existeNombreUsuario(String nombreUsuario) {
-<span class="fc" id="L232">	return this.listaUsuarios.contains(new Usuario(nombreUsuario));</span>
+<span class="fc" id="L234">	return this.listaUsuarios.contains(new Usuario(nombreUsuario));</span>
     }
 
     public boolean altaCiudad(Ciudad unaCiudad) {
-<span class="fc" id="L236">        boolean registroExitoso = false;</span>
-<span class="pc bpc" id="L237" title="1 of 2 branches missed.">        if(!this.existeCiudad(unaCiudad)){</span>
-<span class="fc" id="L238">            this.getListaCiudades().add(unaCiudad);</span>
-<span class="fc" id="L239">            registroExitoso = true;</span>
+<span class="fc" id="L238">        boolean registroExitoso = false;</span>
+<span class="pc bpc" id="L239" title="1 of 2 branches missed.">        if(!this.existeCiudad(unaCiudad)){</span>
+<span class="fc" id="L240">            this.getListaCiudades().add(unaCiudad);</span>
+<span class="fc" id="L241">            registroExitoso = true;</span>
         }
-<span class="fc" id="L241">        return registroExitoso;</span>
+<span class="fc" id="L243">        return registroExitoso;</span>
     }
 
     public void bajaCiudad(Ciudad unaCiudad) {
-<span class="fc" id="L245">        this.getListaCiudades().remove(unaCiudad);</span>
-<span class="fc" id="L246">    }</span>
+<span class="fc" id="L247">        this.getListaCiudades().remove(unaCiudad);</span>
+<span class="fc" id="L248">    }</span>
     
     public boolean existeCiudad(Ciudad unaCiudad) {
-<span class="fc" id="L249">        return this.getListaCiudades().contains(unaCiudad);</span>
+<span class="fc" id="L251">        return this.getListaCiudades().contains(unaCiudad);</span>
     }
     
     public Ciudad obtenerCiudad(int posicionArray){
-<span class="fc" id="L253">        return this.getListaCiudades().get(posicionArray);</span>
+<span class="fc" id="L255">        return this.getListaCiudades().get(posicionArray);</span>
     }
     
     public TipoEvento obtenerTipoEvento(int posicionArray){
-<span class="fc" id="L257">        return this.getListaTipoEventos().get(posicionArray);</span>
+<span class="fc" id="L259">        return this.getListaTipoEventos().get(posicionArray);</span>
     }
     
     public void modificarTipoEvento(String unNombreTipoEvento, int posicion){
-<span class="fc" id="L261">        this.getListaTipoEventos().get(posicion).setNombre(unNombreTipoEvento);</span>
-<span class="fc" id="L262">    }</span>
+<span class="fc" id="L263">        this.getListaTipoEventos().get(posicion).setNombre(unNombreTipoEvento);</span>
+<span class="fc" id="L264">    }</span>
 
     public boolean altaTipoEvento(TipoEvento unTipo) {
-<span class="fc" id="L265">        boolean registroExtitoso = false;</span>
-<span class="pc bpc" id="L266" title="1 of 2 branches missed.">        if(!this.existeTipoEvento(unTipo)){</span>
-<span class="fc" id="L267">            this.getListaTipoEventos().add(unTipo);</span>
-<span class="fc" id="L268">            registroExtitoso = true;</span>
+<span class="fc" id="L267">        boolean registroExtitoso = false;</span>
+<span class="pc bpc" id="L268" title="1 of 2 branches missed.">        if(!this.existeTipoEvento(unTipo)){</span>
+<span class="fc" id="L269">            this.getListaTipoEventos().add(unTipo);</span>
+<span class="fc" id="L270">            registroExtitoso = true;</span>
         }
-<span class="fc" id="L270">        return registroExtitoso;</span>
+<span class="fc" id="L272">        return registroExtitoso;</span>
     }
 
     public void bajaTipoEvento(TipoEvento unTipo) {
-<span class="fc" id="L274">        this.getListaTipoEventos().remove(unTipo);</span>
-<span class="fc" id="L275">    }</span>
+<span class="fc" id="L276">        this.getListaTipoEventos().remove(unTipo);</span>
+<span class="fc" id="L277">    }</span>
     
     public boolean existeTipoEvento(TipoEvento unTipo){
-<span class="fc" id="L278">        return this.getListaTipoEventos().contains(unTipo);</span>
+<span class="fc" id="L280">        return this.getListaTipoEventos().contains(unTipo);</span>
     }
     
     public ArrayList&lt;String&gt; getNombresTiposEventos(){
-<span class="fc" id="L282">        ArrayList&lt;String&gt; nombresTiposEventos = new ArrayList&lt;String&gt;();</span>
-<span class="fc bfc" id="L283" title="All 2 branches covered.">        for (int i = 0; i &lt; this.getListaTipoEventos().size(); i++){</span>
-<span class="fc" id="L284">            TipoEvento unTipoEvento = this.getListaTipoEventos().get(i);</span>
-<span class="fc" id="L285">            nombresTiposEventos.add(unTipoEvento.getNombre());</span>
+<span class="fc" id="L284">        ArrayList&lt;String&gt; nombresTiposEventos = new ArrayList&lt;String&gt;();</span>
+<span class="fc bfc" id="L285" title="All 2 branches covered.">        for (int i = 0; i &lt; this.getListaTipoEventos().size(); i++){</span>
+<span class="fc" id="L286">            TipoEvento unTipoEvento = this.getListaTipoEventos().get(i);</span>
+<span class="fc" id="L287">            nombresTiposEventos.add(unTipoEvento.getNombre());</span>
         }
-<span class="fc" id="L287">        return nombresTiposEventos;</span>
+<span class="fc" id="L289">        return nombresTiposEventos;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

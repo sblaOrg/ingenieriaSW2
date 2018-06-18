@@ -1,1 +1,0 @@
-k'interfaz/panel/SubPanelInformacion.java 2javaXô

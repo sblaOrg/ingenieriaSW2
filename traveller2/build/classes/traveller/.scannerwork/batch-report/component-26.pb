@@ -1,1 +1,0 @@
-2excepciones/evento/NombreEventoVacioException.java 2javaX

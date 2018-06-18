@@ -30,6 +30,8 @@ import traveller.utill.Utilidades;
 
 public final class Usuario implements Serializable {
 
+    private static final long serialVersionUID = 118L;
+    
     private String nombreUsuario;
     private String nombre;
     private String contraseña;
@@ -249,7 +251,12 @@ public final class Usuario implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
+        try{
         return this.getNombreUsuario().equals(((Usuario) obj).getNombreUsuario());
+        }
+        catch(NullPointerException e){
+            return false;
+        }
     }
 
     @Override

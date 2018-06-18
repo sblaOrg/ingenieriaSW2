@@ -3,33 +3,40 @@
 import java.io.Serializable;
 
 public class Ciudad implements Serializable {
+    
+    private static final long serialVersionUID = 111L;
 
     private String nombre;
 
-<span class="fc" id="L9">    public Ciudad() {</span>
-<span class="fc" id="L10">        this.nombre = &quot;Sin datos&quot;;</span>
-<span class="fc" id="L11">    }</span>
+<span class="fc" id="L11">    public Ciudad() {</span>
+<span class="fc" id="L12">        this.nombre = &quot;Sin datos&quot;;</span>
+<span class="fc" id="L13">    }</span>
 
-<span class="fc" id="L13">    public Ciudad(String unNombre) {</span>
-<span class="fc" id="L14">        this.nombre = unNombre;</span>
-<span class="fc" id="L15">    }</span>
+<span class="fc" id="L15">    public Ciudad(String unNombre) {</span>
+<span class="fc" id="L16">        this.nombre = unNombre;</span>
+<span class="fc" id="L17">    }</span>
 
     public String getNombre() {
-<span class="fc" id="L18">        return nombre;</span>
+<span class="fc" id="L20">        return nombre;</span>
     }
 
     public void setNombre(String nombre) {
-<span class="fc" id="L22">        this.nombre = nombre;</span>
-<span class="fc" id="L23">    }</span>
+<span class="fc" id="L24">        this.nombre = nombre;</span>
+<span class="fc" id="L25">    }</span>
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc" id="L27">            return this.getNombre().equals(((Ciudad) obj).getNombre());</span>
+        try{    
+<span class="fc" id="L30">        return this.getNombre().equals(((Ciudad) obj).getNombre());</span>
+        }
+<span class="nc" id="L32">        catch(NullPointerException e){</span>
+<span class="nc" id="L33">            return false;</span>
+        }
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L32">        return this.nombre;</span>
+<span class="fc" id="L39">        return this.nombre;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

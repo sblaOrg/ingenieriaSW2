@@ -334,9 +334,7 @@ public class UsuarioTest {
         try {
             instance.altaViaje("Vacaciones", new Ciudad("MADRID"), "01", "09", "2018",
                     "31", "08", "2018", "descripcion");
-            assert (false);
         } catch (FechaFinAnteriorInicioException e) {
-            assert (true);
         }
     }
 
@@ -711,6 +709,18 @@ public class UsuarioTest {
         assertEquals(amigosEnComun, resultadoEsperado);
     }
     
+    
+    @Test
+    public void testGetCelular() throws UsuarioException {
+        assertEquals(instance.getCelular(), "");
+    }
+    
+    @Test
+    public void testSetCelular() throws UsuarioException {
+        String celular = "099123456";
+        instance.setCelular(celular);
+        assertEquals(instance.getCelular(), celular);
+    }
     /*@Test
     public void testBajaViaje() throws UsuarioException {
         Usuario amigoA = new Usuario("jupa", "ab123456", "Anial", "Porte", new Email("tony@gmail.com"));

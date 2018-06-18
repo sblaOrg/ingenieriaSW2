@@ -1,1 +1,0 @@
-:excepciones/evento/LargoNombreEventoInvalidoException.java 2javaX

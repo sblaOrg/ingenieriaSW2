@@ -3,6 +3,9 @@ package traveller.dominio;
 import java.io.Serializable;
 
 public class Email implements Serializable{
+    
+    private static final long serialVersionUID = 113L;
+    
     private String direccion;
     
     public Email(){
@@ -23,7 +26,12 @@ public class Email implements Serializable{
 
     @Override
     public boolean equals(Object obj) {
+        try{
         return this.getDireccion().equals(((Email)obj).getDireccion());
+        }
+        catch(NullPointerException e){
+            return false;
+        }
     }
 
     @Override

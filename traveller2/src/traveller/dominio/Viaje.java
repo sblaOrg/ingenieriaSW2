@@ -20,6 +20,8 @@ import traveller.utill.Utilidades;
 
 public final class Viaje implements Serializable {
 
+    private static final long serialVersionUID = 119L;
+    
     private String nombre;
     private Ciudad destino;
     private Date fechaInicio;
@@ -167,7 +169,12 @@ public final class Viaje implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
+        try{
         return this.getNombre().equals(((Viaje) obj).getNombre());
+        }
+        catch(NullPointerException e){
+            return false;
+        }
     }
 
     @Override

@@ -3,6 +3,9 @@ package traveller.dominio;
 import java.io.Serializable;
 
 public class ReporteLog implements Serializable{
+    
+    private static final long serialVersionUID = 115L;
+    
     private String accion;
     private String fecha;
 
