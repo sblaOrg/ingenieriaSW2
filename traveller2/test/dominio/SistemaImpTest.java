@@ -1,9 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package dominio;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import traveller.dominio.Email;
 import traveller.dominio.Usuario;
 import traveller.dominio.SistemaImp;
@@ -12,12 +11,18 @@ import traveller.excepciones.usuario.IdentificacionInvalidaException;
 import traveller.excepciones.usuario.UsuarioException;
 import traveller.excepciones.usuario.UsuarioExistenteException;
 import java.util.ArrayList;
+import java.util.Date;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import traveller.dominio.Ciudad;
+import traveller.dominio.TipoEvento;
+import traveller.dominio.Viaje;
+import traveller.excepciones.fecha.FechaException;
+import traveller.excepciones.viaje.ViajeException;
 
 /**
  *
@@ -28,6 +33,7 @@ public class SistemaImpTest {
     private ISistema instance;
 
     public SistemaImpTest() {
+        instance = new SistemaImp();
     }
 
     @BeforeClass
@@ -39,10 +45,24 @@ public class SistemaImpTest {
     }
 
     @Before
-    public void setUp() {
-
+    public void setUp() throws ViajeException, FechaException {
+        /*DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaFin = null;
+        try {
+            fechaFin = formatter.parse(Integer.parseInt("23") + "/"
+                    + Integer.parseInt("11") + "/" + Integer.parseInt("2018"));
+        } catch (ParseException ex) {
+        }
+        instance = new Viaje("Vacaciones", new Ciudad("MADRID"),
+                Calendar.getInstance().getTime(), fechaFin, "Descripcion");
         instance = new SistemaImp();
-
+        Usuario usuarioA = new Usuario("Mario");
+        Usuario usuarioB = new Usuario("Juan");
+        usuarioA.altaViaje("Viaje a Madrid", new Ciudad("Madrid"), "13", "08", 
+                "2018", "18", "08", "2018", "Viaje de vacaciones");
+        usuarioB.altaViaje("Viaje a Madrid", new Ciudad("Madrid"), "13", "08", 
+                "2018", "18", "08", "2018", "Viaje de vacaciones");
+        */
     }
 
     @After
@@ -56,6 +76,7 @@ public class SistemaImpTest {
     public void testAltaUsuarioOK1() throws Exception {
         instance.altaUsuario("Pepe", "pepe4000", new Email("pepeda@gmail.com"),
                 "Jose", "Damonte");
+        assertTrue(instance.existeUsuario("Pepe"));
     }
 
     /**
@@ -65,6 +86,7 @@ public class SistemaImpTest {
     public void testAltaUsuarioOK2() throws Exception {
         instance.altaUsuario("El Juancho", "juancho123", new Email("juancho@gmail.com"),
                 "Juan", "Damonte");
+        assertTrue(instance.existeUsuario("El Juancho"));
     }
 
     /**
@@ -112,7 +134,7 @@ public class SistemaImpTest {
     /**
      * Test of identificacionUsuario method, of class SistemaImp.
      */
-    @Test
+    @Test//(expected=IdentificacionInvalidaException.class)
     public void testIdentificacionUsuarioErrorInvalida2() throws Exception {
         try {
             instance.altaUsuario("Pepe", "pepe4000", new Email("pepeda@gmail.com"),
@@ -127,7 +149,7 @@ public class SistemaImpTest {
     /**
      * Test of identificacionUsuario method, of class SistemaImp.
      */
-    @Test
+    @Test//(expected=IdentificacionInvalidaException.class)
     public void testIdentificacionUsuarioErrorInvalida3() throws Exception {
         try {
             instance.altaUsuario("Pepe", "pepe4000", new Email("pepeda@gmail.com"),
@@ -142,7 +164,7 @@ public class SistemaImpTest {
     /**
      * Test of identificacionUsuario method, of class SistemaImp.
      */
-    @Test
+    @Test//(expected=IdentificacionInvalidaException.class)
     public void testIdentificacionUsuarioErrorInvalida4() throws Exception {
         try {
             instance.altaUsuario("Pepe", "pepe4000", new Email("pepeda@gmail.com"),
@@ -157,15 +179,15 @@ public class SistemaImpTest {
     /**
      * Test of identificacionUsuario method, of class SistemaImp.
      */
-    @Test
+    @Test//(expected=IdentificacionInvalidaException.class)
     public void testIdentificacionUsuarioErrorInvalida5() throws Exception {
         try {
             instance.altaUsuario("Pepe", "pepe4000", new Email("pepeda@gmail.com"),
                     "Jose", "Damonte");
             instance.identificacionUsuario("pepe", "pepe4000");
-            assert (false);
+            assert(false);
         } catch (IdentificacionInvalidaException e) {
-            assert (true);
+            assert(true);
         }
     }
 
@@ -205,13 +227,18 @@ public class SistemaImpTest {
     /**
      * Test of bajaUsuario method, of class SistemaImp.
      */
-    @Test
-    public void testBajaUsuario() throws UsuarioException {
+    @Test//(expected=UsuarioExistenteException.class)
+    public void testBajaUsuario() throws UsuarioException  {
+        try{
         instance.altaUsuario("Pepe", "pepe4000", new Email("pepeda@gmail.com"),
                 "Jose", "Damonte");
         instance.identificacionUsuario("Pepe", "pepe4000");
         instance.bajaUsuario();
-        assert (instance.getListaUsuarios().isEmpty());
+        }
+        catch(UsuarioException e){
+        }
+        
+        assertTrue (instance.getListaUsuarios().isEmpty());
     }
 
     /**
@@ -231,8 +258,8 @@ public class SistemaImpTest {
      */
     @Test
     public void testExisteUsuarioFalse() throws UsuarioException {
-        instance.altaUsuario("Pepe", "pepe4000", new Email("pepeda@gmail.com"),
-                "Jose", "Damonte");
+        instance.altaUsuario("Pedro", "Pepe4001", new Email("pedro12@gmail.com"),
+                "Pedro", "Rodriguez");
         boolean expResult = false;
         boolean result = instance.existeUsuario("pepe");
         assertEquals(expResult, result);
@@ -278,9 +305,8 @@ public class SistemaImpTest {
      */
     @Test
     public void testSetModoDesarrolladorTrue() {
-        boolean modo = true;
-        instance.setModoDesarrollador(modo);
-        assertEquals(modo, instance.esModoDesarrollador());
+        instance.setModoDesarrollador(true);
+        assertTrue(instance.esModoDesarrollador());
     }
 
     /**
@@ -288,8 +314,106 @@ public class SistemaImpTest {
      */
     @Test
     public void testSetModoDesarrolladorFalse() {
-        boolean modo = false;
-        instance.setModoDesarrollador(modo);
-        assertEquals(modo, instance.esModoDesarrollador());
+        instance.setModoDesarrollador(false);
+        assertFalse(instance.esModoDesarrollador());
+    }
+    
+    @Test
+    public void testObtenerGrupoDeViaje() {
+        //dado un viaje voy recorriendo la lista de viajes de usuarios y veo si lo tienen entre sus viajes
+        /*ArrayList<Usuario> usuariosARetornar;
+        Usuario usuarioA = new Usuario("Mario");
+        Usuario usuarioB = new Usuario("Hector");
+        Viaje viajeMadrid = new Viaje("Madrid");
+        usuarioA.agregarViajes(viajeMadrid);
+        usuarioB.agregarViajes(viajeMadrid);
+        instance.getListaUsuarios().add(usuarioA);
+        instance.getListaUsuarios().add(usuarioB);
+        usuariosARetornar = instance.obtenerGrupoDeViaje(viajeMadrid);
+        ArrayList<Usuario> retornoEsperado = new ArrayList<Usuario>();
+        retornoEsperado.add(usuarioA);
+        retornoEsperado.add(usuarioB);
+        assertEquals(retornoEsperado, usuariosARetornar);*/
+        
+    }
+    
+    @Test
+    public void testGetNombresCiudades(){
+        ArrayList<String> resultadoEsperado = new ArrayList<String>();
+        resultadoEsperado = instance.getNombresCiudades();
+        assertEquals(instance.getNombresCiudades(), resultadoEsperado);
+    }
+    
+    @Test
+    public void testGetNombresTiposEventos(){
+        ArrayList<String> resultadoEsperado = new ArrayList<String>();
+        resultadoEsperado = instance.getNombresTiposEventos();
+        assertEquals(instance.getNombresTiposEventos(), resultadoEsperado);
+    }
+    
+    @Test
+    public void testModificarCiudad(){
+        instance.altaCiudad(new Ciudad("Canelondres"));
+        instance.modificarCiudad("Canelones", 4);
+        int pos = instance.getListaCiudades().size() - 1;
+        assertEquals(instance.obtenerCiudad(pos).getNombre(), "Canelones");
+    }
+    
+    @Test
+    public void testModificarTipoEvento(){
+        instance.altaTipoEvento(new TipoEvento("Educaciones"));
+        int pos = instance.getListaTipoEventos().size() - 1;
+        instance.modificarTipoEvento("Educacion", pos);
+        assertEquals(instance.obtenerTipoEvento(pos).getNombre(), "Educacion");
+    }
+    
+    @Test
+    public void testBajaCiudad(){
+        instance.altaCiudad(new Ciudad("Orlando"));
+        instance.bajaCiudad(new Ciudad("Orlando"));
+        assertFalse(instance.existeCiudad(new Ciudad("Orlando")));
+    }
+    
+    @Test
+    public void testBajaTipoEvento(){
+        instance.altaTipoEvento(new TipoEvento("Humano"));
+        instance.bajaTipoEvento(new TipoEvento("Humano"));
+        assertFalse(instance.existeTipoEvento(new TipoEvento("Humano")));
+    }
+    
+    @Test
+    public void testSetSetPuerto(){
+        instance.setPuerto(101);
+        int puertoSeteado = 101;
+        assertEquals(instance.getPuerto(), 101);
+    }
+    
+    @Test
+    public void testSetSetProxy(){
+        String proxySeteado = "Sin Proxy";
+        instance.setProxy(proxySeteado);
+        assertEquals(instance.getProxy(), proxySeteado);
+    }
+    
+    @Test
+    public void testSetMostrarCartelInicio(){
+        instance.setMostrarCartelInicio(true);
+        assertTrue(instance.isMostrarCartelInicio());
+    }
+    
+    @Test
+    public void testIdentificarUsuario() throws UsuarioException{
+        instance.altaUsuario("Usuario1", "qwerty123", new Email("j@gmail.com"),
+                "Juan", "Perez");
+        instance.identificacionUsuario("Usuario1", "qwerty123");
+        assertTrue(instance.isMostrarCartelInicio());
+    }
+    
+    @Test
+    public void testIdentificarUsuarioMetodo() throws UsuarioException{
+        instance.altaUsuario("Usuario1", "qwerty123", new Email("j@gmail.com"),
+                "Juan", "Perez");
+        instance.identificar(new Usuario("Usuario1"));
+        assertEquals(instance.getUsuarioIdentificado(), new Usuario("Usuario1"));
     }
 }

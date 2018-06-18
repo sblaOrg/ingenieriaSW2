@@ -121,9 +121,6 @@ public class ViajeTest {
      */
     @Test(expected=EventoExistenteException.class)
     public void testAltaEventoExistente() throws Exception {
-        
-                
-                
         instance.altaEvento("Visita al parque", "01", "10", "2018", "Parque",
                 "descripcion", new TipoEvento("FAMILIAR"));
         instance.altaEvento("Visita al parque", "01", "10", "2018", "Parque",

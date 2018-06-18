@@ -43,6 +43,9 @@ public final class Usuario implements Serializable {
 
     public Usuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
+        this.contraseña = this.nombreUsuario;
+        this.listaViajes = new ArrayList<Viaje>();
+        this.listaAmigos = new ArrayList<Usuario>();
     }
 
     public Usuario(String nombreUsuario, String contraseña, String nombre, String apellido, Email email) throws UsuarioException {
