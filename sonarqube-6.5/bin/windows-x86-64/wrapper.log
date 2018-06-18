@@ -1,0 +1,5 @@
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2018.04.26 21:37:32 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonarqube-6.5\temp
+2018.04.26 21:37:33 INFO  app[][o.s.a.p.JavaProcessLauncherImpl] Launch process[es]: C:\Program Files\Java\jre1.8.0_51\bin\java -Djava.awt.headless=true -Xmx1G -Xms256m -Xss256k -Djna.nosys=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonarqube-6.5\temp -cp ./lib/common/*;./lib/search/* org.sonar.search.SearchServer C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonarqube-6.5\temp\sq-process906799747573653064properties

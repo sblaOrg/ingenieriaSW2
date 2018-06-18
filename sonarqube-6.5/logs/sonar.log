@@ -1,0 +1,40 @@
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2018.04.26 13:18:27 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\sonarqube-6.5\temp
+2018.04.26 13:18:28 INFO  app[][o.s.a.p.JavaProcessLauncherImpl] Launch process[es]: D:\steffano\Archivos de Programa\JAVA\bin\java -Djava.awt.headless=true -Xmx1G -Xms256m -Xss256k -Djna.nosys=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\sonarqube-6.5\temp -cp ./lib/common/*;./lib/search/* org.sonar.search.SearchServer C:\sonarqube-6.5\temp\sq-process5403014519258776235properties
+2018.04.26 13:18:38 INFO  app[][o.s.a.SchedulerImpl] Process[es] is up
+2018.04.26 13:18:38 INFO  app[][o.s.a.p.JavaProcessLauncherImpl] Launch process[web]: D:\steffano\Archivos de Programa\JAVA\bin\java -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\sonarqube-6.5\temp -cp ./lib/common/*;./lib/server/*;C:\sonarqube-6.5\lib\jdbc\h2\h2-1.3.176.jar org.sonar.server.app.WebServer C:\sonarqube-6.5\temp\sq-process8252798882273940145properties
+2018.04.26 13:19:33 INFO  app[][o.s.a.SchedulerImpl] Process[web] is up
+2018.04.26 13:19:33 INFO  app[][o.s.a.p.JavaProcessLauncherImpl] Launch process[ce]: D:\steffano\Archivos de Programa\JAVA\bin\java -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\sonarqube-6.5\temp -cp ./lib/common/*;./lib/server/*;./lib/ce/*;C:\sonarqube-6.5\lib\jdbc\h2\h2-1.3.176.jar org.sonar.ce.app.CeServer C:\sonarqube-6.5\temp\sq-process7465549145224795428properties
+2018.04.26 13:19:51 INFO  app[][o.s.a.SchedulerImpl] Process[ce] is up
+2018.04.26 13:19:51 INFO  app[][o.s.a.SchedulerImpl] SonarQube is up
+--> Wrapper Started as Console
+Launching a JVM...
+2018.04.26 21:37:40 INFO  app[][o.s.a.SchedulerImpl] Process[es] is up
+2018.04.26 21:37:40 INFO  app[][o.s.a.p.JavaProcessLauncherImpl] Launch process[web]: C:\Program Files\Java\jre1.8.0_51\bin\java -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonarqube-6.5\temp -cp ./lib/common/*;./lib/server/*;C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonarqube-6.5\lib\jdbc\h2\h2-1.3.176.jar org.sonar.server.app.WebServer C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonarqube-6.5\temp\sq-process4335331134794086369properties
+2018.04.26 21:37:53 INFO  app[][o.s.a.SchedulerImpl] Process[web] is up
+2018.04.26 21:37:53 INFO  app[][o.s.a.p.JavaProcessLauncherImpl] Launch process[ce]: C:\Program Files\Java\jre1.8.0_51\bin\java -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonarqube-6.5\temp -cp ./lib/common/*;./lib/server/*;./lib/ce/*;C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonarqube-6.5\lib\jdbc\h2\h2-1.3.176.jar org.sonar.ce.app.CeServer C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonarqube-6.5\temp\sq-process1713035494685958647properties
+2018.04.26 21:37:58 INFO  app[][o.s.a.SchedulerImpl] Process[ce] is up
+2018.04.26 21:37:58 INFO  app[][o.s.a.SchedulerImpl] SonarQube is up
+CTRL-C trapped.  Shutting down.
+2018.04.26 21:43:45 INFO  app[][o.s.a.SchedulerImpl] Process [es] is stopped
+2018.04.26 21:43:46 INFO  app[][o.s.a.SchedulerImpl] Process [ce] is stopped
+2018.04.26 21:43:47 INFO  app[][o.s.a.SchedulerImpl] Process [web] is stopped
+2018.04.26 21:43:47 INFO  app[][o.s.a.SchedulerImpl] SonarQube is stopped
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2018.06.18 10:00:34 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio1\viejoProyecto\sonarqube-6.5\temp
+2018.06.18 10:00:34 INFO  app[][o.s.a.p.JavaProcessLauncherImpl] Launch process[es]: C:\Program Files\Java\jre1.8.0_51\bin\java -Djava.awt.headless=true -Xmx1G -Xms256m -Xss256k -Djna.nosys=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio1\viejoProyecto\sonarqube-6.5\temp -cp ./lib/common/*;./lib/search/* org.sonar.search.SearchServer C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio1\viejoProyecto\sonarqube-6.5\temp\sq-process2744950559030544660properties
+2018.06.18 10:00:42 INFO  app[][o.s.a.SchedulerImpl] Process[es] is up
+2018.06.18 10:00:42 INFO  app[][o.s.a.p.JavaProcessLauncherImpl] Launch process[web]: C:\Program Files\Java\jre1.8.0_51\bin\java -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio1\viejoProyecto\sonarqube-6.5\temp -cp ./lib/common/*;./lib/server/*;C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio1\viejoProyecto\sonarqube-6.5\lib\jdbc\h2\h2-1.3.176.jar org.sonar.server.app.WebServer C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio1\viejoProyecto\sonarqube-6.5\temp\sq-process554238329395981397properties
+2018.06.18 10:00:51 INFO  app[][o.s.a.SchedulerImpl] Process[web] is up
+2018.06.18 10:00:51 INFO  app[][o.s.a.p.JavaProcessLauncherImpl] Launch process[ce]: C:\Program Files\Java\jre1.8.0_51\bin\java -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio1\viejoProyecto\sonarqube-6.5\temp -cp ./lib/common/*;./lib/server/*;./lib/ce/*;C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio1\viejoProyecto\sonarqube-6.5\lib\jdbc\h2\h2-1.3.176.jar org.sonar.ce.app.CeServer C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio1\viejoProyecto\sonarqube-6.5\temp\sq-process136228982373661815properties
+2018.06.18 10:00:55 INFO  app[][o.s.a.SchedulerImpl] Process[ce] is up
+2018.06.18 10:00:55 INFO  app[][o.s.a.SchedulerImpl] SonarQube is up
