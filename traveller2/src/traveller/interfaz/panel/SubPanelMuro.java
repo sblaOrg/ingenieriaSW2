@@ -24,6 +24,7 @@ public final class SubPanelMuro extends javax.swing.JPanel {
         this.viaje = viaje;
 
         actualizarComentarios();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -101,7 +102,7 @@ public final class SubPanelMuro extends javax.swing.JPanel {
             .addGroup(panelComentario1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(panelComentario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(etqContenido1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(etqContenido1)
                     .addGroup(panelComentario1Layout.createSequentialGroup()
                         .addComponent(etqAutor1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -273,7 +274,7 @@ public final class SubPanelMuro extends javax.swing.JPanel {
         );
 
         add(panelMuro);
-        panelMuro.setBounds(0, 0, 0, 0);
+        panelMuro.setBounds(0, 0, 376, 509);
     }// </editor-fold>//GEN-END:initComponents
 
     public void actualizarComentarios() {
@@ -281,7 +282,9 @@ public final class SubPanelMuro extends javax.swing.JPanel {
         this.panelComentario2.setVisible(false);
         this.panelComentario3.setVisible(false);
         this.panelComentario4.setVisible(false);
-
+        lblRedactar.setVisible(true);
+        txtPublicacion.setVisible(true);
+        btnPublicar.setVisible(true);
         int cantComentarios = 1;
         Iterator<Comentario> iteradorComentarios = viaje.getListaComentarios().iterator();
         while (iteradorComentarios.hasNext() && cantComentarios <= 4) {
@@ -310,6 +313,12 @@ public final class SubPanelMuro extends javax.swing.JPanel {
                     this.etqAutor4.setText(comentario.getAutor());
                     this.etqContenido4.setText(comentario.getContenido());
                     this.etqFecha4.setText(comentario.getFecha());
+                    break;
+                default:
+                    this.panelComentario1.setVisible(true);
+                    this.etqAutor1.setText(sistema.getUsuarioIdentificado().getNombre());
+                    this.etqContenido1.setText("Ingrese un Comentario");
+                    this.etqFecha1.setText("01/01/2018");
                     break;
             }
             cantComentarios++;

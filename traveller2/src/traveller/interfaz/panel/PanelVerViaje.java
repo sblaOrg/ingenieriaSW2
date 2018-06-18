@@ -25,11 +25,13 @@ public class PanelVerViaje extends javax.swing.JPanel {
         JPanel jp2 = new SubPanelInformacion(sistema, viaje);
         JPanel jp3 = new SubPanelLog(sistema, viaje);
 	JPanel jp4 = new SubPanelInvitarAmigo(sistema, viaje);
+        JPanel jp5 = new SubPanelMuro(sistema, viaje);
         this.panelPestañas.addTab(viaje.getNombre(), jp1);
 	this.etqTitulo.setText(viaje.getNombre());
         this.panelPestañas.addTab("Información", jp2);
 	this.panelPestañas.addTab("Invitar amigo", jp4);
         this.panelPestañas.addTab("Novedades", jp3);
+        this.panelPestañas.addTab("Comentarios", jp5);
     }
 
     @SuppressWarnings("unchecked")
@@ -139,7 +141,7 @@ public class PanelVerViaje extends javax.swing.JPanel {
             panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrearJugadorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelPestañas, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
+                .addComponent(panelPestañas, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -150,7 +152,7 @@ public class PanelVerViaje extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelCrearJugador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+                    .addComponent(panelCrearJugador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
                     .addComponent(panelTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -169,7 +171,7 @@ public class PanelVerViaje extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
