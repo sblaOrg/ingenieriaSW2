@@ -1,0 +1,1 @@
+6%excepciones/viaje/ViajeException.java 2javaX

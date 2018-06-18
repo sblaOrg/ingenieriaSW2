@@ -1,0 +1,142 @@
+Environment variables:
+  - =::=::\
+  - =C:=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin
+  - ALLUSERSPROFILE=C:\ProgramData
+  - APPDATA=C:\Users\steffano\AppData\Roaming
+  - COMPUTERNAME=LENSBLA
+  - ComSpec=C:\WINDOWS\system32\cmd.exe
+  - CommonProgramFiles=C:\Program Files\Common Files
+  - CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+  - CommonProgramW6432=C:\Program Files\Common Files
+  - DriverData=C:\Windows\System32\Drivers\DriverData
+  - ERROR_CODE=0
+  - ESET_OPTIONS=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+  - FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+  - FPS_BROWSER_USER_PROFILE_STRING=Default
+  - HOMEDRIVE=C:
+  - HOMEPATH=\Users\steffano
+  - JAVA_EXEC="C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin\..\jre\bin\java.exe"
+  - JAVA_HOME=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin\..\jre
+  - LOCALAPPDATA=C:\Users\steffano\AppData\Local
+  - LOGONSERVER=\\LENSBLA
+  - NUMBER_OF_PROCESSORS=8
+  - OS=Windows_NT
+  - OneDrive=C:\Users\steffano\OneDrive
+  - PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+  - PROCESSOR_ARCHITECTURE=AMD64
+  - PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+  - PROCESSOR_LEVEL=6
+  - PROCESSOR_REVISION=3c03
+  - PROJECT_HOME=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin
+  - PROMPT=$P$G
+  - PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\PowerShell\Modules\
+  - PUBLIC=C:\Users\Public
+  - Path=C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files\Haskell\bin;C:\Program Files\Haskell Platform\8.0.1\lib\extralibs\bin;C:\Program Files\Haskell Platform\8.0.1\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_51\bin;C:\Program Files\Haskell Platform\8.0.1\mingw\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonar-scanner-3.1.0.1141-windows\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Users\steffano\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\steffano\AppData\Local\Programs\Python\Python36\;C:\Users\steffano\AppData\Roaming\cabal\bin;C:\Users\steffano\AppData\Roaming\local\bin;C:\Users\steffano\AppData\Local\Microsoft\WindowsApps;
+  - ProgramData=C:\ProgramData
+  - ProgramFiles=C:\Program Files
+  - ProgramFiles(x86)=C:\Program Files (x86)
+  - ProgramW6432=C:\Program Files
+  - SESSIONNAME=Console
+  - SONAR_SCANNER_HOME=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin\..
+  - SystemDrive=C:
+  - SystemRoot=C:\WINDOWS
+  - TEMP=C:\Users\steffano\AppData\Local\Temp
+  - TMP=C:\Users\steffano\AppData\Local\Temp
+  - USERDOMAIN=LENSBLA
+  - USERDOMAIN_ROAMINGPROFILE=LENSBLA
+  - USERNAME=steffano
+  - USERPROFILE=C:\Users\steffano
+  - VBOX_MSI_INSTALL_PATH=C:\Program Files\Oracle\VirtualBox\
+  - VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+  - _JAVA_OPTIONS=-Djava.net.preferIPv4Stack=true
+  - scriptdir=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin
+  - sonar=C:\Users\steffano\Documents\Facultad\ORT\IngenieriaSW2\traveller\sonarqube-6.5\bin\windows-x86-64
+  - use_embedded_jre=true
+  - vi=C:\PROGRA~2\Vim\vim80\vim.exe
+  - windir=C:\WINDOWS
+System properties:
+  - awt.toolkit=sun.awt.windows.WToolkit
+  - file.encoding=Cp1252
+  - file.encoding.pkg=sun.io
+  - file.separator=\
+  - java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+  - java.awt.headless=true
+  - java.awt.printerjob=sun.awt.windows.WPrinterJob
+  - java.class.path=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin\..\lib\sonar-scanner-cli-3.1.0.1141.jar
+  - java.class.version=52.0
+  - java.endorsed.dirs=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\lib\endorsed
+  - java.ext.dirs=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+  - java.home=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre
+  - java.io.tmpdir=C:\Users\steffano\AppData\Local\Temp\
+  - java.library.path=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files\Haskell\bin;C:\Program Files\Haskell Platform\8.0.1\lib\extralibs\bin;C:\Program Files\Haskell Platform\8.0.1\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_51\bin;C:\Program Files\Haskell Platform\8.0.1\mingw\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Users\steffano\OneDrive\ORT\Ingenieria de Software 2\Obligatorio\Proyecto\sonar-scanner-3.1.0.1141-windows\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Users\steffano\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\steffano\AppData\Local\Programs\Python\Python36\;C:\Users\steffano\AppData\Roaming\cabal\bin;C:\Users\steffano\AppData\Roaming\local\bin;C:\Users\steffano\AppData\Local\Microsoft\WindowsApps;;.
+  - java.net.preferIPv4Stack=true
+  - java.runtime.name=Java(TM) SE Runtime Environment
+  - java.runtime.version=1.8.0_121-b13
+  - java.specification.name=Java Platform API Specification
+  - java.specification.vendor=Oracle Corporation
+  - java.specification.version=1.8
+  - java.vendor=Oracle Corporation
+  - java.vendor.url=http://java.oracle.com/
+  - java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+  - java.version=1.8.0_121
+  - java.vm.info=mixed mode
+  - java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+  - java.vm.specification.name=Java Virtual Machine Specification
+  - java.vm.specification.vendor=Oracle Corporation
+  - java.vm.specification.version=1.8
+  - java.vm.vendor=Oracle Corporation
+  - java.vm.version=25.121-b13
+  - line.separator=
+
+  - os.arch=amd64
+  - os.name=Windows 10
+  - os.version=10.0
+  - path.separator=;
+  - project.home=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin
+  - scanner.home=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin\..
+  - sun.arch.data.model=64
+  - sun.boot.class.path=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\lib\resources.jar;C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\lib\rt.jar;C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\lib\sunrsasign.jar;C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\lib\jsse.jar;C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\lib\jce.jar;C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\lib\charsets.jar;C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\lib\jfr.jar;C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\classes
+  - sun.boot.library.path=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\jre\bin
+  - sun.cpu.endian=little
+  - sun.cpu.isalist=amd64
+  - sun.desktop=windows
+  - sun.io.unicode.encoding=UnicodeLittle
+  - sun.java.command=org.sonarsource.scanner.cli.Main -X -Dsonar.projectKey=traveller2 -Dsonar.sources=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\traveller2\src\traveller -Dsonar.projectBaseDir=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\traveller2\src\traveller -Dsonar.java.binaries=.
+  - sun.java.launcher=SUN_STANDARD
+  - sun.jnu.encoding=Cp1252
+  - sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+  - sun.os.patch.level=
+  - sun.stderr.encoding=cp437
+  - sun.stdout.encoding=cp437
+  - user.country=US
+  - user.dir=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\sonar-scanner-3.1.0.1141-windows\bin
+  - user.home=C:\Users\steffano
+  - user.language=en
+  - user.name=steffano
+  - user.script=
+  - user.timezone=America/Montevideo
+  - user.variant=
+SonarQube plugins:
+  - C# 5.10.1.1411 (csharp)
+  - SonarPython 1.8.0.1496 (python)
+  - SonarJava 4.12.0.11033 (java)
+  - Flex 2.3 (flex)
+  - Git 1.2 (scmgit)
+  - SonarXML 1.4.3.1027 (xml)
+  - SonarPHP 2.10.0.2087 (php)
+  - SVN 1.5.0.715 (scmsvn)
+  - SonarJS 3.1.1.5128 (javascript)
+Global properties:
+  - sonar.core.id=AWMCwAjEDMLk6ztuHHkn
+  - sonar.core.startTime=2018-06-18T12:38:13-0300
+Settings for module: traveller2
+  - sonar.host.url=http://localhost:9000
+  - sonar.java.binaries=.
+  - sonar.projectBaseDir=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\traveller2\src\traveller
+  - sonar.projectKey=traveller2
+  - sonar.scanner.app=ScannerCli
+  - sonar.scanner.appVersion=3.1.0.1141
+  - sonar.sourceEncoding=windows-1252
+  - sonar.sources=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\traveller2\src\traveller
+  - sonar.verbose=true
+  - sonar.working.directory=C:\Users\steffano\Documents\Facultad\ORT\IngSw2-obl2\ingenieriaSW2\traveller2\src\traveller\.scannerwork

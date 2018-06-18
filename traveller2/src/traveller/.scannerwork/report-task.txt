@@ -1,0 +1,6 @@
+projectKey=traveller2
+serverUrl=http://localhost:9000
+serverVersion=6.5.0.27846
+dashboardUrl=http://localhost:9000/dashboard/index/traveller2
+ceTaskId=AWQT2a3h5wH-N0Tq_fXM
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWQT2a3h5wH-N0Tq_fXM

@@ -79,12 +79,17 @@ public final class Evento implements Serializable{
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc" id="L82">	return this.getNombre().equals(((Evento) obj).getNombre());</span>
+	try{
+<span class="fc" id="L83">        return this.getNombre().equals(((Evento) obj).getNombre());</span>
+        }
+<span class="nc" id="L85">        catch (NullPointerException e) {</span>
+<span class="nc" id="L86">            return false;</span>
+        }
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L87">	return nombre;</span>
+<span class="fc" id="L92">	return nombre;</span>
     }
 
 }

@@ -376,4 +376,5 @@ public class SistemaImpTest {
         instance.identificar(new Usuario("Usuario1"));
         assertEquals(instance.getUsuarioIdentificado(), new Usuario("Usuario1"));
     }
+    
 }

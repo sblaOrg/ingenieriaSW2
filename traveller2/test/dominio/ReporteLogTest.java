@@ -82,4 +82,12 @@ public class ReporteLogTest {
         instance.setFecha("23/11/2014");
         assertEquals("23/11/2014", instance.getFecha());
     }
+    
+    @Test
+    public void testReporteLog() {
+        ReporteLog reporte = new ReporteLog();
+        String salidaEsperada = "01/01/2018 - Sin datos";
+        
+        assertEquals(salidaEsperada, reporte.toString());
+    }
 }

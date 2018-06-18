@@ -45,9 +45,9 @@ public final class Viaje implements Serializable {
 <span class="fc" id="L45">    }</span>
 
     public void agregarComentario(String autor, String fecha, String contenido) throws ComentarioException {
-<span class="nc" id="L48">        Comentario nuevoComentario = new Comentario(fecha, contenido, autor);</span>
-<span class="nc" id="L49">        this.listaComentarios.add(0,nuevoComentario);</span>
-<span class="nc" id="L50">    }</span>
+<span class="fc" id="L48">        Comentario nuevoComentario = new Comentario(fecha, contenido, autor);</span>
+<span class="fc" id="L49">        this.listaComentarios.add(0,nuevoComentario);</span>
+<span class="fc" id="L50">    }</span>
 
     public ArrayList&lt;Comentario&gt; getListaComentarios() {
 <span class="nc" id="L53">        return this.listaComentarios;</span>
@@ -107,7 +107,7 @@ public final class Viaje implements Serializable {
     }
 
     public ArrayList&lt;Comentario&gt; getComentarios() {
-<span class="nc" id="L110">        return this.listaComentarios;</span>
+<span class="fc" id="L110">        return this.listaComentarios;</span>
     }
 
     public ArrayList&lt;Evento&gt; getListaEventos() {

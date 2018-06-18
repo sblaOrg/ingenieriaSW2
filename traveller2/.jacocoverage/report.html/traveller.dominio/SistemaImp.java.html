@@ -227,68 +227,64 @@ public class SistemaImp implements ISistema, Serializable {
         }
 <span class="fc" id="L228">    }</span>
     
-    /*public void borrarCiudad(Ciudad unaCiudad){
-        
-    }*/
-
     /* MÉTODOS PRIVADOS */
     private boolean existeNombreUsuario(String nombreUsuario) {
-<span class="fc" id="L236">	return this.listaUsuarios.contains(new Usuario(nombreUsuario));</span>
+<span class="fc" id="L232">	return this.listaUsuarios.contains(new Usuario(nombreUsuario));</span>
     }
 
     public boolean altaCiudad(Ciudad unaCiudad) {
-<span class="fc" id="L240">        boolean registroExitoso = false;</span>
-<span class="pc bpc" id="L241" title="1 of 2 branches missed.">        if(!this.existeCiudad(unaCiudad)){</span>
-<span class="fc" id="L242">            this.getListaCiudades().add(unaCiudad);</span>
-<span class="fc" id="L243">            registroExitoso = true;</span>
+<span class="fc" id="L236">        boolean registroExitoso = false;</span>
+<span class="pc bpc" id="L237" title="1 of 2 branches missed.">        if(!this.existeCiudad(unaCiudad)){</span>
+<span class="fc" id="L238">            this.getListaCiudades().add(unaCiudad);</span>
+<span class="fc" id="L239">            registroExitoso = true;</span>
         }
-<span class="fc" id="L245">        return registroExitoso;</span>
+<span class="fc" id="L241">        return registroExitoso;</span>
     }
 
     public void bajaCiudad(Ciudad unaCiudad) {
-<span class="fc" id="L249">        this.getListaCiudades().remove(unaCiudad);</span>
-<span class="fc" id="L250">    }</span>
+<span class="fc" id="L245">        this.getListaCiudades().remove(unaCiudad);</span>
+<span class="fc" id="L246">    }</span>
     
     public boolean existeCiudad(Ciudad unaCiudad) {
-<span class="fc" id="L253">        return this.getListaCiudades().contains(unaCiudad);</span>
+<span class="fc" id="L249">        return this.getListaCiudades().contains(unaCiudad);</span>
     }
     
     public Ciudad obtenerCiudad(int posicionArray){
-<span class="fc" id="L257">        return this.getListaCiudades().get(posicionArray);</span>
+<span class="fc" id="L253">        return this.getListaCiudades().get(posicionArray);</span>
     }
     
     public TipoEvento obtenerTipoEvento(int posicionArray){
-<span class="fc" id="L261">        return this.getListaTipoEventos().get(posicionArray);</span>
+<span class="fc" id="L257">        return this.getListaTipoEventos().get(posicionArray);</span>
     }
     
     public void modificarTipoEvento(String unNombreTipoEvento, int posicion){
-<span class="fc" id="L265">        this.getListaTipoEventos().get(posicion).setNombre(unNombreTipoEvento);</span>
-<span class="fc" id="L266">    }</span>
+<span class="fc" id="L261">        this.getListaTipoEventos().get(posicion).setNombre(unNombreTipoEvento);</span>
+<span class="fc" id="L262">    }</span>
 
     public boolean altaTipoEvento(TipoEvento unTipo) {
-<span class="fc" id="L269">        boolean registroExtitoso = false;</span>
-<span class="pc bpc" id="L270" title="1 of 2 branches missed.">        if(!this.existeTipoEvento(unTipo)){</span>
-<span class="fc" id="L271">            this.getListaTipoEventos().add(unTipo);</span>
-<span class="fc" id="L272">            registroExtitoso = true;</span>
+<span class="fc" id="L265">        boolean registroExtitoso = false;</span>
+<span class="pc bpc" id="L266" title="1 of 2 branches missed.">        if(!this.existeTipoEvento(unTipo)){</span>
+<span class="fc" id="L267">            this.getListaTipoEventos().add(unTipo);</span>
+<span class="fc" id="L268">            registroExtitoso = true;</span>
         }
-<span class="fc" id="L274">        return registroExtitoso;</span>
+<span class="fc" id="L270">        return registroExtitoso;</span>
     }
 
     public void bajaTipoEvento(TipoEvento unTipo) {
-<span class="fc" id="L278">        this.getListaTipoEventos().remove(unTipo);</span>
-<span class="fc" id="L279">    }</span>
+<span class="fc" id="L274">        this.getListaTipoEventos().remove(unTipo);</span>
+<span class="fc" id="L275">    }</span>
     
     public boolean existeTipoEvento(TipoEvento unTipo){
-<span class="fc" id="L282">        return this.getListaTipoEventos().contains(unTipo);</span>
+<span class="fc" id="L278">        return this.getListaTipoEventos().contains(unTipo);</span>
     }
     
     public ArrayList&lt;String&gt; getNombresTiposEventos(){
-<span class="fc" id="L286">        ArrayList&lt;String&gt; nombresTiposEventos = new ArrayList&lt;String&gt;();</span>
-<span class="fc bfc" id="L287" title="All 2 branches covered.">        for (int i = 0; i &lt; this.getListaTipoEventos().size(); i++){</span>
-<span class="fc" id="L288">            TipoEvento unTipoEvento = this.getListaTipoEventos().get(i);</span>
-<span class="fc" id="L289">            nombresTiposEventos.add(unTipoEvento.getNombre());</span>
+<span class="fc" id="L282">        ArrayList&lt;String&gt; nombresTiposEventos = new ArrayList&lt;String&gt;();</span>
+<span class="fc bfc" id="L283" title="All 2 branches covered.">        for (int i = 0; i &lt; this.getListaTipoEventos().size(); i++){</span>
+<span class="fc" id="L284">            TipoEvento unTipoEvento = this.getListaTipoEventos().get(i);</span>
+<span class="fc" id="L285">            nombresTiposEventos.add(unTipoEvento.getNombre());</span>
         }
-<span class="fc" id="L291">        return nombresTiposEventos;</span>
+<span class="fc" id="L287">        return nombresTiposEventos;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

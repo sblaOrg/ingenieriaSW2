@@ -26,6 +26,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import traveller.dominio.Comentario;
+import traveller.excepciones.comentario.ComentarioException;
 
 /**
  *
@@ -543,5 +545,16 @@ public class ViajeTest {
         String expResult = "Vacaciones";
         String result = instance.toString();
         assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testAgregarComentario() throws ComentarioException {
+        instance.agregarComentario("Fabio", "01/01/2018", "Contenido por defecto");
+        ArrayList<Comentario> comentarios;// = new ArrayList<Comentario>();
+        comentarios = instance.getComentarios();
+        int posicionComentario = comentarios.size() - 1;
+        String expResult = "Vacaciones";
+        String result = instance.toString();
+        assertEquals(comentarios.get(posicionComentario).getAutor(), "Fabio");
     }
 }

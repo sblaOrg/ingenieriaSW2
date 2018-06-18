@@ -92,4 +92,12 @@ public class EmailTest {
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
     }
+    
+    @Test
+    public void testConstructorSinParametros() {
+        Email email = new Email();
+        String expResult = "Vacio";
+        String result = email.toString();
+        assertEquals(expResult, result);
+    }
 }

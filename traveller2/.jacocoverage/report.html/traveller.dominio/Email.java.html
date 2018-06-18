@@ -5,31 +5,31 @@ import java.io.Serializable;
 public class Email implements Serializable{
     private String direccion;
     
-<span class="nc" id="L8">    public Email(){</span>
-<span class="nc" id="L9">    }</span>
+<span class="fc" id="L8">    public Email(){</span>
+<span class="fc" id="L9">        this.setDireccion(&quot;Vacio&quot;);</span>
+<span class="fc" id="L10">    }</span>
     
-<span class="fc" id="L11">    public Email(String email){</span>
-<span class="fc" id="L12">	this.direccion = email;</span>
-<span class="fc" id="L13">    }</span>
+<span class="fc" id="L12">    public Email(String email){</span>
+<span class="fc" id="L13">	this.direccion = email;</span>
+<span class="fc" id="L14">    }</span>
 
     public String getDireccion() {
-<span class="fc" id="L16">	return direccion;</span>
+<span class="fc" id="L17">	return direccion;</span>
     }
 
     public void setDireccion(String direccion) {
-<span class="fc" id="L20">	this.direccion = direccion;</span>
-<span class="fc" id="L21">    }</span>
+<span class="fc" id="L21">	this.direccion = direccion;</span>
+<span class="fc" id="L22">    }</span>
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc" id="L25">	return this.getDireccion().equals(((Email)obj).getDireccion());</span>
+<span class="fc" id="L26">        return this.getDireccion().equals(((Email)obj).getDireccion());</span>
     }
 
     @Override
     public String toString() {
-<span class="nc" id="L30">	return direccion;</span>
+<span class="fc" id="L31">	return direccion;</span>
     }
-    
     
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

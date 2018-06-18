@@ -2,7 +2,7 @@
 
 import java.io.Serializable;
 
-public class Ciudad implements Serializable{
+public class Ciudad implements Serializable {
 
     private String nombre;
 
@@ -13,7 +13,7 @@ public class Ciudad implements Serializable{
 <span class="fc" id="L13">    public Ciudad(String unNombre) {</span>
 <span class="fc" id="L14">        this.nombre = unNombre;</span>
 <span class="fc" id="L15">    }</span>
-    
+
     public String getNombre() {
 <span class="fc" id="L18">        return nombre;</span>
     }
@@ -24,7 +24,7 @@ public class Ciudad implements Serializable{
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc" id="L27">        return this.getNombre().equals(((Ciudad) obj).getNombre());</span>
+<span class="fc" id="L27">            return this.getNombre().equals(((Ciudad) obj).getNombre());</span>
     }
 
     @Override

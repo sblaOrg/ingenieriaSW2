@@ -115,4 +115,20 @@ public class ComentarioTest {
         instance.setAutor(autor);
         assertEquals(autor, instance.getAutor());
     }
+    
+    @Test
+    public void testConstructorSinParametros() throws ComentarioException {
+        Comentario nuevoComentario = new Comentario();
+        String sinDatos = "Sin datos";
+        Comentario  ComentarioConParametros = new Comentario("01/01/2018", sinDatos, sinDatos);
+        assertEquals(nuevoComentario, ComentarioConParametros);
+    }
+    
+    @Test
+    public void testEquals() throws ComentarioException {
+        Comentario nuevoComentario = new Comentario();
+        String sinDatos = "Sin datos";
+        Comentario  ComentarioConParametros = new Comentario("01/01/2018", sinDatos, sinDatos);
+        assertTrue(nuevoComentario.equals(ComentarioConParametros));
+    }
 }

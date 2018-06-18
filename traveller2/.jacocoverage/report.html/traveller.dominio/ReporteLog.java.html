@@ -11,23 +11,30 @@ public class ReporteLog implements Serializable{
 <span class="fc" id="L11">        this.fecha = fecha;</span>
 <span class="fc" id="L12">    }</span>
 
-<span class="nc" id="L14">    public ReporteLog(){}</span>
+<span class="fc" id="L14">    public ReporteLog(){</span>
+<span class="fc" id="L15">        this.accion = &quot;Sin datos&quot;;</span>
+<span class="fc" id="L16">        this.fecha = &quot;01/01/2018&quot;;</span>
+<span class="fc" id="L17">    }</span>
     
     public String getAccion() {
-<span class="fc" id="L17">        return accion;</span>
+<span class="fc" id="L20">        return accion;</span>
     }
 
     public void setAccion(String accion) {
-<span class="fc" id="L21">        this.accion = accion;</span>
-<span class="fc" id="L22">    }</span>
+<span class="fc" id="L24">        this.accion = accion;</span>
+<span class="fc" id="L25">    }</span>
 
     public String getFecha() {
-<span class="fc" id="L25">        return fecha;</span>
+<span class="fc" id="L28">        return fecha;</span>
     }
 
     public void setFecha(String fecha) {
-<span class="fc" id="L29">        this.fecha = fecha;</span>
-<span class="fc" id="L30">    }</span>
+<span class="fc" id="L32">        this.fecha = fecha;</span>
+<span class="fc" id="L33">    }</span>
     
+    @Override
+    public String toString(){
+<span class="fc" id="L37">        return this.fecha + &quot; - &quot; + this.accion;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
